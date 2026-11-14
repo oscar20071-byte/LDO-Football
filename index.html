@@ -36,7 +36,7 @@ canvas{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#16834b
 <label>Club<select id="careerClub"></select></label>
 <label>Posición<select id="careerPosition"><option>DEL</option><option>MC</option><option>DFC</option><option>LD</option><option>LI</option><option>POR</option></select></label>
 </div>
-<div class="actions"><button id="careerCreate">Crear carrera</button><button id="careerPlay" disabled>Simular partido</button><button id="careerReset" disabled>Borrar carrera</button></div>
+<div class="actions"><button id="careerCreate">Crear carrera</button><button id="careerPlay" disabled>Simular partido</button><button id="careerTrain" disabled>Entrenar</button><button id="careerRest" disabled>Recuperar</button><button id="careerTransfer" disabled>Cambiar de club</button><button id="careerRenew" disabled>Renovar contrato</button><button id="careerReset" disabled>Borrar carrera</button></div>
 <div id="careerStatus" class="hint" aria-live="polite">Todavía no has creado una carrera.</div><div id="careerStats" class="cards"></div>
 </section>
 <section class="panel">
@@ -83,16 +83,21 @@ function showClub(){const t=teams.find(x=>x.id===$('clubSelect').value);if(!t)re
 function showNation(){const n=nations.find(x=>x.id===$('nationSelect').value);if(!n)return;const rows=players.filter(p=>p.equipoId===n.id);$('dbInfo').innerHTML='<strong>'+safe(n.nombre)+'</strong> · '+safe(n.categoria)+' · '+rows.length+' jugadoras registradas';cards(rows)}
 $('clubSelect').addEventListener('change',showClub);$('nationSelect').addEventListener('change',showNation);
 function renderCareer(){
-if(!career){$('careerStatus').textContent='Todavía no has creado una carrera.';$('careerStats').innerHTML='';$('careerPlay').disabled=true;$('careerReset').disabled=true;return}
+if(!career){$('careerStatus').textContent='Todavía no has creado una carrera.';$('careerStats').innerHTML='';$('careerPlay').disabled=true;$('careerTrain').disabled=true;$('careerRest').disabled=true;$('careerTransfer').disabled=true;$('careerRenew').disabled=true;$('careerReset').disabled=true;return}
 const club=teams.find(t=>t.id===career.clubId);
 $('careerStatus').innerHTML='<strong>'+safe(career.name)+'</strong> · '+safe(club?club.nombre:'Club')+' · '+career.position+' · Temporada '+career.season;
-$('careerStats').innerHTML=[['OVR',career.ovr],['Partidos',career.apps],['Goles',career.goals],['Asistencias',career.assists],['XP',career.xp],['Temporada',career.season]].map(v=>'<article class="playercard"><strong style="font-size:22px">'+v[1]+'</strong><div class="hint">'+v[0]+'</div></article>').join('');
-$('careerPlay').disabled=false;$('careerReset').disabled=false;
+$('careerStats').innerHTML=[['OVR',career.ovr],['Partidos',career.apps],['Goles',career.goals],['Asistencias',career.assists],['XP',career.xp],['Temporada',career.season],['Fatiga',career.fatigue+'%'],['Contrato',career.contractYears+' años']].map(v=>'<article class="playercard"><strong style="font-size:22px">'+v[1]+'</strong><div class="hint">'+v[0]+'</div></article>').join('');
+$('careerPlay').disabled=career.fatigue>=90;$('careerTrain').disabled=career.fatigue>=85;$('careerRest').disabled=career.fatigue===0;$('careerTransfer').disabled=false;$('careerRenew').disabled=false;$('careerReset').disabled=false;
 }
 try{career=JSON.parse(localStorage.getItem('ldoCareerV1')||'null')}catch(e){career=null}
-$('careerCreate').onclick=()=>{const name=$('careerName').value.trim(),clubId=$('careerClub').value;if(!name||!clubId){$('careerStatus').textContent='Escribe un nombre y selecciona un club.';return}career={name,clubId,position:$('careerPosition').value,season:1,ovr:60,apps:0,goals:0,assists:0,xp:0};saveCareer();renderCareer()};
+if(career){career.fatigue=career.fatigue||0;career.contractYears=career.contractYears||3;career.training=career.training||0}
+$('careerCreate').onclick=()=>{const name=$('careerName').value.trim(),clubId=$('careerClub').value;if(!name||!clubId){$('careerStatus').textContent='Escribe un nombre y selecciona un club.';return}career={name,clubId,position:$('careerPosition').value,season:1,ovr:60,apps:0,goals:0,assists:0,xp:0,fatigue:0,contractYears:3,training:0};saveCareer();renderCareer()};
 function saveCareer(){localStorage.setItem('ldoCareerV1',JSON.stringify(career))}
-$('careerPlay').onclick=()=>{if(!career)return;career.apps++;const chance=career.position==='DEL'?.42:career.position==='MC'?.25:.12;const g=Math.random()<chance,a=Math.random()<.25;if(g)career.goals++;if(a)career.assists++;career.xp+=g||a?22:12;if(career.xp>=100){career.xp-=100;career.ovr=Math.min(99,career.ovr+1)}if(career.apps%18===0)career.season++;saveCareer();renderCareer();$('careerStatus').innerHTML+='<div class="hint">Partido simulado: '+(g?'marcaste un gol':a?'diste una asistencia':'sumaste minutos y experiencia')+'.</div>'};
+$('careerPlay').onclick=()=>{if(!career)return;if(career.fatigue>=90){$('careerStatus').textContent='Necesitas recuperarte antes de jugar.';return}career.apps++;career.fatigue=Math.min(100,career.fatigue+18);const chance=career.position==='DEL'?.42:career.position==='MC'?.25:.12;const g=Math.random()<chance,a=Math.random()<.25;if(g)career.goals++;if(a)career.assists++;career.xp+=g||a?22:12;if(career.xp>=100){career.xp-=100;career.ovr=Math.min(99,career.ovr+1)}if(career.apps%18===0){career.season++;career.contractYears=Math.max(0,career.contractYears-1)}saveCareer();renderCareer();$('careerStatus').innerHTML+='<div class="hint">Partido simulado: '+(g?'marcaste un gol':a?'diste una asistencia':'sumaste minutos y experiencia')+'.</div>'};
+$('careerTrain').onclick=()=>{if(!career||career.fatigue>=85)return;career.training++;career.fatigue=Math.min(100,career.fatigue+12);career.xp+=15;if(career.xp>=100){career.xp-=100;career.ovr=Math.min(99,career.ovr+1)}saveCareer();renderCareer();$('careerStatus').textContent='Entrenamiento completado. Has ganado experiencia y acumulado fatiga.'};
+$('careerRest').onclick=()=>{if(!career)return;career.fatigue=Math.max(0,career.fatigue-35);saveCareer();renderCareer();$('careerStatus').textContent='Recuperación completada.'};
+$('careerTransfer').onclick=()=>{if(!career)return;const target=$('careerClub').value;if(target===career.clubId){$('careerStatus').textContent='Ya perteneces a ese club.';return}career.clubId=target;career.contractYears=3;saveCareer();renderCareer();$('careerStatus').textContent='Cambio de club aplicado en tu partida local.'};
+$('careerRenew').onclick=()=>{if(!career)return;career.contractYears+=1;saveCareer();renderCareer();$('careerStatus').textContent='Contrato renovado por una temporada adicional.'};
 $('careerReset').onclick=()=>{if(confirm('¿Borrar el progreso de esta carrera?')){career=null;localStorage.removeItem('ldoCareerV1');renderCareer()}};
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
 function rosterFor(side){const id=side==='home'?match.homeTeamId:match.awayTeamId;return players.filter(p=>(p.clubId===id||p.equipoId===id)&&p.verificado===true)}
