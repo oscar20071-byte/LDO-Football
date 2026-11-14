@@ -16,7 +16,7 @@ Temporada de referencia declarada para el catálogo: **2026-2027**. Los particip
 - Segunda amarilla en un encuentro: roja y un partido de suspensión; roja directa: dos partidos de suspensión.
 - Las sanciones se guardan en el estado local de la competición; las jugadoras suspendidas reducen el rendimiento simulado del equipo mientras cumplen la sanción.
 - Respaldo portátil en JSON: permite exportar e importar carrera, competición activa y disciplina para trasladar el progreso manualmente entre dispositivos.
-- Sincronización manual en la nube mediante Supabase: autenticación por código de correo, guardado privado por usuario y políticas RLS. Requiere crear el proyecto y ejecutar `supabase/schema.sql`; no se incluye ninguna clave secreta.
+- Sincronización automática en la nube mediante Firebase Authentication y Cloud Firestore. Cada cuenta guarda su propio progreso; requiere configurar Firebase y publicar `firebase/firestore.rules`.
 - Copa eliminatoria simulada.
 - Validador de datos y pruebas automáticas de calendario mediante GitHub Actions.
 
@@ -37,7 +37,7 @@ Temporada de referencia declarada para el catálogo: **2026-2027**. Los particip
 - Las ligas y copas producen resultados aleatorios simulados; no son resultados oficiales. Sus grupos iniciales necesitan validación de formato, división y participantes.
 - No están completas las plantillas de todos los clubes ni las convocatorias de selecciones absolutas y juveniles.
 - No se han incorporado todos los escudos, retratos ni uniformes oficiales.
-- La sincronización en la nube está integrada pero requiere configurar un proyecto Supabase y ejecutar el SQL; el envío y la descarga son manuales, no automáticos.
+- La sincronización automática en la nube está integrada mediante Firebase, pero requiere configurar un proyecto, activar Email/Password, crear Firestore y publicar las reglas de `firebase/firestore.rules`. No se ha probado una conexión real porque aún faltan las credenciales del proyecto.
 - No hay multijugador, economía completa, fichajes negociados ni ascensos y descensos.
 
 ## Próximas tareas
