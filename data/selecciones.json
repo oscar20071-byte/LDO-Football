@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "temporada": "2026-2027",
-  "nota": "Catálogo inicial de selecciones con fuentes oficiales. Las plantillas se incorporarán por convocatoria y fecha; no representa todavía a todas las federaciones.",
+  "nota": "Catálogo de asociaciones FIFA para localizar las selecciones femeninas. Los registros con plantillaDisponible:false son pendientes de validar como selección activa y de importar su convocatoria; no representan plantillas completas.",
   "selecciones": [
     {
       "id": "uswnt",
@@ -74,6 +74,1966 @@
       "categoria": "absoluta",
       "fuente": "https://www.football.ch/portaldata/27/Resources/dokumente/nationalteams/a-team-frauen_equipeafeminine/2026/2026_05_26_WNT_Players_list_Juni_2026.pdf?v=1781375696",
       "plantillaDisponible": false
+    },
+    {
+      "id": "fifa-afganistan-women",
+      "pais": "Afganistán",
+      "nombre": "Afganistán (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-albania-women",
+      "pais": "Albania",
+      "nombre": "Albania (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-argelia-women",
+      "pais": "Argelia",
+      "nombre": "Argelia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-samoa-americana-women",
+      "pais": "Samoa Americana",
+      "nombre": "Samoa Americana (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-andorra-women",
+      "pais": "Andorra",
+      "nombre": "Andorra (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-angola-women",
+      "pais": "Angola",
+      "nombre": "Angola (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-anguila-women",
+      "pais": "Anguila",
+      "nombre": "Anguila (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-antigua-y-barbuda-women",
+      "pais": "Antigua y Barbuda",
+      "nombre": "Antigua y Barbuda (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-argentina-women",
+      "pais": "Argentina",
+      "nombre": "Argentina (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-armenia-women",
+      "pais": "Armenia",
+      "nombre": "Armenia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-aruba-women",
+      "pais": "Aruba",
+      "nombre": "Aruba (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-australia-women",
+      "pais": "Australia",
+      "nombre": "Australia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-austria-women",
+      "pais": "Austria",
+      "nombre": "Austria (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-azerbaiyan-women",
+      "pais": "Azerbaiyán",
+      "nombre": "Azerbaiyán (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-bahamas-women",
+      "pais": "Bahamas",
+      "nombre": "Bahamas (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-barein-women",
+      "pais": "Baréin",
+      "nombre": "Baréin (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-banglades-women",
+      "pais": "Bangladés",
+      "nombre": "Bangladés (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-barbados-women",
+      "pais": "Barbados",
+      "nombre": "Barbados (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-bielorrusia-women",
+      "pais": "Bielorrusia",
+      "nombre": "Bielorrusia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-belgica-women",
+      "pais": "Bélgica",
+      "nombre": "Bélgica (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-belice-women",
+      "pais": "Belice",
+      "nombre": "Belice (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-benin-women",
+      "pais": "Benín",
+      "nombre": "Benín (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-bermudas-women",
+      "pais": "Bermudas",
+      "nombre": "Bermudas (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-butan-women",
+      "pais": "Bután",
+      "nombre": "Bután (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-bolivia-women",
+      "pais": "Bolivia",
+      "nombre": "Bolivia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-bosnia-y-herzegovina-women",
+      "pais": "Bosnia y Herzegovina",
+      "nombre": "Bosnia y Herzegovina (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-botsuana-women",
+      "pais": "Botsuana",
+      "nombre": "Botsuana (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-brasil-women",
+      "pais": "Brasil",
+      "nombre": "Brasil (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-islas-virgenes-britanicas-women",
+      "pais": "Islas Vírgenes Británicas",
+      "nombre": "Islas Vírgenes Británicas (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-brunei-women",
+      "pais": "Brunéi",
+      "nombre": "Brunéi (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-bulgaria-women",
+      "pais": "Bulgaria",
+      "nombre": "Bulgaria (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-burkina-faso-women",
+      "pais": "Burkina Faso",
+      "nombre": "Burkina Faso (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-burundi-women",
+      "pais": "Burundi",
+      "nombre": "Burundi (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-cabo-verde-women",
+      "pais": "Cabo Verde",
+      "nombre": "Cabo Verde (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-camboya-women",
+      "pais": "Camboya",
+      "nombre": "Camboya (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-camerun-women",
+      "pais": "Camerún",
+      "nombre": "Camerún (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-islas-caiman-women",
+      "pais": "Islas Caimán",
+      "nombre": "Islas Caimán (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-republica-centroafricana-women",
+      "pais": "República Centroafricana",
+      "nombre": "República Centroafricana (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-chad-women",
+      "pais": "Chad",
+      "nombre": "Chad (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-chile-women",
+      "pais": "Chile",
+      "nombre": "Chile (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-china-women",
+      "pais": "China",
+      "nombre": "China (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-taiwan-women",
+      "pais": "Taiwán",
+      "nombre": "Taiwán (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-colombia-women",
+      "pais": "Colombia",
+      "nombre": "Colombia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-comoras-women",
+      "pais": "Comoras",
+      "nombre": "Comoras (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-congo-women",
+      "pais": "Congo",
+      "nombre": "Congo (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-republica-democratica-del-congo-women",
+      "pais": "República Democrática del Congo",
+      "nombre": "República Democrática del Congo (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-islas-cook-women",
+      "pais": "Islas Cook",
+      "nombre": "Islas Cook (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-costa-rica-women",
+      "pais": "Costa Rica",
+      "nombre": "Costa Rica (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-costa-de-marfil-women",
+      "pais": "Costa de Marfil",
+      "nombre": "Costa de Marfil (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-croacia-women",
+      "pais": "Croacia",
+      "nombre": "Croacia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-cuba-women",
+      "pais": "Cuba",
+      "nombre": "Cuba (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-curazao-women",
+      "pais": "Curazao",
+      "nombre": "Curazao (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-chipre-women",
+      "pais": "Chipre",
+      "nombre": "Chipre (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-chequia-women",
+      "pais": "Chequia",
+      "nombre": "Chequia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-dinamarca-women",
+      "pais": "Dinamarca",
+      "nombre": "Dinamarca (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-yibuti-women",
+      "pais": "Yibuti",
+      "nombre": "Yibuti (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-dominica-women",
+      "pais": "Dominica",
+      "nombre": "Dominica (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-republica-dominicana-women",
+      "pais": "República Dominicana",
+      "nombre": "República Dominicana (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-corea-del-norte-women",
+      "pais": "Corea del Norte",
+      "nombre": "Corea del Norte (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-ecuador-women",
+      "pais": "Ecuador",
+      "nombre": "Ecuador (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-egipto-women",
+      "pais": "Egipto",
+      "nombre": "Egipto (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-el-salvador-women",
+      "pais": "El Salvador",
+      "nombre": "El Salvador (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-inglaterra-women",
+      "pais": "Inglaterra",
+      "nombre": "Inglaterra (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-guinea-ecuatorial-women",
+      "pais": "Guinea Ecuatorial",
+      "nombre": "Guinea Ecuatorial (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-eritrea-women",
+      "pais": "Eritrea",
+      "nombre": "Eritrea (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-estonia-women",
+      "pais": "Estonia",
+      "nombre": "Estonia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-esuatini-women",
+      "pais": "Esuatini",
+      "nombre": "Esuatini (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-etiopia-women",
+      "pais": "Etiopía",
+      "nombre": "Etiopía (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-islas-feroe-women",
+      "pais": "Islas Feroe",
+      "nombre": "Islas Feroe (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-fiyi-women",
+      "pais": "Fiyi",
+      "nombre": "Fiyi (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-finlandia-women",
+      "pais": "Finlandia",
+      "nombre": "Finlandia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-francia-women",
+      "pais": "Francia",
+      "nombre": "Francia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-gabon-women",
+      "pais": "Gabón",
+      "nombre": "Gabón (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-georgia-women",
+      "pais": "Georgia",
+      "nombre": "Georgia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-alemania-women",
+      "pais": "Alemania",
+      "nombre": "Alemania (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-ghana-women",
+      "pais": "Ghana",
+      "nombre": "Ghana (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-gibraltar-women",
+      "pais": "Gibraltar",
+      "nombre": "Gibraltar (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-grecia-women",
+      "pais": "Grecia",
+      "nombre": "Grecia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-granada-women",
+      "pais": "Granada",
+      "nombre": "Granada (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-guam-women",
+      "pais": "Guam",
+      "nombre": "Guam (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-guatemala-women",
+      "pais": "Guatemala",
+      "nombre": "Guatemala (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-guinea-women",
+      "pais": "Guinea",
+      "nombre": "Guinea (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-guinea-bisau-women",
+      "pais": "Guinea-Bisáu",
+      "nombre": "Guinea-Bisáu (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-guyana-women",
+      "pais": "Guyana",
+      "nombre": "Guyana (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-haiti-women",
+      "pais": "Haití",
+      "nombre": "Haití (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-honduras-women",
+      "pais": "Honduras",
+      "nombre": "Honduras (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-hong-kong-women",
+      "pais": "Hong Kong",
+      "nombre": "Hong Kong (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-hungria-women",
+      "pais": "Hungría",
+      "nombre": "Hungría (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-islandia-women",
+      "pais": "Islandia",
+      "nombre": "Islandia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-india-women",
+      "pais": "India",
+      "nombre": "India (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-indonesia-women",
+      "pais": "Indonesia",
+      "nombre": "Indonesia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-iran-women",
+      "pais": "Irán",
+      "nombre": "Irán (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-irak-women",
+      "pais": "Irak",
+      "nombre": "Irak (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-israel-women",
+      "pais": "Israel",
+      "nombre": "Israel (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-italia-women",
+      "pais": "Italia",
+      "nombre": "Italia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-jamaica-women",
+      "pais": "Jamaica",
+      "nombre": "Jamaica (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-jordania-women",
+      "pais": "Jordania",
+      "nombre": "Jordania (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-kazajistan-women",
+      "pais": "Kazajistán",
+      "nombre": "Kazajistán (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-kenia-women",
+      "pais": "Kenia",
+      "nombre": "Kenia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-corea-del-sur-women",
+      "pais": "Corea del Sur",
+      "nombre": "Corea del Sur (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-kosovo-women",
+      "pais": "Kosovo",
+      "nombre": "Kosovo (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-kuwait-women",
+      "pais": "Kuwait",
+      "nombre": "Kuwait (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-kirguistan-women",
+      "pais": "Kirguistán",
+      "nombre": "Kirguistán (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-laos-women",
+      "pais": "Laos",
+      "nombre": "Laos (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-letonia-women",
+      "pais": "Letonia",
+      "nombre": "Letonia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-libano-women",
+      "pais": "Líbano",
+      "nombre": "Líbano (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-lesoto-women",
+      "pais": "Lesoto",
+      "nombre": "Lesoto (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-liberia-women",
+      "pais": "Liberia",
+      "nombre": "Liberia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-libia-women",
+      "pais": "Libia",
+      "nombre": "Libia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-liechtenstein-women",
+      "pais": "Liechtenstein",
+      "nombre": "Liechtenstein (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-lituania-women",
+      "pais": "Lituania",
+      "nombre": "Lituania (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-luxemburgo-women",
+      "pais": "Luxemburgo",
+      "nombre": "Luxemburgo (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-macao-women",
+      "pais": "Macao",
+      "nombre": "Macao (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-madagascar-women",
+      "pais": "Madagascar",
+      "nombre": "Madagascar (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-malaui-women",
+      "pais": "Malaui",
+      "nombre": "Malaui (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-malasia-women",
+      "pais": "Malasia",
+      "nombre": "Malasia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-maldivas-women",
+      "pais": "Maldivas",
+      "nombre": "Maldivas (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-mali-women",
+      "pais": "Malí",
+      "nombre": "Malí (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-malta-women",
+      "pais": "Malta",
+      "nombre": "Malta (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-mauritania-women",
+      "pais": "Mauritania",
+      "nombre": "Mauritania (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-mauricio-women",
+      "pais": "Mauricio",
+      "nombre": "Mauricio (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-mexico-women",
+      "pais": "México",
+      "nombre": "México (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-moldavia-women",
+      "pais": "Moldavia",
+      "nombre": "Moldavia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-mongolia-women",
+      "pais": "Mongolia",
+      "nombre": "Mongolia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-montenegro-women",
+      "pais": "Montenegro",
+      "nombre": "Montenegro (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-montserrat-women",
+      "pais": "Montserrat",
+      "nombre": "Montserrat (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-marruecos-women",
+      "pais": "Marruecos",
+      "nombre": "Marruecos (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-mozambique-women",
+      "pais": "Mozambique",
+      "nombre": "Mozambique (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-myanmar-women",
+      "pais": "Myanmar",
+      "nombre": "Myanmar (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-namibia-women",
+      "pais": "Namibia",
+      "nombre": "Namibia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-nepal-women",
+      "pais": "Nepal",
+      "nombre": "Nepal (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-paquistan-women",
+      "pais": "Paquistán",
+      "nombre": "Paquistán (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-palestina-women",
+      "pais": "Palestina",
+      "nombre": "Palestina (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-panama-women",
+      "pais": "Panamá",
+      "nombre": "Panamá (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-papua-nueva-guinea-women",
+      "pais": "Papúa Nueva Guinea",
+      "nombre": "Papúa Nueva Guinea (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-paraguay-women",
+      "pais": "Paraguay",
+      "nombre": "Paraguay (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-peru-women",
+      "pais": "Perú",
+      "nombre": "Perú (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-filipinas-women",
+      "pais": "Filipinas",
+      "nombre": "Filipinas (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-polonia-women",
+      "pais": "Polonia",
+      "nombre": "Polonia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-puerto-rico-women",
+      "pais": "Puerto Rico",
+      "nombre": "Puerto Rico (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-catar-women",
+      "pais": "Catar",
+      "nombre": "Catar (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-irlanda-women",
+      "pais": "Irlanda",
+      "nombre": "Irlanda (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-rumania-women",
+      "pais": "Rumanía",
+      "nombre": "Rumanía (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-rusia-women",
+      "pais": "Rusia",
+      "nombre": "Rusia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-ruanda-women",
+      "pais": "Ruanda",
+      "nombre": "Ruanda (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-samoa-women",
+      "pais": "Samoa",
+      "nombre": "Samoa (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-san-marino-women",
+      "pais": "San Marino",
+      "nombre": "San Marino (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-santo-tome-y-principe-women",
+      "pais": "Santo Tomé y Príncipe",
+      "nombre": "Santo Tomé y Príncipe (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-arabia-saudita-women",
+      "pais": "Arabia Saudita",
+      "nombre": "Arabia Saudita (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-escocia-women",
+      "pais": "Escocia",
+      "nombre": "Escocia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-senegal-women",
+      "pais": "Senegal",
+      "nombre": "Senegal (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-serbia-women",
+      "pais": "Serbia",
+      "nombre": "Serbia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-seychelles-women",
+      "pais": "Seychelles",
+      "nombre": "Seychelles (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-sierra-leona-women",
+      "pais": "Sierra Leona",
+      "nombre": "Sierra Leona (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-singapur-women",
+      "pais": "Singapur",
+      "nombre": "Singapur (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-eslovaquia-women",
+      "pais": "Eslovaquia",
+      "nombre": "Eslovaquia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-eslovenia-women",
+      "pais": "Eslovenia",
+      "nombre": "Eslovenia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-islas-salomon-women",
+      "pais": "Islas Salomón",
+      "nombre": "Islas Salomón (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-somalia-women",
+      "pais": "Somalia",
+      "nombre": "Somalia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-sudafrica-women",
+      "pais": "Sudáfrica",
+      "nombre": "Sudáfrica (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-sudan-del-sur-women",
+      "pais": "Sudán del Sur",
+      "nombre": "Sudán del Sur (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-espana-women",
+      "pais": "España",
+      "nombre": "España (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-sri-lanka-women",
+      "pais": "Sri Lanka",
+      "nombre": "Sri Lanka (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-san-cristobal-y-nieves-women",
+      "pais": "San Cristóbal y Nieves",
+      "nombre": "San Cristóbal y Nieves (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-santa-lucia-women",
+      "pais": "Santa Lucía",
+      "nombre": "Santa Lucía (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-san-vicente-y-las-granadinas-women",
+      "pais": "San Vicente y las Granadinas",
+      "nombre": "San Vicente y las Granadinas (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-sudan-women",
+      "pais": "Sudán",
+      "nombre": "Sudán (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-surinam-women",
+      "pais": "Surinam",
+      "nombre": "Surinam (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-suecia-women",
+      "pais": "Suecia",
+      "nombre": "Suecia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-siria-women",
+      "pais": "Siria",
+      "nombre": "Siria (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-tahiti-women",
+      "pais": "Tahití",
+      "nombre": "Tahití (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-tayikistan-women",
+      "pais": "Tayikistán",
+      "nombre": "Tayikistán (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-tanzania-women",
+      "pais": "Tanzania",
+      "nombre": "Tanzania (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-tailandia-women",
+      "pais": "Tailandia",
+      "nombre": "Tailandia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-gambia-women",
+      "pais": "Gambia",
+      "nombre": "Gambia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-timor-oriental-women",
+      "pais": "Timor Oriental",
+      "nombre": "Timor Oriental (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-togo-women",
+      "pais": "Togo",
+      "nombre": "Togo (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-tonga-women",
+      "pais": "Tonga",
+      "nombre": "Tonga (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-trinidad-y-tobago-women",
+      "pais": "Trinidad y Tobago",
+      "nombre": "Trinidad y Tobago (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-tunez-women",
+      "pais": "Túnez",
+      "nombre": "Túnez (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-turquia-women",
+      "pais": "Turquía",
+      "nombre": "Turquía (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-turkmenistan-women",
+      "pais": "Turkmenistán",
+      "nombre": "Turkmenistán (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-islas-turcas-y-caicos-women",
+      "pais": "Islas Turcas y Caicos",
+      "nombre": "Islas Turcas y Caicos (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-uganda-women",
+      "pais": "Uganda",
+      "nombre": "Uganda (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-ucrania-women",
+      "pais": "Ucrania",
+      "nombre": "Ucrania (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-emiratos-arabes-unidos-women",
+      "pais": "Emiratos Árabes Unidos",
+      "nombre": "Emiratos Árabes Unidos (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-uruguay-women",
+      "pais": "Uruguay",
+      "nombre": "Uruguay (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-islas-virgenes-de-estados-unidos-women",
+      "pais": "Islas Vírgenes de Estados Unidos",
+      "nombre": "Islas Vírgenes de Estados Unidos (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-uzbekistan-women",
+      "pais": "Uzbekistán",
+      "nombre": "Uzbekistán (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-vanuatu-women",
+      "pais": "Vanuatu",
+      "nombre": "Vanuatu (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-venezuela-women",
+      "pais": "Venezuela",
+      "nombre": "Venezuela (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-vietnam-women",
+      "pais": "Vietnam",
+      "nombre": "Vietnam (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-gales-women",
+      "pais": "Gales",
+      "nombre": "Gales (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-yemen-women",
+      "pais": "Yemen",
+      "nombre": "Yemen (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-zambia-women",
+      "pais": "Zambia",
+      "nombre": "Zambia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-zimbabue-women",
+      "pais": "Zimbabue",
+      "nombre": "Zimbabue (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
     }
   ]
 }
