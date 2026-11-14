@@ -58,15 +58,17 @@ canvas{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#16834b
 <p class="hint">Exporta tu carrera, liga activa y disciplina a un archivo JSON. Guarda el archivo y podrás importarlo en otro dispositivo. Esta función no envía datos a un servidor.</p>
 <div class="actions"><button id="exportSave">Exportar progreso</button><button id="importSave">Importar archivo</button><input id="saveFile" type="file" accept=".json,application/json" hidden></div>
 <p id="backupStatus" class="hint" aria-live="polite">Tus datos actuales siguen guardados en este navegador.</p>
-<p class="hint">Sincronización en la nube con cuenta privada. Necesitas configurar un proyecto Supabase y ejecutar el SQL incluido en <code>supabase/schema.sql</code>.</p>
+<p class="hint">Sincronización automática con Firebase. Configura la aplicación web de Firebase una sola vez y crea una cuenta para guardar tu carrera, liga y disciplina en la nube.</p>
 <div class="grid">
-<label>URL del proyecto Supabase<input id="cloudUrl" type="url" placeholder="https://tu-proyecto.supabase.co" autocomplete="url"></label>
-<label>Clave pública anon / publishable<input id="cloudKey" type="password" placeholder="Clave pública del proyecto" autocomplete="off"></label>
-<label>Correo de tu cuenta<input id="cloudEmail" type="email" placeholder="tu-correo@example.com" autocomplete="email"></label>
-<label>Código recibido por correo<input id="cloudOtp" inputmode="numeric" maxlength="8" placeholder="Código de acceso" autocomplete="one-time-code"></label>
+<label>Firebase API Key<input id="cloudApiKey" type="password" placeholder="AIza..." autocomplete="off"></label>
+<label>Auth Domain<input id="cloudAuthDomain" type="text" placeholder="tu-proyecto.firebaseapp.com" autocomplete="off"></label>
+<label>Project ID<input id="cloudProjectId" type="text" placeholder="tu-proyecto" autocomplete="off"></label>
+<label>App ID<input id="cloudAppId" type="text" placeholder="1:123456:web:abcdef" autocomplete="off"></label>
+<label>Correo electrónico<input id="cloudEmail" type="email" placeholder="tu-correo@example.com" autocomplete="email"></label>
+<label>Contraseña<input id="cloudPassword" type="password" minlength="6" placeholder="Mínimo 6 caracteres" autocomplete="current-password"></label>
 </div>
-<div class="actions"><button id="cloudSaveConfig">Guardar configuración</button><button id="cloudSendCode">Enviar código</button><button id="cloudVerify">Verificar código</button><button id="cloudPush">Subir progreso</button><button id="cloudPull">Descargar progreso</button><button id="cloudLogout">Cerrar sesión</button></div>
-<p id="cloudStatus" class="hint" aria-live="polite">Nube sin configurar. Tus partidas locales no se modifican.</p>
+<div class="actions"><button id="cloudSaveConfig">Guardar Firebase</button><button id="cloudRegister">Crear cuenta</button><button id="cloudLogin">Iniciar sesión</button><button id="cloudLogout">Cerrar sesión</button></div>
+<p id="cloudStatus" class="hint" aria-live="polite">Firebase sin configurar. El progreso local permanece intacto.</p>
 </section>
 <section class="panel" id="competitions">
 <h2>🏆 Ligas y copas</h2><p class="hint">Competiciones generadas a partir de los clubes registrados. Los resultados se simulan y se guardan en este navegador.</p>
@@ -79,6 +81,9 @@ canvas{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#16834b
 .tableWrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:600px;font-size:13px}th,td{text-align:center;padding:8px;border-bottom:1px solid #31566d}th:nth-child(2),td:nth-child(2){text-align:left}.fixture{display:grid;grid-template-columns:42px minmax(90px,1fr) 55px minmax(90px,1fr);gap:7px;align-items:center;padding:8px;border-bottom:1px solid #31566d;font-size:13px}.fixture span{text-align:center;color:#b8d4e5}
 </style>
 </main>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
 <script>
 (()=>{
 const $=id=>document.getElementById(id),canvas=$('game'),ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height;
@@ -157,37 +162,24 @@ $('exportSave').addEventListener('click',exportProgress);
 $('importSave').addEventListener('click',()=>$('saveFile').click());
 $('saveFile').addEventListener('change',e=>{importProgress(e.target.files&&e.target.files[0]);e.target.value=''});
 
-const CLOUD_CONFIG_KEY='ldoSupabaseConfigV1',CLOUD_SESSION_KEY='ldoSupabaseSessionV1';
-let cloudConfig=null,cloudSession=null;
+const CLOUD_CONFIG_KEY='ldoFirebaseConfigV1';
+let cloudConfig=null,cloudAuth=null,cloudDb=null,cloudUser=null,cloudReady=false,cloudApplying=false,cloudTimer=null,cloudUnsubscribe=null;
 try{cloudConfig=JSON.parse(localStorage.getItem(CLOUD_CONFIG_KEY)||'null')}catch(e){}
-try{cloudSession=JSON.parse(localStorage.getItem(CLOUD_SESSION_KEY)||'null')}catch(e){}
-$('cloudUrl').value=cloudConfig?.url||'';
-$('cloudKey').value=cloudConfig?.key||'';
+$('cloudApiKey').value=cloudConfig?.apiKey||'';
+$('cloudAuthDomain').value=cloudConfig?.authDomain||'';
+$('cloudProjectId').value=cloudConfig?.projectId||'';
+$('cloudAppId').value=cloudConfig?.appId||'';
 $('cloudEmail').value=cloudConfig?.email||'';
 function cloudMessage(message){$('cloudStatus').textContent=message}
 function saveCloudConfig(){
- const url=$('cloudUrl').value.trim().replace(/\/+$/,''),key=$('cloudKey').value.trim(),email=$('cloudEmail').value.trim();
- if(!/^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(url)){cloudMessage('Introduce la URL HTTPS válida de tu proyecto Supabase.');return false}
- if(!key){cloudMessage('Falta la clave pública anon/publishable. Nunca uses la service_role key.');return false}
- cloudConfig={url,key,email};localStorage.setItem(CLOUD_CONFIG_KEY,JSON.stringify(cloudConfig));cloudMessage('Configuración guardada en este navegador.');return true;
-}
-function cloudHeaders(token){return {'apikey':cloudConfig.key,'Authorization':'Bearer '+token,'Content-Type':'application/json'}}
-async function cloudRequest(path,options={}){
- if(!cloudConfig)throw Error('Primero guarda la configuración de Supabase.');
- const response=await fetch(cloudConfig.url+path,{...options,headers:{'apikey':cloudConfig.key,'Content-Type':'application/json',...(options.headers||{})}});
- const raw=await response.text();let data={};try{data=raw?JSON.parse(raw):{}}catch(e){data={message:raw}}
- if(!response.ok)throw Error(data.msg||data.message||data.error_description||data.error||('Error HTTP '+response.status));
- return data;
-}
-async function validCloudSession(){
- if(!cloudSession?.access_token||!cloudSession?.refresh_token)throw Error('Inicia sesión primero con el código enviado a tu correo.');
- if(Number(cloudSession.expires_at||0)<Math.floor(Date.now()/1000)+60){
-  const data=await cloudRequest('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:JSON.stringify({refresh_token:cloudSession.refresh_token})});
-  cloudSession={...data,expires_at:Math.floor(Date.now()/1000)+(data.expires_in||3600)};
-  localStorage.setItem(CLOUD_SESSION_KEY,JSON.stringify(cloudSession));
- }
- if(!cloudSession.user?.id)throw Error('La sesión no contiene un usuario válido. Vuelve a iniciar sesión.');
- return cloudSession;
+ const config={apiKey:$('cloudApiKey').value.trim(),authDomain:$('cloudAuthDomain').value.trim(),projectId:$('cloudProjectId').value.trim(),appId:$('cloudAppId').value.trim(),email:$('cloudEmail').value.trim()};
+ if(!config.apiKey||!config.authDomain||!/^[a-z0-9-]+$/i.test(config.projectId)||!config.appId){cloudMessage('Completa API Key, Auth Domain, Project ID y App ID de Firebase.');return false}
+ cloudConfig=config;localStorage.setItem(CLOUD_CONFIG_KEY,JSON.stringify(config));
+ try{
+  if(!firebase.apps.length)firebase.initializeApp({apiKey:config.apiKey,authDomain:config.authDomain,projectId:config.projectId,appId:config.appId});
+  cloudAuth=firebase.auth();cloudDb=firebase.firestore();
+ }catch(e){cloudMessage('No se pudo iniciar Firebase: '+e.message);return false}
+ cloudMessage('Firebase configurado en este navegador. Ahora crea una cuenta o inicia sesión.');return true;
 }
 function currentSavePayload(){
  const storage={};for(const key of SAVE_KEYS)storage[key]=localStorage.getItem(key);
@@ -195,65 +187,63 @@ function currentSavePayload(){
 }
 function validateCloudPayload(payload){
  if(!payload||payload.app!=='LDO Football'||payload.format!=='ldo-cloud-save'||payload.version!==1||!payload.storage||typeof payload.storage!=='object')throw Error('El respaldo en la nube tiene un formato no reconocido.');
- for(const key of SAVE_KEYS){
-  const raw=payload.storage[key];
-  if(raw!==null&&typeof raw!=='string')throw Error('El respaldo contiene un dato no válido.');
-  if(raw!==null){const value=JSON.parse(raw);
-   if(key==='ldoCareerV1'&&value!==null&&(!value||typeof value!=='object'||!value.name||!value.clubId))throw Error('La carrera guardada no es válida.');
-   if(key==='ldoCompetitionV1'&&value!==null&&(!value||typeof value!=='object'||!Array.isArray(value.table)||!Array.isArray(value.schedule)))throw Error('La competición guardada no es válida.');
-   if(key==='ldoDisciplineV1'&&value!==null&&(!value||typeof value!=='object'||!value.discipline||typeof value.discipline!=='object'))throw Error('El registro disciplinario no es válido.');
-  }
- }
+ for(const key of SAVE_KEYS){const raw=payload.storage[key];if(raw!==null&&typeof raw!=='string')throw Error('El respaldo contiene un dato no válido.');if(raw!==null){const value=JSON.parse(raw);if(key==='ldoCareerV1'&&value!==null&&(!value||typeof value!=='object'||!value.name||!value.clubId))throw Error('La carrera guardada no es válida.');if(key==='ldoCompetitionV1'&&value!==null&&(!value||typeof value!=='object'||!Array.isArray(value.table)||!Array.isArray(value.schedule)))throw Error('La competición guardada no es válida.');if(key==='ldoDisciplineV1'&&value!==null&&(!value||typeof value!=='object'||!value.discipline||typeof value.discipline!=='object'))throw Error('El registro disciplinario no es válido.')}}
+}
+function applyCloudPayload(payload){cloudApplying=true;try{for(const key of SAVE_KEYS){const raw=payload.storage[key];if(raw===null)localStorage.removeItem(key);else localStorage.setItem(key,raw)}}finally{cloudApplying=false}}
+async function uploadCloudSave(showMessage=true){
+ if(!cloudUser||!cloudDb||!cloudReady)return;
+ const ref=cloudDb.collection('users').doc(cloudUser.uid).collection('saves').doc('main');
+ await ref.set({...currentSavePayload(),updatedAt:firebase.firestore.FieldValue.serverTimestamp()});
+ if(showMessage)cloudMessage('Sincronización automática completada. Tu progreso está guardado en Firebase.');
+}
+function queueCloudSync(){
+ if(!cloudUser||!cloudReady||cloudApplying)return;
+ clearTimeout(cloudTimer);cloudTimer=setTimeout(()=>uploadCloudSave(false).catch(e=>cloudMessage('No se pudo sincronizar: '+e.message)),1200);
+}
+async function startCloudSync(user){
+ cloudUser=user;cloudReady=false;
+ const ref=cloudDb.collection('users').doc(user.uid).collection('saves').doc('main');
+ try{
+  const snap=await ref.get();
+  if(snap.exists){
+   const payload=snap.data();validateCloudPayload(payload);
+   if(confirm('Encontramos una partida guardada en Firebase. ¿Quieres cargarla en este dispositivo? Si eliges Cancelar, se conservará la partida local y se subirá a tu cuenta.')){applyCloudPayload(payload);cloudMessage('Partida de Firebase cargada. Sincronización automática activada.')}
+   else{cloudMessage('Se conservará tu partida local y se guardará en Firebase.');await uploadCloudSave(false)}
+  }else{await uploadCloudSave(false);cloudMessage('Cuenta conectada. Tu progreso local se guardó en Firebase.')}
+  cloudReady=true;
+  if(cloudUnsubscribe)cloudUnsubscribe();
+  cloudUnsubscribe=ref.onSnapshot(snapshot=>{
+   if(!cloudReady||!snapshot.exists||cloudApplying)return;
+   const remote=snapshot.data();
+   if(remote.updatedAt?.toDate&&Date.now()-remote.updatedAt.toDate().getTime()>3000){
+    cloudMessage('Hay una actualización en la nube. Inicia sesión en otro dispositivo para recuperar la última partida.');
+   }
+  },e=>cloudMessage('Aviso de sincronización: '+e.message));
+ }catch(e){cloudReady=false;cloudMessage('No se pudo preparar la sincronización: '+e.message)}
 }
 $('cloudSaveConfig').addEventListener('click',saveCloudConfig);
-$('cloudSendCode').addEventListener('click',async()=>{
- if(!saveCloudConfig())return;
- const email=$('cloudEmail').value.trim();if(!email){cloudMessage('Escribe tu correo electrónico.');return}
- try{await cloudRequest('/auth/v1/otp',{method:'POST',body:JSON.stringify({email,create_user:true})});cloudMessage('Código enviado. Revisa tu correo y escríbelo aquí.')}
- catch(e){cloudMessage('No se pudo enviar el código: '+e.message)}
+$('cloudRegister').addEventListener('click',async()=>{
+ if(!cloudAuth&&!saveCloudConfig())return;
+ const email=$('cloudEmail').value.trim(),password=$('cloudPassword').value;
+ if(!email||password.length<6){cloudMessage('Escribe un correo y una contraseña de al menos 6 caracteres.');return}
+ try{const credential=await cloudAuth.createUserWithEmailAndPassword(email,password);await startCloudSync(credential.user)}
+ catch(e){cloudMessage('No se pudo crear la cuenta: '+e.message)}
 });
-$('cloudVerify').addEventListener('click',async()=>{
- if(!cloudConfig&&!saveCloudConfig())return;
- const email=$('cloudEmail').value.trim(),token=$('cloudOtp').value.trim();
- if(!email||!token){cloudMessage('Escribe tu correo y el código recibido.');return}
- try{
-  const data=await cloudRequest('/auth/v1/verify',{method:'POST',body:JSON.stringify({email,token,type:'email'})});
-  cloudSession={...data,expires_at:Math.floor(Date.now()/1000)+(data.expires_in||3600)};
-  if(!cloudSession.user?.id||!cloudSession.access_token)throw Error('La respuesta de autenticación está incompleta.');
-  localStorage.setItem(CLOUD_SESSION_KEY,JSON.stringify(cloudSession));cloudMessage('Sesión iniciada. Ya puedes sincronizar tu progreso.');
- }catch(e){cloudMessage('No se pudo verificar el código: '+e.message)}
-});
-$('cloudPush').addEventListener('click',async()=>{
- try{
-  if(!cloudConfig&&!saveCloudConfig())return;
-  const session=await validCloudSession();
-  if(!confirm('Subir reemplazará el respaldo anterior de esta cuenta. ¿Continuar?'))return;
-  const payload=currentSavePayload();
-  const row={user_id:session.user.id,payload,updated_at:new Date().toISOString()};
-  await cloudRequest('/rest/v1/ldo_saves?on_conflict=user_id',{method:'POST',headers:{'Authorization':'Bearer '+session.access_token,'Prefer':'resolution=merge-duplicates,return=minimal'},body:JSON.stringify(row)});
-  cloudMessage('Progreso subido a tu cuenta privada en la nube.');
- }catch(e){cloudMessage('No se pudo subir: '+e.message)}
-});
-$('cloudPull').addEventListener('click',async()=>{
- try{
-  if(!cloudConfig&&!saveCloudConfig())return;
-  const session=await validCloudSession(),query='?select=payload,updated_at&user_id=eq.'+encodeURIComponent(session.user.id)+'&limit=1';
-  const rows=await cloudRequest('/rest/v1/ldo_saves'+query,{method:'GET',headers:{'Authorization':'Bearer '+session.access_token}});
-  if(!Array.isArray(rows)||!rows.length){cloudMessage('No hay un respaldo en la nube para esta cuenta. Sube primero tu progreso.');return}
-  const payload=rows[0].payload;validateCloudPayload(payload);
-  if(!confirm('Descargar el respaldo de la nube reemplazará la carrera, liga y disciplina locales equivalentes. ¿Continuar?'))return;
-  for(const key of SAVE_KEYS){const raw=payload.storage[key];if(raw===null)localStorage.removeItem(key);else localStorage.setItem(key,raw)}
-  cloudMessage('Progreso descargado. La página se recargará para aplicar los datos.');
-  setTimeout(()=>location.reload(),400);
- }catch(e){cloudMessage('No se pudo descargar: '+e.message)}
+$('cloudLogin').addEventListener('click',async()=>{
+ if(!cloudAuth&&!saveCloudConfig())return;
+ const email=$('cloudEmail').value.trim(),password=$('cloudPassword').value;
+ if(!email||!password){cloudMessage('Escribe tu correo y contraseña.');return}
+ try{const credential=await cloudAuth.signInWithEmailAndPassword(email,password);await startCloudSync(credential.user)}
+ catch(e){cloudMessage('No se pudo iniciar sesión: '+e.message)}
 });
 $('cloudLogout').addEventListener('click',async()=>{
- try{
-  if(cloudSession?.access_token&&cloudConfig)await cloudRequest('/auth/v1/logout',{method:'POST',headers:{'Authorization':'Bearer '+cloudSession.access_token}});
- }catch(e){}
- cloudSession=null;localStorage.removeItem(CLOUD_SESSION_KEY);cloudMessage('Sesión cerrada. Tus partidas locales se conservan.');
+ try{if(cloudUnsubscribe)cloudUnsubscribe();cloudReady=false;cloudUser=null;if(cloudAuth)await cloudAuth.signOut();cloudMessage('Sesión cerrada. Tus partidas locales se conservan.')}
+ catch(e){cloudMessage('No se pudo cerrar sesión: '+e.message)}
 });
-if(cloudSession?.user?.email)cloudMessage('Sesión guardada para '+cloudSession.user.email+'. Puedes subir o descargar tu progreso.');
+const originalSetItem=Storage.prototype.setItem,originalRemoveItem=Storage.prototype.removeItem;
+Storage.prototype.setItem=function(key,value){originalSetItem.call(this,key,value);if(this===localStorage&&SAVE_KEYS.includes(String(key)))queueCloudSync()};
+Storage.prototype.removeItem=function(key){originalRemoveItem.call(this,key);if(this===localStorage&&SAVE_KEYS.includes(String(key)))queueCloudSync()};
+if(cloudConfig){try{if(!firebase.apps.length)firebase.initializeApp({apiKey:cloudConfig.apiKey,authDomain:cloudConfig.authDomain,projectId:cloudConfig.projectId,appId:cloudConfig.appId});cloudAuth=firebase.auth();cloudDb=firebase.firestore();cloudAuth.onAuthStateChanged(user=>{if(user){cloudUser=user;startCloudSync(user)}else{cloudUser=null;cloudReady=false}});cloudMessage('Firebase configurado. Inicia sesión para activar la sincronización automática.')}catch(e){cloudMessage('Revisa la configuración Firebase: '+e.message)}}
 
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
 const DISCIPLINE_STORE='ldoCompetitionV1';
