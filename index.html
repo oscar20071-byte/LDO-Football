@@ -144,7 +144,7 @@ function applyCard(side){
  const state=readDisciplineState(),record=p.player&&state?disciplineFor(p.player,state):null;
  if(secondYellow){
   if(side==='home')match.stats.yellow+=2;else match.stats.oppCards++;
-  if(record){record.yellowCards+=2;record.redCards++;record.suspension=Math.max(record.suspension,1)}
+  if(record){record.yellowCards+=2;record.yellows+=2;if(record.yellows>=5)record.yellows=0;record.redCards++;record.suspension=Math.max(record.suspension,1)}
  }
  if(directRed||secondYellow){
   p.sentOff=true;
