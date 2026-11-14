@@ -28,7 +28,18 @@ canvas{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#16834b
 <div id="dbInfo" style="margin-top:12px"></div>
 <div id="rosterList" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin-top:10px"></div>
 </section>
-<div class="bar"><div><div class="hint">MARCADOR</div><div id="score">LDO 0 - 0 CPU</div></div><div class="hint">Muévete con WASD o las flechas · Presiona ESPACIO para chutar</div></div>
+<section id="career" class="bar" style="display:block;margin:14px 0">
+<h2 style="margin:4px 0 10px">🎮 Modo carrera · Crea tu futbolista</h2>
+<p class="hint">Crea una jugadora, elige un club y guarda tu progreso en este navegador.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px">
+<label>Nombre de tu jugadora<input id="careerName" maxlength="30" placeholder="Ej. Alex Morgan" style="display:block;width:100%;padding:10px;border-radius:8px;margin-top:5px"></label>
+<label>Club inicial<select id="careerClub" style="display:block;width:100%;padding:10px;border-radius:8px;margin-top:5px"></select></label>
+<label>Posición<select id="careerPosition" style="display:block;width:100%;padding:10px;border-radius:8px;margin-top:5px"><option>DEL</option><option>MC</option><option>DFC</option><option>LD</option><option>LI</option><option>POR</option></select></label>
+</div>
+<div class="actions" style="justify-content:flex-start;margin:12px 0"><button id="careerCreate">Crear carrera</button><button id="careerPlay" disabled>Jugar partido</button><button id="careerReset" disabled>Borrar carrera</button></div>
+<div id="careerStatus" class="hint" aria-live="polite">Todavía no has creado una carrera.</div>
+<div id="careerStats" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px;margin-top:10px"></div>
+</section>\n<div class="bar"><div><div class="hint">MARCADOR</div><div id="score">LDO 0 - 0 CPU</div></div><div class="hint">Muévete con WASD o las flechas · Presiona ESPACIO para chutar</div></div>
 <canvas id="game" width="960" height="540" aria-label="Campo de fútbol visto desde arriba"></canvas>
 <div class="actions"><button id="restart">Reiniciar partido</button><button id="pause">Pausar</button></div>
 </main>
@@ -91,6 +102,48 @@ function showClub(){const t=teams.find(x=>x.id===clubSel.value);if(!t)return;con
 function showNation(){const n=nations.find(x=>x.id===nationSel.value);if(!n)return;const rows=players.filter(p=>p.equipoId===n.id);info.innerHTML='<strong>'+safe(n.nombre)+'</strong><div class="hint">'+safe(n.categoria)+' · '+rows.length+' jugadoras registradas</div>';cards(rows)}
 clubSel.addEventListener('change',showClub);nationSel.addEventListener('change',showNation);showClub();
 }catch(e){info.textContent='No se pudo cargar la base de datos. Abre el juego desde GitHub Pages.';console.error(e)}
+})();
+</script>\n<script>
+(()=>{
+const $=id=>document.getElementById(id);
+const club=$('careerClub'),name=$('careerName'),pos=$('careerPosition'),status=$('careerStatus'),stats=$('careerStats');
+let clubs=[];
+fetch('data/equipos.json').then(r=>r.json()).then(d=>{
+clubs=d.equipos||[];
+club.innerHTML=clubs.map(t=>'<option value="'+t.id+'">'+t.nombre+' · '+t.pais+'</option>').join('');
+}).catch(()=>{club.innerHTML='<option value="">No se pudo cargar clubes</option>'});
+let career=null;
+try{career=JSON.parse(localStorage.getItem('ldoCareerV1')||'null')}catch(e){}
+function save(){localStorage.setItem('ldoCareerV1',JSON.stringify(career))}
+function render(){
+if(!career){status.textContent='Todavía no has creado una carrera.';stats.innerHTML='';$('careerPlay').disabled=true;$('careerReset').disabled=true;return}
+const team=clubs.find(t=>t.id===career.clubId);
+status.innerHTML='<strong>'+career.name+'</strong> · '+(team?team.nombre:'Club')+' · '+career.position+' · Temporada '+career.season;
+const values=[['OVR',career.ovr],['Partidos',career.apps],['Goles',career.goals],['Asistencias',career.assists],['Experiencia',career.xp]];
+stats.innerHTML=values.map(v=>'<article style="background:#18394f;border:1px solid #31566d;border-radius:9px;padding:10px;text-align:center"><strong style="font-size:22px">'+v[1]+'</strong><div class="hint">'+v[0]+'</div></article>').join('');
+$('careerPlay').disabled=false;$('careerReset').disabled=false;
+}
+$('careerCreate').onclick=()=>{
+const n=name.value.trim();if(!n){status.textContent='Escribe el nombre de tu jugadora.';return}
+if(!club.value){status.textContent='Selecciona un club.';return}
+career={name:n,clubId:club.value,position:pos.value,season:1,ovr:60,apps:0,goals:0,assists:0,xp:0};
+save();render();
+};
+$('careerPlay').onclick=()=>{
+if(!career)return;
+career.apps++;
+const scored=Math.random()<.42;
+const assisted=Math.random()<.38;
+if(scored&&career.position!=='POR')career.goals++;
+if(assisted&&career.position!=='POR')career.assists++;
+career.xp+=scored||assisted?20:10;
+if(career.xp>=100){career.xp-=100;career.ovr=Math.min(99,career.ovr+1)}
+if(career.apps%20===0)career.season++;
+save();render();
+status.innerHTML+='<div style="margin-top:6px">Partido simulado: '+(scored?'¡Buen partido, participaste en gol!':'Partido completado. Sigue mejorando.')+'</div>';
+};
+$('careerReset').onclick=()=>{if(confirm('¿Borrar todo el progreso de esta carrera?')){career=null;localStorage.removeItem('ldoCareerV1');render()}};
+render();
 })();
 </script>\n</body>
 </html>
