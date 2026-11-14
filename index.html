@@ -226,7 +226,9 @@ $('cloudVerify').addEventListener('click',async()=>{
 $('cloudPush').addEventListener('click',async()=>{
  try{
   if(!cloudConfig&&!saveCloudConfig())return;
-  const session=await validCloudSession(),payload=currentSavePayload();
+  const session=await validCloudSession();
+  if(!confirm('Subir reemplazará el respaldo anterior de esta cuenta. ¿Continuar?'))return;
+  const payload=currentSavePayload();
   const row={user_id:session.user.id,payload,updated_at:new Date().toISOString()};
   await cloudRequest('/rest/v1/ldo_saves?on_conflict=user_id',{method:'POST',headers:{'Authorization':'Bearer '+session.access_token,'Prefer':'resolution=merge-duplicates,return=minimal'},body:JSON.stringify(row)});
   cloudMessage('Progreso subido a tu cuenta privada en la nube.');
