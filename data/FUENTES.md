@@ -38,3 +38,7 @@ Usar este archivo para documentar las fuentes oficiales consultadas al incorpora
 | 14/11/2026 | Internacional | Asociaciones miembro FIFA | https://legal.fifa.com/associations | Directorio de asociaciones para ampliar el catálogo de selecciones; no confirma por sí solo convocatoria femenina activa ni plantilla |
 
 | 14/11/2026 | Inglaterra | London City Lionesses 2026/27 | https://www.londoncitylionesses.com/ | 27 futbolistas del primer equipo, con posiciones y dorsales publicados en la plantilla oficial |
+
+| 14/11/2026 | Inglaterra | Manchester City Women 2026/27 | https://www.mancity.com/news/womens/man-city-women-squad-numbers-2026-27-63924224 | 26 dorsales del primer equipo publicados por el club; posiciones y nacionalidades contrastadas con UEFA cuando están disponibles; dos registros mantienen esos campos pendientes |
+| 14/11/2026 | Inglaterra | Manchester City Women 2026/27 — posiciones y nacionalidades | https://www.uefa.com/womenschampionsleague/clubs/2603520--man-city/squad/ | Contraste de posición y nacionalidad para los registros presentes en la lista UEFA |
+| 14/11/2026 | España | Real Madrid CF femenino 2026/27 | https://www.laliga.com/clubes/real-madrid-femenino/plantilla | 32 jugadoras únicas registradas con dorsal, posición y nacionalidad según la plantilla oficial de Liga F |
