@@ -21,3 +21,5 @@ Usar este archivo para documentar las fuentes oficiales consultadas al incorpora
 | 14/11/2026 | Alemania | Google Pixel Frauen-Bundesliga 2026/27 | https://www.dfb.de/news/teilnehmerfeld-der-google-pixel-frauen-bundesliga-steht-fest-alle-sportlich-qualifizierten-klubs-erhalten-zulassung | 14 clubes; listado oficial DFB |
 | 14/11/2026 | Italia | Serie A Women 2026/27 | https://www.figc.it/it/serie-a-women/club/club-serie-a | 12 clubes; listado oficial FIGC |
 | 14/11/2026 | Japón | WE League 2026/27 | https://weleague.jp/pdf/about/outline/26-27WELEAGUE_PROFILE.pdf | 12 clubes; perfil oficial de la liga |
+
+| 14/11/2026 | Arabia Saudita | Women's Premier League 2026/27 | https://www.linkedin.com/posts/saudi-arabian-football-federation_the-20262027-womens-premier-league-season-activity-7492480596707966977-pHfb | 8 clubes participantes anunciados por SAFF |
