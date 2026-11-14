@@ -2134,6 +2134,16 @@
       "plantillaDisponible": false,
       "estado": "catalogo_pendiente",
       "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-portugal-women",
+      "pais": "Portugal",
+      "nombre": "Portugal (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; convocatoria femenina pendiente de verificación."
     }
   ]
 }
