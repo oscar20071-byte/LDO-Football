@@ -26,3 +26,8 @@ Usar este archivo para documentar las fuentes oficiales consultadas al incorpora
 
 | 14/11/2026 | Portugal | Liga BPI 2026/27 | https://www.abola.pt/futebol/competicao/liga-bpi-667 | 10 clubes listados en la competición |
 | 14/11/2026 | Bélgica | Lotto Women's Pro League 2026/27 | https://www.proleague.be/lotto-super-league-clubs | 8 clubes; listado oficial de Pro League |
+
+| 14/11/2026 | Estados Unidos | US Women's National Team | https://www.ussoccer.com/teams/uswnt/roster | Convocatoria absoluta publicada por U.S. Soccer; 26 futbolistas registradas en jugadoras.json |
+| 14/11/2026 | Canadá | Selecciones femeninas WNT, U-20, U-17, U-16 y U-15 | https://www.canadasoccer.com/national-teams/womens/ | Catálogo de categorías; sin importar nombres de jugadoras todavía |
+| 14/11/2026 | Japón | Selecciones femeninas 2026 y Sub-17 | https://www.jfa.jp/eng/national_team/womens_all_2026/ | Calendario y convocatorias publicadas por JFA; catálogo inicial |
+| 14/11/2026 | Suiza | Selección femenina absoluta | https://www.football.ch/portaldata/27/Resources/dokumente/nationalteams/a-team-frauen_equipeafeminine/2026/2026_05_26_WNT_Players_list_Juni_2026.pdf?v=1781375696 | Lista oficial de jugadoras para junio de 2026; pendiente cargar plantilla completa |
