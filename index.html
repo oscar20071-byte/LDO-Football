@@ -101,7 +101,11 @@ $('careerTransfer').onclick=()=>{if(!career)return;const target=$('careerClub').
 $('careerRenew').onclick=()=>{if(!career)return;career.contractYears+=1;saveCareer();renderCareer();$('careerStatus').textContent='Contrato renovado por una temporada adicional.'};
 $('careerReset').onclick=()=>{if(confirm('¿Borrar el progreso de esta carrera?')){career=null;localStorage.removeItem('ldoCareerV1');renderCareer()}};
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
-function rosterFor(side){const id=side==='home'?match.homeTeamId:match.awayTeamId;return players.filter(p=>(p.clubId===id||p.equipoId===id)&&p.verificado===true)}
+const DISCIPLINE_STORE='ldoCompetitionV1';
+function readDisciplineState(){try{return JSON.parse(localStorage.getItem(DISCIPLINE_STORE)||'null')}catch(e){return null}}
+function writeDisciplineState(state){if(state){localStorage.setItem(DISCIPLINE_STORE,JSON.stringify(state));document.dispatchEvent(new CustomEvent('ldo:discipline-updated'))}}
+function disciplineFor(player,state){if(!state.discipline)state.discipline={};if(!state.discipline[player.id])state.discipline[player.id]={id:player.id,name:player.nombre,teamId:player.clubId||player.equipoId,yellows:0,yellowCards:0,redCards:0,suspension:0};return state.discipline[player.id]}
+function rosterFor(side){const id=side==='home'?match.homeTeamId:match.awayTeamId,state=readDisciplineState();return players.filter(p=>(p.clubId===id||p.equipoId===id)&&p.verificado===true&&!(state&&disciplineFor(p,state).suspension>0))}
 function selectedRoster(side){const roster=rosterFor(side),keeper=roster.find(p=>['POR','GK'].includes(p.posicion)),field=roster.filter(p=>!['POR','GK'].includes(p.posicion)).slice(0,4);while(field.length<4)field.push(null);return [...field,keeper||null]}
 function makePlayer(side,i,p){const dir=side==='home'?1:-1,keeper=i===4||['POR','GK'].includes(p?.posicion);return {x:keeper?(side==='home'?78:882):((side==='home'?260:700)+(i===0?0:(i%2?dir*65:-dir*40))),y:keeper?270:[270,145,395,220][i%4],r:15,speed:keeper?2.1:i===0?3.4:2.5,side,index:i,dir,role:keeper?'POR':'CAMPO',color:(side==='home'?homeColors:awayColors)[i===0?0:1],player:p||null,name:p?.nombre||'Jugadora de prueba '+(i+1),position:p?.posicion|| (keeper?'POR':'ND'),dorsal:p?.dorsal||i+1,yellows:0,sentOff:false}}
 function makeTeam(side){return selectedRoster(side).map((p,i)=>makePlayer(side,i,p))}
@@ -110,20 +114,58 @@ function renderLineups(){if(!match)return;const team=(name,list,bench)=>'<articl
 function substitutePlayer(){if(!match||match.paused||match.finished||!match.homeBench?.length)return;const index=Number($('subPlayerSelect').value),out=match.home[index];if(!out)return;const incoming=match.homeBench.shift(),outName=out.name;match.homeBench.push({...out});Object.assign(out,incoming,{x:out.x,y:out.y,side:'home',index,color:homeColors[0]});match.active=index;renderLineups();$('matchStatus').textContent='Cambio realizado: '+incoming.name+' entra por '+outName+'.'}
 function resetPositions(){match.home=makeTeam('home');match.away=makeTeam('away');match.ball={x:480,y:270,r:8,vx:0,vy:0,owner:null};match.active=0;match.elapsed=0;match.paused=true;match.finished=false;match.goals=[0,0];match.stats={shots:0,passes:0,yellow:0,red:0,oppCards:0};match.subsAt=[];match.lastCardMinute=-1;updateHud();$('matchStatus').textContent='Listo para comenzar.'}
 function updateHud(){$('score').textContent=(match.homeName||'LDO')+' '+match.goals[0]+' - '+match.goals[1]+' '+(match.awayName||'RIVAL');const remain=Math.max(0,90-match.elapsed);$('clock').textContent=String(Math.floor(remain)).padStart(2,'0')+':00';$('pauseMatch').textContent=match.paused?'Continuar':'Pausar';if(match.stats){$('statShots').textContent=match.stats.shots;$('statPasses').textContent=match.stats.passes;$('statGoals').textContent=match.goals[0];$('statYellow').textContent=match.stats.yellow;$('statRed').textContent=match.stats.red;$('statOppCards').textContent=match.stats.oppCards}}
-function start(){const h=teams.find(t=>t.id===$('homeTeam').value),a=teams.find(t=>t.id===$('awayTeam').value);if(!h||!a||h.id===a.id){$('matchStatus').textContent='Selecciona dos clubes diferentes.';return}match.homeName=h.nombre;match.awayName=a.nombre;match.homeTeamId=h.id;match.awayTeamId=a.id;match.home=makeTeam('home');match.away=makeTeam('away');match.homeBench=makeBench('home');match.awayBench=makeBench('away');match.active=0;match.elapsed=0;match.goals=[0,0];match.stats={shots:0,passes:0,yellow:0,red:0,oppCards:0};match.subsAt=[];match.lastCardMinute=-1;renderLineups();match.paused=false;match.finished=false;$('matchStatus').textContent='¡Partido en juego!';updateHud()}
+function start(){const h=teams.find(t=>t.id===$('homeTeam').value),a=teams.find(t=>t.id===$('awayTeam').value);if(!h||!a||h.id===a.id){$('matchStatus').textContent='Selecciona dos clubes diferentes.';return}match.homeName=h.nombre;match.awayName=a.nombre;match.homeTeamId=h.id;match.awayTeamId=a.id;match.home=makeTeam('home');match.away=makeTeam('away');match.homeBench=makeBench('home');match.awayBench=makeBench('away');match.active=0;match.elapsed=0;match.goals=[0,0];match.stats={shots:0,passes:0,yellow:0,red:0,oppCards:0};match.subsAt=[];match.lastCardMinute=-1;
+const discipline=readDisciplineState();match.disciplineServeIds=discipline?Object.values(discipline.discipline||{}).filter(d=>(d.teamId===h.id||d.teamId===a.id)&&d.suspension>0).map(d=>d.id):[];
+match.disciplineSettled=false;renderLineups();match.paused=false;match.finished=false;
+const unavailable=match.disciplineServeIds.length;
+$('matchStatus').textContent='¡Partido en juego!'+(unavailable?' '+unavailable+' jugadora(s) cumplen sanción.':'');updateHud()}
 function switchPlayer(){if(!match)return;match.active=(match.active+1)%match.home.length}
 function shoot(){if(!match||match.paused||match.finished)return;const p=match.home[match.active],b=match.ball;if(dist(p,b)<55){match.stats.shots++;let dx=960-b.x,dy=270-b.y;const d=Math.hypot(dx,dy)||1;b.owner=null;b.vx=dx/d*10;b.vy=dy/d*10;updateHud()}}
 function passBall(){if(!match||match.paused||match.finished)return;const p=match.home[match.active],b=match.ball;if(dist(p,b)>55)return;const mates=match.home.filter(q=>q!==p).sort((a,c)=>dist(a,b)-dist(c,b));const q=mates[0];if(q){match.stats.passes++;b.owner=null;const dx=q.x-b.x,dy=q.y-b.y,d=Math.hypot(dx,dy)||1;b.vx=dx/d*8;b.vy=dy/d*8;updateHud()}}
 function scoreGoal(side){match.goals[side==='home'?0:1]++;$('matchStatus').textContent='¡GOOOL de '+(side==='home'?match.homeName:match.awayName)+'!';resetBall();updateHud()}
 function resetBall(){match.ball={x:480,y:270,r:8,vx:0,vy:0,owner:null};match.home.forEach((p,i)=>{p.x=sideX('home',i);p.y=[270,145,395,220,320][i]});match.away.forEach((p,i)=>{p.x=sideX('away',i);p.y=[270,145,395,220,320][i]})}
 function sideX(side,i){return (side==='home'?260:700)+(i===0?0:(i%2?(side==='home'?65:-65):(side==='home'?-40:40)))}
-function applyCard(side){const roster=side==='home'?match.home:match.away,eligible=roster.filter(p=>p.role!=='POR'&&!p.sentOff);if(!eligible.length)return;const p=eligible[Math.floor(Math.random()*eligible.length)],directRed=Math.random()<.025,secondYellow=p.yellows>=1;if(secondYellow){if(side==='home')match.stats.yellow++;else match.stats.oppCards++}if(directRed||secondYellow){p.sentOff=true;if(side==='home'){match.stats.red++;if(match.home[match.active]?.sentOff){const next=match.home.findIndex(q=>!q.sentOff);if(next>=0)match.active=next}}else match.stats.oppCards++;$('matchStatus').textContent='Tarjeta roja para '+p.name+'. Jugará con una menos.'}else{p.yellows++;if(side==='home')match.stats.yellow++;else match.stats.oppCards++;$('matchStatus').textContent='Tarjeta amarilla para '+p.name+'.'}}
+function applyCard(side){
+ const roster=side==='home'?match.home:match.away,eligible=roster.filter(p=>p.role!=='POR'&&!p.sentOff);if(!eligible.length)return;
+ const p=eligible[Math.floor(Math.random()*eligible.length)],directRed=Math.random()<.025,secondYellow=p.yellows>=1;
+ const state=readDisciplineState(),record=p.player&&state?disciplineFor(p.player,state):null;
+ if(secondYellow){
+  if(side==='home')match.stats.yellow+=2;else match.stats.oppCards++;
+  if(record){record.yellowCards+=2;record.redCards++;record.suspension=Math.max(record.suspension,1)}
+ }
+ if(directRed||secondYellow){
+  p.sentOff=true;
+  if(record&&directRed){record.redCards++;record.suspension=Math.max(record.suspension,2)}
+  if(side==='home'){match.stats.red++;if(match.home[match.active]?.sentOff){const next=match.home.findIndex(q=>!q.sentOff);if(next>=0)match.active=next}}else match.stats.oppCards++;
+  $('matchStatus').textContent='Tarjeta roja para '+p.name+'. Jugará con una menos.';
+ }else{
+  p.yellows++;if(side==='home')match.stats.yellow++;else match.stats.oppCards++;
+  if(record){record.yellowCards++;record.yellows++;if(record.yellows>=5){record.yellows=0;record.suspension=Math.max(record.suspension,1);$('matchStatus').textContent='Amarilla para '+p.name+'. Acumulación: se perderá el próximo partido.'}else $('matchStatus').textContent='Tarjeta amarilla para '+p.name+'.'}
+  else $('matchStatus').textContent='Tarjeta amarilla para '+p.name+'.';
+ }
+ if(record)writeDisciplineState(state);
+}
+function settleMatchDiscipline(){
+ if(!match||match.disciplineSettled)return;
+ const state=readDisciplineState();
+ if(state&&match.disciplineServeIds?.length){
+  for(const id of match.disciplineServeIds){const d=state.discipline?.[id];if(d&&d.suspension>0)d.suspension=Math.max(0,d.suspension-1)}
+  writeDisciplineState(state);
+ }
+ match.disciplineSettled=true;
+}
+function finishMatch(){
+ if(match.finished)return;
+ match.finished=true;match.paused=true;settleMatchDiscipline();
+ $('matchStatus').textContent='Final del partido. Las sanciones cumplidas se han actualizado.';
+ renderLineups();
+}
 function maybeMatchEvents(){const minute=Math.floor(match.elapsed);if(minute>0&&minute!==match.lastCardMinute){match.lastCardMinute=minute;if(Math.random()<.035)applyCard(Math.random()<.5?'home':'away')}if(match.elapsed>=60&&!match.subsAt.includes(60))aiSubstitute(60);if(match.elapsed>=75&&!match.subsAt.includes(75))aiSubstitute(75)}
 function aiSubstitute(minute){match.subsAt.push(minute);if(!match.awayBench?.length)return;const candidates=match.away.map((p,i)=>({p,i})).filter(x=>x.p.role!=='POR'&&!x.p.sentOff);if(!candidates.length)return;const out=candidates.sort((a,b)=>a.p.speed-b.p.speed)[0],incoming=match.awayBench.shift(),outName=out.p.name;match.awayBench.push({...out.p});Object.assign(out.p,incoming,{x:out.p.x,y:out.p.y,side:'away',index:out.i,color:awayColors[0]});$('matchStatus').textContent='Cambio del rival ('+minute+"'): "+incoming.name+' entra por '+outName+'.';renderLineups()}
 
 function update(){
 if(match&&!match.paused&&!match.finished){
-match.elapsed+=1/60;maybeMatchEvents();if(match.elapsed>=90){match.finished=true;match.paused=true;$('matchStatus').textContent='Final del partido.'}
+match.elapsed+=1/60;maybeMatchEvents();if(match.elapsed>=90){finishMatch()}
 const p=match.home[match.active],b=match.ball;let dx=0,dy=0;
 if(keys.w||keys.arrowup)dy--;if(keys.s||keys.arrowdown)dy++;if(keys.a||keys.arrowleft)dx--;if(keys.d||keys.arrowright)dx++;
 const mag=Math.hypot(dx,dy)||1;p.x=clamp(p.x+dx/mag*p.speed,p.role==='POR'?35:40,p.role==='POR'?135:920);p.y=clamp(p.y+dy/mag*p.speed,p.role==='POR'?190:40,p.role==='POR'?350:500);
