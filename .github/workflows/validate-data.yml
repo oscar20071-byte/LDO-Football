@@ -1,4 +1,4 @@
-name: Validar base de datos
+name: Validar datos y calendarios
 on:
   push:
     branches: [main]
@@ -15,9 +15,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Validar JSON, IDs y referencias
+      - name: Validar catálogos y referencias
         run: node scripts/validate-data.mjs
+      - name: Probar calendarios de liga
+        run: node scripts/test-fixtures.mjs
       - name: Comprobar sintaxis JavaScript
         run: |
           node --check competitions.js
           node --check scripts/validate-data.mjs
+          node --check scripts/test-fixtures.mjs
