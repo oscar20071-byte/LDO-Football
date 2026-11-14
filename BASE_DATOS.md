@@ -20,8 +20,8 @@ Temporada de referencia de los datos: **2026-2027**.
 - Una asociación miembro FIFA no demuestra por sí sola que exista una selección femenina activa ni una convocatoria vigente.
 
 ## Limitaciones actuales del juego
-- El partido es una demostración arcade 5 contra 5; todavía no utiliza las plantillas reales de los JSON como futbolistas seleccionables en el campo.
-- La IA es básica; faltan tácticas, formaciones configurables, porteras especializadas, faltas, tarjetas, lesiones, sustituciones y estadísticas detalladas.
+- El partido es una demostración arcade 5 contra 5. Cuando hay registros verificados para el club seleccionado, se usan hasta cinco jugadoras de la base y el resto queda como banquillo local con sustituciones; si no hay plantilla registrada, aparecen jugadoras genéricas de prueba.\n- Las alineaciones usan el orden de los registros disponibles y no equivalen a una alineación oficial ni a una formación táctica real.
+- La IA es básica; faltan tácticas, formaciones configurables, porteras especializadas, faltas, tarjetas, lesiones y estadísticas detalladas. Ya existe sustitución local cuando hay banquillo disponible.
 - El modo carrera guarda el progreso localmente, pero su partido es una simulación estadística sencilla; todavía no está conectado al partido jugable.
 - Se añadió un gestor local de ligas con calendario de ida y vuelta, jornadas simuladas, clasificación y resultados guardados.\n- Se añadió un torneo de copa eliminatoria simulado y guardado localmente.\n- Los calendarios y resultados son generados por el juego; no son calendarios ni resultados oficiales.\n- Siguen pendientes ascensos/descensos, fichajes, contratos y multijugador.
 - No se han incorporado escudos, retratos ni uniformes oficiales de todas las entidades.
