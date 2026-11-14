@@ -37,9 +37,9 @@ function applyCompetitionDiscipline(teamId,events){
  const available=roster.filter(p=>disciplineRecord(p).suspension===0);
  if(available.length&&Math.random()<.18){
   const player=available[Math.floor(Math.random()*available.length)],d=disciplineRecord(player);
-  const secondYellow=d.yellows>0&&Math.random()<.12;
+  const secondYellow=Math.random()<.04;
   const directRed=!secondYellow&&Math.random()<.025;
-  if(secondYellow){d.yellowCards++;d.redCards++;d.yellows=0;d.suspension=Math.max(d.suspension,1);events.push(player.nombre+': segunda amarilla y roja (1 partido de sanción)')}
+  if(secondYellow){d.yellowCards+=2;d.redCards++;d.yellows=(d.yellows+2)%5;d.suspension=Math.max(d.suspension,1);events.push(player.nombre+': segunda amarilla y roja (1 partido de sanción)')}
   else if(directRed){d.redCards++;d.suspension=Math.max(d.suspension,2);events.push(player.nombre+': roja directa (2 partidos de sanción)')}
   else{d.yellows++;d.yellowCards++;events.push(player.nombre+': amarilla'+(d.yellows>=5?' (acumulación: 1 partido de sanción)':''));if(d.yellows>=5){d.yellows=0;d.suspension=Math.max(d.suspension,1)}}
  }
