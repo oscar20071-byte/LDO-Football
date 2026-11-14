@@ -10,7 +10,7 @@ Temporada de referencia de los datos: **2026-2027**.
 - Navegador de clubes, selecciones y jugadoras cargadas.
 - `data/equipos.json`: catálogo de 122 clubes femeninos en 10 países/competiciones.
 - `data/jugadoras.json`: 79 registros de jugadoras.
-- `data/selecciones.json`: 216 entradas de catálogo, no 216 plantillas completas.\n- `data/competiciones.json`: catálogo inicial de competiciones agrupadas por el campo de competición de los clubes.
+- `data/selecciones.json`: 216 entradas de catálogo, no 216 plantillas completas.\n- `data/competiciones.json`: catálogo inicial de 10 competiciones agrupadas por el campo de competición de los clubes.\n- `competitions.js`: motor local de ligas con calendario de ida y vuelta, jornadas, tabla y copa eliminatoria simulada.\n- `scripts/validate-data.mjs` y `.github/workflows/validate-data.yml`: validación automática de JSON, IDs y referencias al actualizar `main`.
 
 ## Cobertura actual de plantillas
 - 27 registros vinculados al Chelsea Women 2026/27, con dorsales publicados por el club; no todos los campos de posición/nacionalidad están completados.
@@ -30,7 +30,7 @@ Temporada de referencia de los datos: **2026-2027**.
 - [ ] Importar y verificar plantillas oficiales de los 122 clubes.
 - [ ] Ampliar las convocatorias absolutas y juveniles de las selecciones con fuentes federativas.
 - [ ] Vincular jugadoras reales de los JSON con los equipos del partido.
-- [x] Crear un primer gestor de ligas, calendarios, tablas y copa simulada.\n- [ ] Validar participantes y formatos oficiales de cada competición; añadir temporadas, ascensos y descensos.
+- [x] Crear un primer gestor de ligas, calendarios, tablas y copa simulada.\n- [ ] Validar participantes y formatos oficiales de cada competición; añadir temporadas, ascensos y descensos.\n- [x] Añadir comprobaciones automáticas de integridad de los datos con GitHub Actions.
 - [ ] Conectar el modo carrera al partido real y añadir entrenamientos, contratos y fichajes.
 - [ ] Añadir porteras, tácticas, sustituciones, faltas, tarjetas, lesiones y estadísticas.
 - [ ] Añadir escudos, retratos y uniformes con recursos autorizados.
