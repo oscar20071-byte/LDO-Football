@@ -87,7 +87,7 @@ if(!career){$('careerStatus').textContent='Todavía no has creado una carrera.';
 const club=teams.find(t=>t.id===career.clubId);
 $('careerStatus').innerHTML='<strong>'+safe(career.name)+'</strong> · '+safe(club?club.nombre:'Club')+' · '+career.position+' · Temporada '+career.season;
 $('careerStats').innerHTML=[['OVR',career.ovr],['Partidos',career.apps],['Goles',career.goals],['Asistencias',career.assists],['XP',career.xp],['Temporada',career.season],['Fatiga',career.fatigue+'%'],['Contrato',career.contractYears+' años'],['Amarillas',career.yellowCards],['Rojas',career.redCards],['Suspensión',career.suspension+' PJ'],['Recuperación',career.injuryDays+' jornadas']].map(v=>'<article class="playercard"><strong style="font-size:22px">'+v[1]+'</strong><div class="hint">'+v[0]+'</div></article>').join('');
-$('careerPlay').disabled=career.fatigue>=90;$('careerTrain').disabled=career.fatigue>=85;$('careerRest').disabled=career.fatigue===0;$('careerTransfer').disabled=false;$('careerRenew').disabled=false;$('careerReset').disabled=false;
+$('careerPlay').disabled=career.fatigue>=90;$('careerTrain').disabled=career.fatigue>=85;$('careerRest').disabled=career.fatigue===0&&career.injuryDays===0;$('careerTransfer').disabled=false;$('careerRenew').disabled=false;$('careerReset').disabled=false;
 }
 try{career=JSON.parse(localStorage.getItem('ldoCareerV1')||'null')}catch(e){career=null}
 if(career){career.fatigue=career.fatigue||0;career.contractYears=career.contractYears??3;career.training=career.training||0;career.yellowCards=career.yellowCards||0;career.redCards=career.redCards||0;career.suspension=career.suspension||0;career.injuryDays=career.injuryDays||0}
