@@ -53,6 +53,12 @@ canvas{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#16834b
 <p class="hint">Controles: WASD/flechas para moverte · ESPACIO para chutar · X para pasar · Q para cambiar de jugadora. En móvil usa los controles táctiles.</p>
 </section>
 
+<section class="panel" id="backup">
+<h2>💾 Respaldar y transferir progreso</h2>
+<p class="hint">Exporta tu carrera, liga activa y disciplina a un archivo JSON. Guarda el archivo y podrás importarlo en otro dispositivo. Esta función no envía datos a un servidor.</p>
+<div class="actions"><button id="exportSave">Exportar progreso</button><button id="importSave">Importar archivo</button><input id="saveFile" type="file" accept=".json,application/json" hidden></div>
+<p id="backupStatus" class="hint" aria-live="polite">Tus datos actuales siguen guardados en este navegador.</p>
+</section>
 <section class="panel" id="competitions">
 <h2>🏆 Ligas y copas</h2><p class="hint">Competiciones generadas a partir de los clubes registrados. Los resultados se simulan y se guardan en este navegador.</p>
 <div class="grid"><label>Competición<select id="competitionSelect"></select></label><div class="actions" style="align-items:end"><button id="createLeague">Crear temporada</button><button id="playRound" disabled>Jugar jornada</button><button id="resetLeague">Reiniciar</button></div></div>
@@ -100,6 +106,48 @@ $('careerRest').onclick=()=>{if(!career)return;career.fatigue=Math.max(0,career.
 $('careerTransfer').onclick=()=>{if(!career)return;const target=$('careerClub').value;if(target===career.clubId){$('careerStatus').textContent='Ya perteneces a ese club.';return}career.clubId=target;career.contractYears=3;saveCareer();renderCareer();$('careerStatus').textContent='Cambio de club aplicado en tu partida local.'};
 $('careerRenew').onclick=()=>{if(!career)return;career.contractYears+=1;saveCareer();renderCareer();$('careerStatus').textContent='Contrato renovado por una temporada adicional.'};
 $('careerReset').onclick=()=>{if(confirm('¿Borrar el progreso de esta carrera?')){career=null;localStorage.removeItem('ldoCareerV1');renderCareer()}};
+const SAVE_KEYS=['ldoCareerV1','ldoCompetitionV1','ldoDisciplineV1'];
+function exportProgress(){
+ const data={app:'LDO Football',format:'ldo-save',version:1,exportedAt:new Date().toISOString(),storage:{}};
+ for(const key of SAVE_KEYS){const value=localStorage.getItem(key);if(value!==null)data.storage[key]=value}
+ const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+ const url=URL.createObjectURL(blob),a=document.createElement('a');
+ a.href=url;a.download='ldo-football-respaldo-'+new Date().toISOString().slice(0,10)+'.json';
+ document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ $('backupStatus').textContent='Respaldo exportado. Guarda el archivo para importarlo en otro dispositivo.';
+}
+function importProgress(file){
+ if(!file)return;
+ const reader=new FileReader();
+ reader.onload=()=>{
+  try{
+   const data=JSON.parse(String(reader.result||''));
+   if(!data||data.app!=='LDO Football'||data.format!=='ldo-save'||data.version!==1||!data.storage||typeof data.storage!=='object')throw Error('El archivo no es un respaldo válido de LDO Football.');
+   const incoming={};
+   for(const key of SAVE_KEYS){
+    if(Object.prototype.hasOwnProperty.call(data.storage,key)){
+     const raw=data.storage[key];if(typeof raw!=='string')throw Error('El respaldo contiene datos con formato incorrecto.');
+     const parsed=JSON.parse(raw);
+     if(key==='ldoCareerV1'&&parsed!==null&&(!parsed||typeof parsed!=='object'||!parsed.name||!parsed.clubId))throw Error('La carrera del respaldo no es válida.');
+     if(key==='ldoCompetitionV1'&&parsed!==null&&(!parsed||typeof parsed!=='object'||!Array.isArray(parsed.table)||!Array.isArray(parsed.schedule)))throw Error('La competición del respaldo no es válida.');
+     if(key==='ldoDisciplineV1'&&parsed!==null&&(!parsed||typeof parsed!=='object'||!parsed.discipline||typeof parsed.discipline!=='object'))throw Error('El registro disciplinario no es válido.');
+     incoming[key]=raw;
+    }
+   }
+   if(!Object.keys(incoming).length)throw Error('El archivo no contiene progreso para importar.');
+   if(!confirm('Importar este respaldo reemplazará los datos locales equivalentes. ¿Continuar?'))return;
+   for(const [key,value] of Object.entries(incoming))localStorage.setItem(key,value);
+   $('backupStatus').textContent='Respaldo importado correctamente. La página se recargará para aplicar los datos.';
+   setTimeout(()=>location.reload(),350);
+  }catch(error){$('backupStatus').textContent='No se pudo importar: '+error.message}
+ };
+ reader.onerror=()=>$('backupStatus').textContent='No se pudo leer el archivo seleccionado.';
+ reader.readAsText(file);
+}
+$('exportSave').addEventListener('click',exportProgress);
+$('importSave').addEventListener('click',()=>$('saveFile').click());
+$('saveFile').addEventListener('change',e=>{importProgress(e.target.files&&e.target.files[0]);e.target.value=''});
+
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
 const DISCIPLINE_STORE='ldoCompetitionV1';
 function readDisciplineState(){
