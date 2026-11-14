@@ -2,5 +2,306 @@
   "version": "1.0",
   "temporada": "2026-2027",
   "nota": "Catálogo inicial. Añadir clubes y selecciones únicamente después de verificar sus datos.",
-  "equipos": []
+  "equipos": [
+    {
+      "id": "arsenal-w",
+      "nombre": "Arsenal Women",
+      "tipo": "club",
+      "pais": "Inglaterra",
+      "competicion": "Barclays Women's Super League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.liverpoolfc.com/es/noticias/wsl-season-preview-expanded-league-how-watch-and-new-fantasy-game",
+      "verificado": true
+    },
+    {
+      "id": "aston-villa-w",
+      "nombre": "Aston Villa Women",
+      "tipo": "club",
+      "pais": "Inglaterra",
+      "competicion": "Barclays Women's Super League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.liverpoolfc.com/es/noticias/wsl-season-preview-expanded-league-how-watch-and-new-fantasy-game",
+      "verificado": true
+    },
+    {
+      "id": "birmingham-city-w",
+      "nombre": "Birmingham City Women",
+      "tipo": "club",
+      "pais": "Inglaterra",
+      "competicion": "Barclays Women's Super League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.liverpoolfc.com/es/noticias/wsl-season-preview-expanded-league-how-watch-and-new-fantasy-game",
+      "verificado": true
+    },
+    {
+      "id": "brighton-w",
+      "nombre": "Brighton & Hove Albion Women",
+      "tipo": "club",
+      "pais": "Inglaterra",
+      "competicion": "Barclays Women's Super League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.liverpoolfc.com/es/noticias/wsl-season-preview-expanded-league-how-watch-and-new-fantasy-game",
+      "verificado": true
+    },
+    {
+      "id": "charlton-athletic-w",
+      "nombre": "Charlton Athletic Women",
+      "tipo": "club",
+      "pais": "Inglaterra",
+      "competicion": "Barclays Women's Super League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.liverpoolfc.com/es/noticias/wsl-season-preview-expanded-league-how-watch-and-new-fantasy-game",
+      "verificado": true
+    },
+    {
+      "id": "chelsea-w",
+      "nombre": "Chelsea Women",
+      "tipo": "club",
+      "pais": "Inglaterra",
+      "competicion": "Barclays Women's Super League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.liverpoolfc.com/es/noticias/wsl-season-preview-expanded-league-how-watch-and-new-fantasy-game",
+      "verificado": true
+    },
+    {
+      "id": "crystal-palace-w",
+      "nombre": "Crystal Palace Women",
+      "tipo": "club",
+      "pais": "Inglaterra",
+      "competicion": "Barclays Women's Super League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.liverpoolfc.com/es/noticias/wsl-season-preview-expanded-league-how-watch-and-new-fantasy-game",
+      "verificado": true
+    },
+    {
+      "id": "everton-w",
+      "nombre": "Everton Women",
+      "tipo": "club",
+      "pais": "Inglaterra",
+      "competicion": "Barclays Women's Super League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.liverpoolfc.com/es/noticias/wsl-season-preview-expanded-league-how-watch-and-new-fantasy-game",
+      "verificado": true
+    },
+    {
+      "id": "liverpool-w",
+      "nombre": "Liverpool Women",
+      "tipo": "club",
+      "pais": "Inglaterra",
+      "competicion": "Barclays Women's Super League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.liverpoolfc.com/es/noticias/wsl-season-preview-expanded-league-how-watch-and-new-fantasy-game",
+      "verificado": true
+    },
+    {
+      "id": "london-city-lionesses",
+      "nombre": "London City Lionesses",
+      "tipo": "club",
+      "pais": "Inglaterra",
+      "competicion": "Barclays Women's Super League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.liverpoolfc.com/es/noticias/wsl-season-preview-expanded-league-how-watch-and-new-fantasy-game",
+      "verificado": true
+    },
+    {
+      "id": "manchester-city-w",
+      "nombre": "Manchester City Women",
+      "tipo": "club",
+      "pais": "Inglaterra",
+      "competicion": "Barclays Women's Super League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.liverpoolfc.com/es/noticias/wsl-season-preview-expanded-league-how-watch-and-new-fantasy-game",
+      "verificado": true
+    },
+    {
+      "id": "manchester-united-w",
+      "nombre": "Manchester United Women",
+      "tipo": "club",
+      "pais": "Inglaterra",
+      "competicion": "Barclays Women's Super League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.liverpoolfc.com/es/noticias/wsl-season-preview-expanded-league-how-watch-and-new-fantasy-game",
+      "verificado": true
+    },
+    {
+      "id": "tottenham-hotspur-w",
+      "nombre": "Tottenham Hotspur Women",
+      "tipo": "club",
+      "pais": "Inglaterra",
+      "competicion": "Barclays Women's Super League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.liverpoolfc.com/es/noticias/wsl-season-preview-expanded-league-how-watch-and-new-fantasy-game",
+      "verificado": true
+    },
+    {
+      "id": "west-ham-united-w",
+      "nombre": "West Ham United Women",
+      "tipo": "club",
+      "pais": "Inglaterra",
+      "competicion": "Barclays Women's Super League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.liverpoolfc.com/es/noticias/wsl-season-preview-expanded-league-how-watch-and-new-fantasy-game",
+      "verificado": true
+    },
+    {
+      "id": "angel-city-fc",
+      "nombre": "Angel City FC",
+      "tipo": "club",
+      "pais": "Estados Unidos",
+      "competicion": "National Women's Soccer League",
+      "temporada": "2026",
+      "fuente": "https://images.nwslsoccer.com/image/private/t_q-good/prd/tstudhfledlk7z8ygtzd.pdf",
+      "verificado": true
+    },
+    {
+      "id": "bay-fc",
+      "nombre": "Bay FC",
+      "tipo": "club",
+      "pais": "Estados Unidos",
+      "competicion": "National Women's Soccer League",
+      "temporada": "2026",
+      "fuente": "https://images.nwslsoccer.com/image/private/t_q-good/prd/tstudhfledlk7z8ygtzd.pdf",
+      "verificado": true
+    },
+    {
+      "id": "boston-legacy-fc",
+      "nombre": "Boston Legacy FC",
+      "tipo": "club",
+      "pais": "Estados Unidos",
+      "competicion": "National Women's Soccer League",
+      "temporada": "2026",
+      "fuente": "https://images.nwslsoccer.com/image/private/t_q-good/prd/tstudhfledlk7z8ygtzd.pdf",
+      "verificado": true
+    },
+    {
+      "id": "chicago-stars-fc",
+      "nombre": "Chicago Stars FC",
+      "tipo": "club",
+      "pais": "Estados Unidos",
+      "competicion": "National Women's Soccer League",
+      "temporada": "2026",
+      "fuente": "https://images.nwslsoccer.com/image/private/t_q-good/prd/tstudhfledlk7z8ygtzd.pdf",
+      "verificado": true
+    },
+    {
+      "id": "denver-summit-fc",
+      "nombre": "Denver Summit FC",
+      "tipo": "club",
+      "pais": "Estados Unidos",
+      "competicion": "National Women's Soccer League",
+      "temporada": "2026",
+      "fuente": "https://images.nwslsoccer.com/image/private/t_q-good/prd/tstudhfledlk7z8ygtzd.pdf",
+      "verificado": true
+    },
+    {
+      "id": "gotham-fc",
+      "nombre": "Gotham FC",
+      "tipo": "club",
+      "pais": "Estados Unidos",
+      "competicion": "National Women's Soccer League",
+      "temporada": "2026",
+      "fuente": "https://images.nwslsoccer.com/image/private/t_q-good/prd/tstudhfledlk7z8ygtzd.pdf",
+      "verificado": true
+    },
+    {
+      "id": "houston-dash",
+      "nombre": "Houston Dash",
+      "tipo": "club",
+      "pais": "Estados Unidos",
+      "competicion": "National Women's Soccer League",
+      "temporada": "2026",
+      "fuente": "https://images.nwslsoccer.com/image/private/t_q-good/prd/tstudhfledlk7z8ygtzd.pdf",
+      "verificado": true
+    },
+    {
+      "id": "kansas-city-current",
+      "nombre": "Kansas City Current",
+      "tipo": "club",
+      "pais": "Estados Unidos",
+      "competicion": "National Women's Soccer League",
+      "temporada": "2026",
+      "fuente": "https://images.nwslsoccer.com/image/private/t_q-good/prd/tstudhfledlk7z8ygtzd.pdf",
+      "verificado": true
+    },
+    {
+      "id": "north-carolina-courage",
+      "nombre": "North Carolina Courage",
+      "tipo": "club",
+      "pais": "Estados Unidos",
+      "competicion": "National Women's Soccer League",
+      "temporada": "2026",
+      "fuente": "https://images.nwslsoccer.com/image/private/t_q-good/prd/tstudhfledlk7z8ygtzd.pdf",
+      "verificado": true
+    },
+    {
+      "id": "orlando-pride",
+      "nombre": "Orlando Pride",
+      "tipo": "club",
+      "pais": "Estados Unidos",
+      "competicion": "National Women's Soccer League",
+      "temporada": "2026",
+      "fuente": "https://images.nwslsoccer.com/image/private/t_q-good/prd/tstudhfledlk7z8ygtzd.pdf",
+      "verificado": true
+    },
+    {
+      "id": "portland-thorns-fc",
+      "nombre": "Portland Thorns FC",
+      "tipo": "club",
+      "pais": "Estados Unidos",
+      "competicion": "National Women's Soccer League",
+      "temporada": "2026",
+      "fuente": "https://images.nwslsoccer.com/image/private/t_q-good/prd/tstudhfledlk7z8ygtzd.pdf",
+      "verificado": true
+    },
+    {
+      "id": "racing-louisville-fc",
+      "nombre": "Racing Louisville FC",
+      "tipo": "club",
+      "pais": "Estados Unidos",
+      "competicion": "National Women's Soccer League",
+      "temporada": "2026",
+      "fuente": "https://images.nwslsoccer.com/image/private/t_q-good/prd/tstudhfledlk7z8ygtzd.pdf",
+      "verificado": true
+    },
+    {
+      "id": "san-diego-wave-fc",
+      "nombre": "San Diego Wave FC",
+      "tipo": "club",
+      "pais": "Estados Unidos",
+      "competicion": "National Women's Soccer League",
+      "temporada": "2026",
+      "fuente": "https://images.nwslsoccer.com/image/private/t_q-good/prd/tstudhfledlk7z8ygtzd.pdf",
+      "verificado": true
+    },
+    {
+      "id": "seattle-reign-fc",
+      "nombre": "Seattle Reign FC",
+      "tipo": "club",
+      "pais": "Estados Unidos",
+      "competicion": "National Women's Soccer League",
+      "temporada": "2026",
+      "fuente": "https://images.nwslsoccer.com/image/private/t_q-good/prd/tstudhfledlk7z8ygtzd.pdf",
+      "verificado": true
+    },
+    {
+      "id": "utah-royals-fc",
+      "nombre": "Utah Royals FC",
+      "tipo": "club",
+      "pais": "Estados Unidos",
+      "competicion": "National Women's Soccer League",
+      "temporada": "2026",
+      "fuente": "https://images.nwslsoccer.com/image/private/t_q-good/prd/tstudhfledlk7z8ygtzd.pdf",
+      "verificado": true
+    },
+    {
+      "id": "washington-spirit",
+      "nombre": "Washington Spirit",
+      "tipo": "club",
+      "pais": "Estados Unidos",
+      "competicion": "National Women's Soccer League",
+      "temporada": "2026",
+      "fuente": "https://images.nwslsoccer.com/image/private/t_q-good/prd/tstudhfledlk7z8ygtzd.pdf",
+      "verificado": true
+    }
+  ]
 }
