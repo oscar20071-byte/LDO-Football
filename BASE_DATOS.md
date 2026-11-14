@@ -15,10 +15,10 @@ Temporada de referencia declarada para el catálogo: **2026-2027**. Los particip
 
 ## Cobertura de datos actual
 - `data/equipos.json`: 122 registros de clubes.
-- `data/jugadoras.json`: 79 registros de jugadoras.
+- `data/jugadoras.json`: 137 registros de jugadoras.
 - `data/selecciones.json`: 216 entradas de catálogo; no equivalen a 216 plantillas completas ni certifican actividad de todas las selecciones femeninas.
 - `data/competiciones.json`: 10 grupos competitivos iniciales derivados del campo de competición de los clubes.
-- Hay registros de Chelsea Women, London City Lionesses y la selección absoluta de Estados Unidos. La cobertura de plantillas sigue siendo parcial.
+- Hay registros de Chelsea Women (27), London City Lionesses (27), Manchester City Women (26), Real Madrid CF femenino (32) y la selección absoluta de Estados Unidos (26). La cobertura de plantillas sigue siendo parcial.
 - Una asociación miembro de FIFA no demuestra por sí sola que exista una selección femenina activa ni que haya una convocatoria vigente.
 
 ## Límites conocidos
