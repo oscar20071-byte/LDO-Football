@@ -1,0 +1,79 @@
+{
+  "version": "1.0",
+  "temporada": "2026-2027",
+  "nota": "Catálogo inicial de selecciones con fuentes oficiales. Las plantillas se incorporarán por convocatoria y fecha; no representa todavía a todas las federaciones.",
+  "selecciones": [
+    {
+      "id": "uswnt",
+      "pais": "Estados Unidos",
+      "nombre": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "plantillaDisponible": true
+    },
+    {
+      "id": "canada-wnt",
+      "pais": "Canadá",
+      "nombre": "Canadá",
+      "categoria": "absoluta",
+      "fuente": "https://www.canadasoccer.com/national-teams/womens/",
+      "plantillaDisponible": false
+    },
+    {
+      "id": "canada-u20",
+      "pais": "Canadá",
+      "nombre": "Canadá Sub-20",
+      "categoria": "sub-20",
+      "fuente": "https://www.canadasoccer.com/national-teams/womens/",
+      "plantillaDisponible": false
+    },
+    {
+      "id": "canada-u17",
+      "pais": "Canadá",
+      "nombre": "Canadá Sub-17",
+      "categoria": "sub-17",
+      "fuente": "https://www.canadasoccer.com/national-teams/womens/",
+      "plantillaDisponible": false
+    },
+    {
+      "id": "canada-u16",
+      "pais": "Canadá",
+      "nombre": "Canadá Sub-16",
+      "categoria": "sub-16",
+      "fuente": "https://www.canadasoccer.com/national-teams/womens/",
+      "plantillaDisponible": false
+    },
+    {
+      "id": "canada-u15",
+      "pais": "Canadá",
+      "nombre": "Canadá Sub-15",
+      "categoria": "sub-15",
+      "fuente": "https://www.canadasoccer.com/national-teams/womens/",
+      "plantillaDisponible": false
+    },
+    {
+      "id": "japan-wnt",
+      "pais": "Japón",
+      "nombre": "Japón",
+      "categoria": "absoluta",
+      "fuente": "https://www.jfa.jp/eng/national_team/womens_all_2026/",
+      "plantillaDisponible": false
+    },
+    {
+      "id": "japan-u17",
+      "pais": "Japón",
+      "nombre": "Japón Sub-17",
+      "categoria": "sub-17",
+      "fuente": "https://www.jfa.jp/eng/national_team/womens_all_2026/",
+      "plantillaDisponible": false
+    },
+    {
+      "id": "switzerland-wnt",
+      "pais": "Suiza",
+      "nombre": "Suiza",
+      "categoria": "absoluta",
+      "fuente": "https://www.football.ch/portaldata/27/Resources/dokumente/nationalteams/a-team-frauen_equipeafeminine/2026/2026_05_26_WNT_Players_list_Juni_2026.pdf?v=1781375696",
+      "plantillaDisponible": false
+    }
+  ]
+}
