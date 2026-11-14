@@ -16,6 +16,7 @@ Temporada de referencia declarada para el catálogo: **2026-2027**. Los particip
 - Segunda amarilla en un encuentro: roja y un partido de suspensión; roja directa: dos partidos de suspensión.
 - Las sanciones se guardan en el estado local de la competición; las jugadoras suspendidas reducen el rendimiento simulado del equipo mientras cumplen la sanción.
 - Respaldo portátil en JSON: permite exportar e importar carrera, competición activa y disciplina para trasladar el progreso manualmente entre dispositivos.
+- Sincronización manual en la nube mediante Supabase: autenticación por código de correo, guardado privado por usuario y políticas RLS. Requiere crear el proyecto y ejecutar `supabase/schema.sql`; no se incluye ninguna clave secreta.
 - Copa eliminatoria simulada.
 - Validador de datos y pruebas automáticas de calendario mediante GitHub Actions.
 
@@ -36,6 +37,7 @@ Temporada de referencia declarada para el catálogo: **2026-2027**. Los particip
 - Las ligas y copas producen resultados aleatorios simulados; no son resultados oficiales. Sus grupos iniciales necesitan validación de formato, división y participantes.
 - No están completas las plantillas de todos los clubes ni las convocatorias de selecciones absolutas y juveniles.
 - No se han incorporado todos los escudos, retratos ni uniformes oficiales.
+- La sincronización en la nube está integrada pero requiere configurar un proyecto Supabase y ejecutar el SQL; el envío y la descarga son manuales, no automáticos.
 - No hay multijugador, economía completa, fichajes negociados ni ascensos y descensos.
 
 ## Próximas tareas
