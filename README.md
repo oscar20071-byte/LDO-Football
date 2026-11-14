@@ -20,7 +20,7 @@ Juego web de fútbol femenino con partido arcade 2D desde arriba y sistemas loca
 - Validación de datos y pruebas de calendario en GitHub Actions.
 
 ## Datos y transparencia
-Las plantillas todavía son parciales. Los grupos competitivos son catálogos iniciales y necesitan confirmación de formato y participantes. Los resultados de ligas y copas son generados por el juego y no son resultados oficiales. Las lesiones, tarjetas y suspensiones afectan al modo carrera estadístico, no al partido 2D.
+La base contiene 137 registros de jugadoras: Chelsea Women (27), London City Lionesses (27), Manchester City Women (26), Real Madrid femenino (32) y USWNT (26). Las plantillas de los demás clubes y selecciones todavía son parciales. Los grupos competitivos son catálogos iniciales y necesitan confirmación de formato y participantes. Los resultados de ligas y copas son generados por el juego y no son resultados oficiales. Las lesiones, tarjetas y suspensiones afectan al modo carrera estadístico, no al partido 2D.
 
 Consulta [BASE_DATOS.md](BASE_DATOS.md) para el estado detallado y [data/FUENTES.md](data/FUENTES.md) para las fuentes.
 
