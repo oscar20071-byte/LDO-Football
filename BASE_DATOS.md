@@ -7,7 +7,7 @@ Temporada de referencia declarada para el catálogo: **2026-2027**. Los particip
 - Controles de teclado y controles táctiles básicos.
 - Navegador de clubes, selecciones y jugadoras registradas.
 - Alineaciones de partido que aprovechan registros verificados disponibles y muestran jugadoras genéricas de prueba cuando no hay plantilla.
-- Sustituciones locales en el equipo del usuario cuando existe banquillo.
+- Sustituciones locales en el equipo del usuario cuando existe banquillo; se puede elegir desde un selector qué titular sale.
 - Modo carrera local con progresión estadística, entrenamiento, fatiga, recuperación, lesiones simuladas, tarjetas, suspensiones, contratos y cambio de club.
 - Gestor local de ligas con calendario de ida y vuelta, jornadas simuladas y clasificación.
 - Copa eliminatoria simulada.
@@ -24,7 +24,7 @@ Temporada de referencia declarada para el catálogo: **2026-2027**. Los particip
 ## Límites conocidos
 - El partido es un prototipo arcade, no un simulador de fútbol completo. La IA, la posesión y las colisiones son básicas.
 - El partido utiliza cinco jugadoras por equipo e incluye una portera con posicionamiento defensivo y movimiento lateral básico. Solo asigna una jugadora real a portera cuando su posición está confirmada; si no hay dato, usa una portera genérica. No implementa todavía formaciones configurables, tácticas avanzadas, faltas ni reglas completas.
-- Las sustituciones actuales afectan al equipo local del usuario; falta un sistema completo de cambios para ambos equipos.
+- Las sustituciones actuales afectan al equipo local del usuario; todavía falta automatizar o habilitar cambios para el equipo rival.
 - Las tarjetas, lesiones y suspensiones están en la simulación estadística del modo carrera, no en el partido 2D.
 - El modo carrera no está conectado al partido 2D. El cambio de club y los contratos son mecánicas locales simplificadas, no negociaciones de mercado.
 - Las ligas y copas producen resultados aleatorios simulados; no son resultados oficiales. Sus grupos iniciales necesitan validación de formato, división y participantes.
