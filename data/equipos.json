@@ -1042,6 +1042,186 @@
       "temporada": "2026-2027",
       "fuente": "https://www.linkedin.com/posts/saudi-arabian-football-federation_the-20262027-womens-premier-league-season-activity-7492480596707966977-pHfb",
       "verificado": true
+    },
+    {
+      "id": "benfica-w",
+      "nombre": "Benfica Women",
+      "tipo": "club",
+      "pais": "Portugal",
+      "competicion": "Liga BPI",
+      "temporada": "2026-2027",
+      "fuente": "https://www.abola.pt/futebol/competicao/liga-bpi-667",
+      "verificado": true
+    },
+    {
+      "id": "porto-w",
+      "nombre": "FC Porto Women",
+      "tipo": "club",
+      "pais": "Portugal",
+      "competicion": "Liga BPI",
+      "temporada": "2026-2027",
+      "fuente": "https://www.abola.pt/futebol/competicao/liga-bpi-667",
+      "verificado": true
+    },
+    {
+      "id": "maritimo-w",
+      "nombre": "Marítimo Women",
+      "tipo": "club",
+      "pais": "Portugal",
+      "competicion": "Liga BPI",
+      "temporada": "2026-2027",
+      "fuente": "https://www.abola.pt/futebol/competicao/liga-bpi-667",
+      "verificado": true
+    },
+    {
+      "id": "racing-power",
+      "nombre": "Racing Power FC",
+      "tipo": "club",
+      "pais": "Portugal",
+      "competicion": "Liga BPI",
+      "temporada": "2026-2027",
+      "fuente": "https://www.abola.pt/futebol/competicao/liga-bpi-667",
+      "verificado": true
+    },
+    {
+      "id": "rio-ave-w",
+      "nombre": "Rio Ave Women",
+      "tipo": "club",
+      "pais": "Portugal",
+      "competicion": "Liga BPI",
+      "temporada": "2026-2027",
+      "fuente": "https://www.abola.pt/futebol/competicao/liga-bpi-667",
+      "verificado": true
+    },
+    {
+      "id": "braga-w",
+      "nombre": "SC Braga Women",
+      "tipo": "club",
+      "pais": "Portugal",
+      "competicion": "Liga BPI",
+      "temporada": "2026-2027",
+      "fuente": "https://www.abola.pt/futebol/competicao/liga-bpi-667",
+      "verificado": true
+    },
+    {
+      "id": "sporting-cp-w",
+      "nombre": "Sporting CP Women",
+      "tipo": "club",
+      "pais": "Portugal",
+      "competicion": "Liga BPI",
+      "temporada": "2026-2027",
+      "fuente": "https://www.abola.pt/futebol/competicao/liga-bpi-667",
+      "verificado": true
+    },
+    {
+      "id": "torreense-w",
+      "nombre": "Torreense Women",
+      "tipo": "club",
+      "pais": "Portugal",
+      "competicion": "Liga BPI",
+      "temporada": "2026-2027",
+      "fuente": "https://www.abola.pt/futebol/competicao/liga-bpi-667",
+      "verificado": true
+    },
+    {
+      "id": "valadares-gaia",
+      "nombre": "Valadares Gaia",
+      "tipo": "club",
+      "pais": "Portugal",
+      "competicion": "Liga BPI",
+      "temporada": "2026-2027",
+      "fuente": "https://www.abola.pt/futebol/competicao/liga-bpi-667",
+      "verificado": true
+    },
+    {
+      "id": "vitoria-guimaraes-w",
+      "nombre": "Vitória de Guimarães Women",
+      "tipo": "club",
+      "pais": "Portugal",
+      "competicion": "Liga BPI",
+      "temporada": "2026-2027",
+      "fuente": "https://www.abola.pt/futebol/competicao/liga-bpi-667",
+      "verificado": true
+    },
+    {
+      "id": "club-yla",
+      "nombre": "Club YLA",
+      "tipo": "club",
+      "pais": "Bélgica",
+      "competicion": "Lotto Women's Pro League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.proleague.be/lotto-super-league-clubs",
+      "verificado": true
+    },
+    {
+      "id": "essevee-women",
+      "nombre": "Essevee Women",
+      "tipo": "club",
+      "pais": "Bélgica",
+      "competicion": "Lotto Women's Pro League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.proleague.be/lotto-super-league-clubs",
+      "verificado": true
+    },
+    {
+      "id": "kaa-gent-ladies",
+      "nombre": "KAA Gent Ladies",
+      "tipo": "club",
+      "pais": "Bélgica",
+      "competicion": "Lotto Women's Pro League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.proleague.be/lotto-super-league-clubs",
+      "verificado": true
+    },
+    {
+      "id": "krc-genk-ladies",
+      "nombre": "KRC Genk Ladies",
+      "tipo": "club",
+      "pais": "Bélgica",
+      "competicion": "Lotto Women's Pro League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.proleague.be/lotto-super-league-clubs",
+      "verificado": true
+    },
+    {
+      "id": "les-louvieroises",
+      "nombre": "Les Louviéroises",
+      "tipo": "club",
+      "pais": "Bélgica",
+      "competicion": "Lotto Women's Pro League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.proleague.be/lotto-super-league-clubs",
+      "verificado": true
+    },
+    {
+      "id": "oh-leuven-women",
+      "nombre": "OH Leuven Women",
+      "tipo": "club",
+      "pais": "Bélgica",
+      "competicion": "Lotto Women's Pro League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.proleague.be/lotto-super-league-clubs",
+      "verificado": true
+    },
+    {
+      "id": "anderlecht-women",
+      "nombre": "RSC Anderlecht Women",
+      "tipo": "club",
+      "pais": "Bélgica",
+      "competicion": "Lotto Women's Pro League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.proleague.be/lotto-super-league-clubs",
+      "verificado": true
+    },
+    {
+      "id": "standard-femina",
+      "nombre": "Standard Fémina",
+      "tipo": "club",
+      "pais": "Bélgica",
+      "competicion": "Lotto Women's Pro League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.proleague.be/lotto-super-league-clubs",
+      "verificado": true
     }
   ]
 }
