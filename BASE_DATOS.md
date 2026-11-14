@@ -15,6 +15,7 @@ Temporada de referencia declarada para el catálogo: **2026-2027**. Los particip
 - Amarillas acumuladas: al llegar a cinco, se aplica un partido de suspensión y se reinicia el contador de acumulación.
 - Segunda amarilla en un encuentro: roja y un partido de suspensión; roja directa: dos partidos de suspensión.
 - Las sanciones se guardan en el estado local de la competición; las jugadoras suspendidas reducen el rendimiento simulado del equipo mientras cumplen la sanción.
+- Respaldo portátil en JSON: permite exportar e importar carrera, competición activa y disciplina para trasladar el progreso manualmente entre dispositivos.
 - Copa eliminatoria simulada.
 - Validador de datos y pruebas automáticas de calendario mediante GitHub Actions.
 
