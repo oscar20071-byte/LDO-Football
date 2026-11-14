@@ -23,7 +23,7 @@ Temporada de referencia declarada para el catálogo: **2026-2027**. Los particip
 
 ## Límites conocidos
 - El partido es un prototipo arcade, no un simulador de fútbol completo. La IA, la posesión y las colisiones son básicas.
-- El partido utiliza cinco jugadoras por equipo. No implementa todavía formaciones configurables, porteras con lógica especializada, tácticas avanzadas, faltas ni reglas completas.
+- El partido utiliza cinco jugadoras por equipo e incluye una portera con posicionamiento defensivo y movimiento lateral básico. No implementa todavía formaciones configurables, tácticas avanzadas, faltas ni reglas completas.
 - Las sustituciones actuales afectan al equipo local del usuario; falta un sistema completo de cambios para ambos equipos.
 - Las tarjetas, lesiones y suspensiones están en la simulación estadística del modo carrera, no en el partido 2D.
 - El modo carrera no está conectado al partido 2D. El cambio de club y los contratos son mecánicas locales simplificadas, no negociaciones de mercado.
@@ -37,6 +37,7 @@ Temporada de referencia declarada para el catálogo: **2026-2027**. Los particip
 - [ ] Completar selecciones femeninas absolutas y juveniles, distinguiendo asociaciones, equipos activos y convocatorias publicadas.
 - [ ] Validar formato, división, calendario y participantes oficiales de cada liga.
 - [ ] Conectar la carrera con partidos jugables.
+- [x] Añadir una portera con comportamiento defensivo básico.
 - [ ] Mejorar IA, porteras, tácticas, formaciones y reglas.
 - [ ] Implementar sustituciones para ambos equipos, tarjetas, lesiones y sanciones dentro del partido.
 - [ ] Añadir fichajes, contratos negociables, presupuestos y temporadas.
