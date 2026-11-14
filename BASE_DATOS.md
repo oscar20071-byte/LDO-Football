@@ -28,6 +28,9 @@ Construir una base mundial de fútbol femenino con clubes, selecciones absolutas
 - [x] Catálogo de 122 clubes femeninos en 10 países/competiciones.
 - [x] Catálogo inicial de 9 selecciones/categorías.
 - [x] Primera convocatoria de 26 jugadoras de Estados Unidos.
+- [x] Plantilla del Chelsea Women 2026-27: 27 futbolistas vinculadas al club (incluye Alyssa Thompson compartida con la selección); dorsales oficiales, posiciones pendientes cuando la fuente no las especifica.
+- [x] Modo carrera local: crear jugadora, elegir club/posición, simular partidos, progresar OVR y guardar partida en el navegador.
+- [x] Catálogo inicial ampliado a 215 registros de selecciones/categorías; la mayoría son asociaciones con convocatoria pendiente, no plantillas completas.
 - [x] Interfaz para explorar clubes, selecciones y las jugadoras que ya están cargadas.
 - [ ] Completar y auditar las plantillas de los 122 clubes.
 - [ ] Ampliar el catálogo a todas las federaciones y categorías juveniles.
