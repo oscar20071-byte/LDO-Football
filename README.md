@@ -6,7 +6,7 @@ Juego web de fútbol femenino con vista 2D desde arriba.
 1. Abre la página publicada en GitHub Pages, si está activada.
 2. Elige dos clubes distintos.
 3. Pulsa **Comenzar partido**.
-4. Muévete con WASD o las flechas, usa **ESPACIO** para chutar, **X** para pasar y **Q**** para cambiar de jugadora.
+4. Muévete con WASD o las flechas, usa **ESPACIO** para chutar, **X** para pasar y **Q** para cambiar de jugadora.
 5. En móvil aparecen controles táctiles.
 
 ## Funciones actuales
