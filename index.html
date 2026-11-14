@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071b2b">
+<title>LDO FOOTBALL</title>
+<style>
+:root{color-scheme:dark;--bg:#071b2b;--panel:#102b40;--green:#16834b;--line:#d9f5df}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#123b55,var(--bg) 65%);color:#f5fbff;font:16px system-ui,Arial}
+header{padding:18px 20px;text-align:center}h1{margin:0;font-size:clamp(26px,5vw,42px);letter-spacing:2px}header p{margin:6px 0;color:#b8d4e5}
+main{width:min(1000px,96vw);margin:auto}.bar{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap;background:var(--panel);padding:12px 16px;border-radius:14px;margin-bottom:12px}
+#score{font-size:24px;font-weight:800;letter-spacing:2px}.hint{color:#c5dbe8;font-size:13px}
+canvas{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#16834b;border:3px solid #d9f5df;border-radius:12px;touch-action:none}
+.actions{display:flex;gap:10px;justify-content:center;margin:14px 0 24px;flex-wrap:wrap}button{border:0;border-radius:10px;padding:11px 18px;background:#e5f5ff;color:#092235;font-weight:800;cursor:pointer}button:hover{background:#b9e4ff}
+</style>
+</head>
+<body>
+<header><h1>⚽ LDO FOOTBALL</h1><p>Fútbol femenino · Modo partido · Versión inicial</p></header>
+<main>
+<div class="bar"><div><div class="hint">MARCADOR</div><div id="score">LDO 0 - 0 CPU</div></div><div class="hint">Muévete con WASD o las flechas · Presiona ESPACIO para chutar</div></div>
+<canvas id="game" width="960" height="540" aria-label="Campo de fútbol visto desde arriba"></canvas>
+<div class="actions"><button id="restart">Reiniciar partido</button><button id="pause">Pausar</button></div>
+</main>
+<script>
+(()=>{
+const c=document.getElementById('game'),ctx=c.getContext('2d'),score=document.getElementById('score');
+const W=c.width,H=c.height,keys={};let goals=[0,0],paused=false;
+const player={x:250,y:270,r:15,speed:3.4,color:'#f7fbff'};
+const rival={x:700,y:270,r:15,speed:1.8,color:'#f4d34e'};
+const ball={x:480,y:270,r:8,vx:0,vy:0};
+addEventListener('keydown',e=>{keys[e.key.toLowerCase()]=true;if(e.code==='Space'){e.preventDefault();kick()}});
+addEventListener('keyup',e=>keys[e.key.toLowerCase()]=false);
+function kick(){const dx=ball.x-player.x,dy=ball.y-player.y,d=Math.hypot(dx,dy);if(d<65){const a=Math.atan2(dy,dx);ball.vx=Math.cos(a)*8;ball.vy=Math.sin(a)*8}}
+function reset(){player.x=250;player.y=270;rival.x=700;rival.y=270;ball.x=480;ball.y=270;ball.vx=ball.vy=0}
+function draw(){
+ctx.clearRect(0,0,W,H);ctx.fillStyle='#16834b';ctx.fillRect(0,0,W,H);
+ctx.strokeStyle='rgba(255,255,255,.8)';ctx.lineWidth=3;ctx.strokeRect(22,22,W-44,H-44);
+ctx.beginPath();ctx.moveTo(W/2,22);ctx.lineTo(W/2,H-22);ctx.stroke();
+ctx.beginPath();ctx.arc(W/2,H/2,75,0,Math.PI*2);ctx.stroke();
+ctx.strokeRect(22,165,125,210);ctx.strokeRect(W-147,165,125,210);
+ctx.strokeRect(22,215,48,110);ctx.strokeRect(W-70,215,48,110);
+ctx.fillStyle='#e9f6ff';ctx.fillRect(0,215,22,110);ctx.fillRect(W-22,215,22,110);
+function dot(p){ctx.beginPath();ctx.fillStyle='rgba(0,0,0,.2)';ctx.arc(p.x+3,p.y+4,p.r,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.fillStyle=p.color;ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#082334';ctx.lineWidth=2;ctx.stroke()}
+dot(player);dot(rival);
+ctx.beginPath();ctx.fillStyle='#fff';ctx.arc(ball.x,ball.y,ball.r,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#111';ctx.lineWidth=2;ctx.stroke();
+ctx.fillStyle='#092b1a';ctx.font='bold 12px system-ui';ctx.fillText('10',player.x-4,player.y+4);ctx.fillText('9',rival.x-3,rival.y+4);
+}
+function update(){
+if(!paused){
+let dx=0,dy=0;if(keys.w||keys.arrowup)dy--;if(keys.s||keys.arrowdown)dy++;if(keys.a||keys.arrowleft)dx--;if(keys.d||keys.arrowright)dx++;
+const m=Math.hypot(dx,dy)||1;player.x+=dx/m*player.speed;player.y+=dy/m*player.speed;
+player.x=Math.max(40,Math.min(W-40,player.x));player.y=Math.max(40,Math.min(H-40,player.y));
+const a=Math.atan2(ball.y-rival.y,ball.x-rival.x);rival.x+=Math.cos(a)*rival.speed;rival.y+=Math.sin(a)*rival.speed;
+if(Math.hypot(ball.x-player.x,ball.y-player.y)<player.r+ball.r+2){ball.vx+=(ball.x-player.x)*.08;ball.vy+=(ball.y-player.y)*.08}
+if(Math.hypot(ball.x-rival.x,ball.y-rival.y)<rival.r+ball.r+2){ball.vx+=(ball.x-rival.x)*.08;ball.vy+=(ball.y-rival.y)*.08}
+ball.x+=ball.vx;ball.y+=ball.vy;ball.vx*=.985;ball.vy*=.985;
+if(ball.y<30||ball.y>H-30)ball.vy*=-.8;
+if(ball.x<18&&ball.y>215&&ball.y<325){goals[1]++;score.textContent='LDO '+goals[0]+' - '+goals[1]+' CPU';reset()}
+else if(ball.x>W-18&&ball.y>215&&ball.y<325){goals[0]++;score.textContent='LDO '+goals[0]+' - '+goals[1]+' CPU';reset()}
+else if(ball.x<30||ball.x>W-30)ball.vx*=-.8;
+}
+draw();requestAnimationFrame(update)
+}
+document.getElementById('restart').onclick=()=>{goals=[0,0];score.textContent='LDO 0 - 0 CPU';reset();paused=false;document.getElementById('pause').textContent='Pausar'};
+document.getElementById('pause').onclick=()=>{paused=!paused;document.getElementById('pause').textContent=paused?'Continuar':'Pausar'};
+reset();update();
+})();
+</script>
+</body>
+</html>
