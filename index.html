@@ -102,8 +102,21 @@ $('careerRenew').onclick=()=>{if(!career)return;career.contractYears+=1;saveCare
 $('careerReset').onclick=()=>{if(confirm('¿Borrar el progreso de esta carrera?')){career=null;localStorage.removeItem('ldoCareerV1');renderCareer()}};
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
 const DISCIPLINE_STORE='ldoCompetitionV1';
-function readDisciplineState(){try{return JSON.parse(localStorage.getItem(DISCIPLINE_STORE)||'null')}catch(e){return null}}
-function writeDisciplineState(state){if(state){localStorage.setItem(DISCIPLINE_STORE,JSON.stringify(state));document.dispatchEvent(new CustomEvent('ldo:discipline-updated'))}}
+function readDisciplineState(){
+ let competition=null,standalone=null;
+ try{competition=JSON.parse(localStorage.getItem(DISCIPLINE_STORE)||'null')}catch(e){}
+ try{standalone=JSON.parse(localStorage.getItem('ldoDisciplineV1')||'null')}catch(e){}
+ if(!competition&&!standalone)return null;
+ return {...(competition||{}),discipline:{...(standalone?.discipline||{}),...(competition?.discipline||{})}};
+}
+function writeDisciplineState(state){
+ if(!state)return;
+ const discipline=state.discipline||{};
+ localStorage.setItem('ldoDisciplineV1',JSON.stringify({discipline}));
+ const competition=(()=>{try{return JSON.parse(localStorage.getItem(DISCIPLINE_STORE)||'null')}catch(e){return null}})();
+ if(competition?.table?.length){competition.discipline=discipline;localStorage.setItem(DISCIPLINE_STORE,JSON.stringify(competition))}
+ document.dispatchEvent(new CustomEvent('ldo:discipline-updated'));
+}
 function disciplineFor(player,state){if(!state.discipline)state.discipline={};if(!state.discipline[player.id])state.discipline[player.id]={id:player.id,name:player.nombre,teamId:player.clubId||player.equipoId,yellows:0,yellowCards:0,redCards:0,suspension:0};return state.discipline[player.id]}
 function rosterFor(side){const id=side==='home'?match.homeTeamId:match.awayTeamId,state=readDisciplineState();return players.filter(p=>(p.clubId===id||p.equipoId===id)&&p.verificado===true&&!(state&&disciplineFor(p,state).suspension>0))}
 function selectedRoster(side){const roster=rosterFor(side),keeper=roster.find(p=>['POR','GK'].includes(p.posicion)),field=roster.filter(p=>!['POR','GK'].includes(p.posicion)).slice(0,4);while(field.length<4)field.push(null);return [...field,keeper||null]}
