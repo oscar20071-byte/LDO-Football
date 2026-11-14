@@ -1,0 +1,23 @@
+name: Validar base de datos
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validar JSON, IDs y referencias
+        run: node scripts/validate-data.mjs
+      - name: Comprobar sintaxis JavaScript
+        run: |
+          node --check competitions.js
+          node --check scripts/validate-data.mjs
