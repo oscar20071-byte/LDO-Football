@@ -36,3 +36,5 @@ Usar este archivo para documentar las fuentes oficiales consultadas al incorpora
 
 | 14/11/2026 | Inglaterra | Chelsea Women 2026/27 | https://www.chelseafc.com/en/news/article/chelsea-women-squad-numbers-confirmed-for-the-2026-27-season | 27 jugadoras y dorsales publicados oficialmente; posiciones no añadidas si no constan en la fuente consultada |
 | 14/11/2026 | Internacional | Asociaciones miembro FIFA | https://legal.fifa.com/associations | Directorio de asociaciones para ampliar el catálogo de selecciones; no confirma por sí solo convocatoria femenina activa ni plantilla |
+
+| 14/11/2026 | Inglaterra | London City Lionesses 2026/27 | https://www.londoncitylionesses.com/ | 27 futbolistas del primer equipo, con posiciones y dorsales publicados en la plantilla oficial |
