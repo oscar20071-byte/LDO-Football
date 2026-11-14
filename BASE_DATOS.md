@@ -30,7 +30,7 @@ Temporada de referencia declarada para el catálogo: **2026-2027**. Los particip
 - El partido es un prototipo arcade, no un simulador de fútbol completo. La IA, la posesión y las colisiones son básicas.
 - El partido utiliza cinco jugadoras por equipo e incluye una portera con posicionamiento defensivo y movimiento lateral básico. Solo asigna una jugadora real a portera cuando su posición está confirmada; si no hay dato, usa una portera genérica. No implementa todavía formaciones configurables, tácticas avanzadas, faltas ni reglas completas.
 - Las sustituciones del usuario son manuales y las del rival son automáticas y simplificadas.
-- El sistema de tarjetas del partido arcade sigue siendo aleatorio y no está conectado al registro disciplinario de ligas. En el gestor de ligas sí hay sanciones persistentes por jugadora verificada, pero el motor no genera alineaciones individuales: la sanción se representa reduciendo el rendimiento simulado del club. No hay cálculo de faltas ni conexión con el partido 2D.
+- El sistema de tarjetas del partido arcade sigue siendo aleatorio y básico, pero ahora comparte el registro disciplinario local con las ligas. Las jugadoras verificadas con suspensión pendiente se excluyen de las alineaciones y del banquillo del partido 2D; al terminar el partido se descuenta una jornada solo a las sanciones que ya estaban activas al inicio. Las tarjetas del partido actualizan amarillas, rojas y suspensiones persistentes. No hay cálculo de faltas ni sincronización entre dispositivos.
 - El modo carrera no está conectado al partido 2D. El cambio de club y los contratos son mecánicas locales simplificadas, no negociaciones de mercado.
 - Las ligas y copas producen resultados aleatorios simulados; no son resultados oficiales. Sus grupos iniciales necesitan validación de formato, división y participantes.
 - No están completas las plantillas de todos los clubes ni las convocatorias de selecciones absolutas y juveniles.
@@ -45,7 +45,7 @@ Temporada de referencia declarada para el catálogo: **2026-2027**. Los particip
 - [x] Añadir una portera con comportamiento defensivo básico.
 - [ ] Mejorar IA, porteras, tácticas, formaciones y reglas.
 - [x] Añadir tarjetas y sanciones persistentes por jugadora en el simulador de ligas.
-- [ ] Conectar las sanciones de liga con alineaciones individuales y con el partido arcade 2D.
+- [x] Conectar las sanciones de liga con las alineaciones disponibles del partido arcade 2D y compartir tarjetas entre ambos sistemas.
 - [ ] Implementar lesiones y faltas en el partido.
 - [ ] Añadir fichajes, contratos negociables, presupuestos y temporadas.
 - [ ] Añadir escudos, retratos y equipaciones con recursos autorizados.
