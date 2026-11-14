@@ -21,8 +21,8 @@ Temporada de referencia de los datos: **2026-2027**.
 
 ## Limitaciones actuales del juego
 - El partido es una demostración arcade 5 contra 5. Cuando hay registros verificados para el club seleccionado, se usan hasta cinco jugadoras de la base y el resto queda como banquillo local con sustituciones; si no hay plantilla registrada, aparecen jugadoras genéricas de prueba.\n- Las alineaciones usan el orden de los registros disponibles y no equivalen a una alineación oficial ni a una formación táctica real.
-- La IA es básica; faltan tácticas, formaciones configurables, porteras especializadas, faltas, tarjetas, lesiones y estadísticas detalladas. Ya existe sustitución local cuando hay banquillo disponible.
-- El modo carrera guarda el progreso localmente e incluye entrenamiento, fatiga, recuperación, renovación de contrato y cambio de club dentro de la partida; los partidos de carrera siguen siendo simulaciones estadísticas y no están conectados al partido jugable.
+- La IA es básica; faltan tácticas, formaciones configurables, porteras especializadas, faltas y estadísticas detalladas. Las tarjetas, lesiones y suspensiones están implementadas en el modo carrera estadístico, no aún en el partido 2D. Ya existe sustitución local cuando hay banquillo disponible.
+- El modo carrera guarda el progreso localmente e incluye entrenamiento, fatiga, recuperación, lesiones simuladas, tarjetas amarillas/rojas, suspensiones, renovación de contrato y cambio de club dentro de la partida; los partidos de carrera siguen siendo simulaciones estadísticas y no están conectados al partido jugable.
 - Se añadió un gestor local de ligas con calendario de ida y vuelta, jornadas simuladas, clasificación y resultados guardados.\n- Se añadió un torneo de copa eliminatoria simulado y guardado localmente.\n- Los calendarios y resultados son generados por el juego; no son calendarios ni resultados oficiales.\n- Siguen pendientes ascensos/descensos, fichajes, contratos y multijugador.
 - No se han incorporado escudos, retratos ni uniformes oficiales de todas las entidades.
 
