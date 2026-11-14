@@ -103,5 +103,6 @@ async function boot(){
  $('resetLeague').onclick=()=>{if(confirm('¿Borrar liga, resultados y copa guardados?')){state=null;localStorage.removeItem(STORE);$('compTitle').textContent='Sin competición activa';$('compTable').innerHTML='';$('compFixtures').innerHTML='';$('cupBracket').innerHTML='';$('compMessage').textContent='Selecciona una competición.'}};
  }catch(e){$('compMessage').textContent='No se pudo cargar data/equipos.json. '+e.message}
 }
+document.addEventListener('ldo:discipline-updated',()=>{try{const latest=JSON.parse(localStorage.getItem(STORE)||'null');if(latest&&latest.table?.length){state=latest;state.discipline=state.discipline||{};render()}}catch(e){console.warn('No se pudo actualizar la disciplina',e)}});
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
