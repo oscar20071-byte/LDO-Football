@@ -6,15 +6,16 @@ Temporada de referencia: **2026-2027**.
 Construir una base mundial de fútbol femenino con clubes, selecciones absolutas y categorías juveniles cuando existan datos verificables.
 
 ## Archivos
-- `data/equipos.json`: clubes y selecciones.
+- `data/equipos.json`: catálogo de clubes.
+- `data/selecciones.json`: catálogo de selecciones nacionales y categorías.
 - `data/jugadoras.json`: información deportiva de las jugadoras.
 - `index.html`: prototipo jugable 2D desde arriba.
 
-## Campos previstos para equipos
-`id`, `nombre`, `tipo` (club/seleccion), `pais`, `liga`, `categoria`, `escudo`.
+## Campos actuales para equipos
+`id`, `nombre`, `tipo`, `pais`, `competicion`, `temporada`, `fuente`, `verificado`.
 
-## Campos previstos para jugadoras
-`id`, `nombre`, `nacionalidad`, `fechaNacimiento`, `edad`, `posicion`, `dorsal`, `equipoId`, `ovr`, `ritmo`, `tiro`, `pase`, `regate`, `defensa`, `fisico`.
+## Campos actuales para jugadoras
+`id`, `nombre`, `posicion`, `equipoId`, `nacionalidad`, `categoria`, `fuente`, `fechaConsulta`, `verificado`. Los datos biográficos y atributos de juego se añadirán solo cuando estén comprobados o identificados como estimaciones.
 
 ## Criterios de calidad
 - No inventar nombres, edades, dorsales ni afiliaciones.
@@ -24,8 +25,10 @@ Construir una base mundial de fútbol femenino con clubes, selecciones absolutas
 
 ## Estado
 - [x] Prototipo inicial de partido 2D.
-- [x] Estructura JSON de equipos.
-- [x] Estructura JSON de jugadoras.
-- [ ] Incorporar clubes y plantillas verificadas por competición.
-- [ ] Incorporar selecciones absolutas y juveniles verificadas.
-- [ ] Conectar los datos al modo partido y al modo carrera.
+- [x] Catálogo de 122 clubes femeninos en 10 países/competiciones.
+- [x] Catálogo inicial de 9 selecciones/categorías.
+- [x] Primera convocatoria de 26 jugadoras de Estados Unidos.
+- [x] Interfaz para explorar clubes, selecciones y las jugadoras que ya están cargadas.
+- [ ] Completar y auditar las plantillas de los 122 clubes.
+- [ ] Ampliar el catálogo a todas las federaciones y categorías juveniles.
+- [ ] Conectar las plantillas completas al modo partido y desarrollar modo carrera.
