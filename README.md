@@ -15,7 +15,7 @@ Juego web de fútbol femenino con vista 2D desde arriba.
 - Gestor de ligas con calendario de ida y vuelta, clasificación y copa eliminatoria simulada.
 - Validación automática de datos con GitHub Actions.
 - Marcador, reloj, pausa y reinicio.
-- Modo carrera local con entrenamiento, fatiga, recuperación, contratos y cambios de club guardados en el navegador.
+- Modo carrera local con entrenamiento, fatiga, recuperación, lesiones simuladas, tarjetas, suspensiones, contratos y cambios de club guardados en el navegador.
 - Catálogo de clubes, selecciones, jugadoras y competiciones.
 - Gestor de ligas con calendario, clasificación y resultados simulados.
 - Copa eliminatoria simulada.
@@ -23,7 +23,7 @@ Juego web de fútbol femenino con vista 2D desde arriba.
 ## Datos y transparencia
 Los datos están en `data/`. Las plantillas incompletas se indican como pendientes; los catálogos no equivalen a plantillas completas.
 
-Los resultados de ligas y copas se generan dentro del juego y no representan resultados oficiales. Las plantillas que aún no están cargadas se muestran como pendientes o alineaciones de prueba; no se inventan jugadoras reales.
+Las lesiones, tarjetas y suspensiones están activas en la simulación estadística del modo carrera; todavía no afectan al partido 2D. Los resultados de ligas y copas se generan dentro del juego y no representan resultados oficiales. Las plantillas que aún no están cargadas se muestran como pendientes o alineaciones de prueba; no se inventan jugadoras reales.
 
 Consulta [BASE_DATOS.md](BASE_DATOS.md) para ver la cobertura y las limitaciones actuales y [data/FUENTES.md](data/FUENTES.md) para las fuentes utilizadas.
 
