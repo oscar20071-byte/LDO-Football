@@ -235,14 +235,14 @@ $('cloudRegister').addEventListener('click',async()=>{
  if(!cloudAuth&&!saveCloudConfig())return;
  const email=$('cloudEmail').value.trim(),password=$('cloudPassword').value;
  if(!email||password.length<6){cloudMessage('Escribe un correo y una contraseña de al menos 6 caracteres.');return}
- try{const credential=await cloudAuth.createUserWithEmailAndPassword(email,password);await startCloudSync(credential.user)}
+ try{await cloudAuth.createUserWithEmailAndPassword(email,password)}
  catch(e){cloudMessage('No se pudo crear la cuenta: '+e.message)}
 });
 $('cloudLogin').addEventListener('click',async()=>{
  if(!cloudAuth&&!saveCloudConfig())return;
  const email=$('cloudEmail').value.trim(),password=$('cloudPassword').value;
  if(!email||!password){cloudMessage('Escribe tu correo y contraseña.');return}
- try{const credential=await cloudAuth.signInWithEmailAndPassword(email,password);await startCloudSync(credential.user)}
+ try{await cloudAuth.signInWithEmailAndPassword(email,password)}
  catch(e){cloudMessage('No se pudo iniciar sesión: '+e.message)}
 });
 $('cloudLogout').addEventListener('click',async()=>{
