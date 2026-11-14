@@ -50,6 +50,17 @@ canvas{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#16834b
 <div class="actions"><button id="startMatch">Comenzar partido</button><button id="pauseMatch">Pausar</button><button id="restartMatch">Reiniciar</button></div>
 <p class="hint">Controles: WASD/flechas para moverte · ESPACIO para chutar · X para pasar · Q para cambiar de jugadora. En móvil usa los controles táctiles.</p>
 </section>
+
+<section class="panel" id="competitions">
+<h2>🏆 Ligas y copas</h2><p class="hint">Competiciones generadas a partir de los clubes registrados. Los resultados se simulan y se guardan en este navegador.</p>
+<div class="grid"><label>Competición<select id="competitionSelect"></select></label><div class="actions" style="align-items:end"><button id="createLeague">Crear temporada</button><button id="playRound" disabled>Jugar jornada</button><button id="resetLeague">Reiniciar</button></div></div>
+<h3 id="compTitle">Sin competición activa</h3><p class="hint" id="compProgress"></p><div id="compMessage" class="hint">Selecciona una competición.</div>
+<h3>Clasificación</h3><div id="compTable"></div><h3>Calendario y resultados</h3><div id="compFixtures"></div>
+<hr style="border-color:#31566d;margin:18px 0"><h3>🏆 Copa eliminatoria</h3><div class="actions"><button id="createCup">Crear copa</button><button id="playCup" disabled>Jugar ronda</button></div><p class="hint" id="cupMessage"></p><div id="cupBracket"></div>
+</section>
+<style>
+.tableWrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:600px;font-size:13px}th,td{text-align:center;padding:8px;border-bottom:1px solid #31566d}th:nth-child(2),td:nth-child(2){text-align:left}.fixture{display:grid;grid-template-columns:42px minmax(90px,1fr) 55px minmax(90px,1fr);gap:7px;align-items:center;padding:8px;border-bottom:1px solid #31566d;font-size:13px}.fixture span{text-align:center;color:#b8d4e5}
+</style>
 </main>
 <script>
 (()=>{
@@ -122,4 +133,4 @@ document.querySelectorAll('[data-key]').forEach(btn=>{const k=btn.dataset.key;bt
 document.querySelectorAll('[data-action]').forEach(btn=>btn.addEventListener('click',()=>({shoot,pass:passBall,switch:switchPlayer}[btn.dataset.action])()));
 })();
 </script>
-</body></html>
+<script src="competitions.js"></script></body></html>
