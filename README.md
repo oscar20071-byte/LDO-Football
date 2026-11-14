@@ -13,12 +13,12 @@ Juego web de fútbol femenino con vista 2D desde arriba.
 - Partido arcade 2D 5 contra 5 con IA básica.
 - Marcador, reloj, pausa y reinicio.
 - Modo carrera local con progreso guardado en el navegador.
-- Catálogo de clubes, selecciones y jugadoras.
+- Catálogo de clubes, selecciones, jugadoras y competiciones.\n- Gestor de ligas con calendario, clasificación y resultados simulados.\n- Copa eliminatoria simulada.
 
 ## Datos y transparencia
 Los datos están en `data/`. Las plantillas incompletas se indican como pendientes; los catálogos no equivalen a plantillas completas.
 
-Consulta [BASE_DATOS.md](BASE_DATOS.md) para ver la cobertura y las limitaciones actuales y [data/FUENTES.md](data/FUENTES.md) para las fuentes utilizadas.
+Los resultados de ligas y copas se generan dentro del juego y no representan resultados oficiales.\n\nConsulta [BASE_DATOS.md](BASE_DATOS.md) para ver la cobertura y las limitaciones actuales y [data/FUENTES.md](data/FUENTES.md) para las fuentes utilizadas.
 
 ## Estado
 Proyecto en desarrollo. El partido actual es una base jugable, no un simulador completo ni una reproducción de FIFA.
