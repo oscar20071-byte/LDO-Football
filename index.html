@@ -109,7 +109,7 @@ $('careerReset').onclick=()=>{if(confirm('¿Borrar el progreso de esta carrera?'
 const SAVE_KEYS=['ldoCareerV1','ldoCompetitionV1','ldoDisciplineV1'];
 function exportProgress(){
  const data={app:'LDO Football',format:'ldo-save',version:1,exportedAt:new Date().toISOString(),storage:{}};
- for(const key of SAVE_KEYS){const value=localStorage.getItem(key);if(value!==null)data.storage[key]=value}
+ for(const key of SAVE_KEYS)data.storage[key]=localStorage.getItem(key)
  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
  const url=URL.createObjectURL(blob),a=document.createElement('a');
  a.href=url;a.download='ldo-football-respaldo-'+new Date().toISOString().slice(0,10)+'.json';
@@ -126,7 +126,7 @@ function importProgress(file){
    const incoming={};
    for(const key of SAVE_KEYS){
     if(Object.prototype.hasOwnProperty.call(data.storage,key)){
-     const raw=data.storage[key];if(typeof raw!=='string')throw Error('El respaldo contiene datos con formato incorrecto.');
+     const raw=data.storage[key];if(raw===null){incoming[key]=null;continue}if(typeof raw!=='string')throw Error('El respaldo contiene datos con formato incorrecto.');
      const parsed=JSON.parse(raw);
      if(key==='ldoCareerV1'&&parsed!==null&&(!parsed||typeof parsed!=='object'||!parsed.name||!parsed.clubId))throw Error('La carrera del respaldo no es válida.');
      if(key==='ldoCompetitionV1'&&parsed!==null&&(!parsed||typeof parsed!=='object'||!Array.isArray(parsed.table)||!Array.isArray(parsed.schedule)))throw Error('La competición del respaldo no es válida.');
@@ -136,7 +136,7 @@ function importProgress(file){
    }
    if(!Object.keys(incoming).length)throw Error('El archivo no contiene progreso para importar.');
    if(!confirm('Importar este respaldo reemplazará los datos locales equivalentes. ¿Continuar?'))return;
-   for(const [key,value] of Object.entries(incoming))localStorage.setItem(key,value);
+   for(const [key,value] of Object.entries(incoming)){if(value===null)localStorage.removeItem(key);else localStorage.setItem(key,value)}
    $('backupStatus').textContent='Respaldo importado correctamente. La página se recargará para aplicar los datos.';
    setTimeout(()=>location.reload(),350);
   }catch(error){$('backupStatus').textContent='No se pudo importar: '+error.message}
