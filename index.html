@@ -105,7 +105,7 @@ clubSel.addEventListener('change',showClub);nationSel.addEventListener('change',
 })();
 </script>\n<script>
 (()=>{
-const $=id=>document.getElementById(id);
+const $=id=>document.getElementById(id);\nconst esc=s=>String(s??'').replace(/[&<>\"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;'}[c]));
 const club=$('careerClub'),name=$('careerName'),pos=$('careerPosition'),status=$('careerStatus'),stats=$('careerStats');
 let clubs=[];
 fetch('data/equipos.json').then(r=>r.json()).then(d=>{
@@ -118,7 +118,7 @@ function save(){localStorage.setItem('ldoCareerV1',JSON.stringify(career))}
 function render(){
 if(!career){status.textContent='Todavía no has creado una carrera.';stats.innerHTML='';$('careerPlay').disabled=true;$('careerReset').disabled=true;return}
 const team=clubs.find(t=>t.id===career.clubId);
-status.innerHTML='<strong>'+career.name+'</strong> · '+(team?team.nombre:'Club')+' · '+career.position+' · Temporada '+career.season;
+status.innerHTML='<strong>'+esc(career.name)+'</strong> · '+(team?team.nombre:'Club')+' · '+career.position+' · Temporada '+career.season;
 const values=[['OVR',career.ovr],['Partidos',career.apps],['Goles',career.goals],['Asistencias',career.assists],['Experiencia',career.xp]];
 stats.innerHTML=values.map(v=>'<article style="background:#18394f;border:1px solid #31566d;border-radius:9px;padding:10px;text-align:center"><strong style="font-size:22px">'+v[1]+'</strong><div class="hint">'+v[0]+'</div></article>').join('');
 $('careerPlay').disabled=false;$('careerReset').disabled=false;
