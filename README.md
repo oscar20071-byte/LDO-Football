@@ -12,7 +12,7 @@ Juego web de fútbol femenino con partido arcade 2D desde arriba y sistemas loca
 ## Funciones disponibles
 - Partido 2D arcade 5 contra 5 con IA básica.
 - Jugadoras registradas en alineaciones cuando hay datos disponibles; jugadoras genéricas de prueba si falta la plantilla.
-- Sustituciones locales cuando hay banquillo.
+- Sustituciones locales: eliges desde un selector qué titular sale y entra una jugadora del banquillo.
 - Modo carrera con progresión, entrenamiento, fatiga, recuperación, lesiones simuladas, tarjetas, suspensiones y contratos locales.
 - Ligas con calendario de ida y vuelta, clasificación y resultados simulados.
 - Copa eliminatoria simulada.
