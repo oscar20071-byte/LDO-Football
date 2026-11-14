@@ -19,6 +19,7 @@ Juego web de fútbol femenino con partido arcade 2D desde arriba y sistemas loca
 - Modo carrera con progresión, entrenamiento, fatiga, recuperación, lesiones simuladas, tarjetas, suspensiones y contratos locales.
 - Ligas con calendario de ida y vuelta, clasificación y resultados simulados.
 - Disciplina en ligas: amarillas acumulables, segunda amarilla, rojas directas y suspensiones persistentes entre jornadas para jugadoras verificadas; las sanciones pendientes reducen el rendimiento simulado del club.
+- Exportación e importación de respaldos JSON para transferir carrera, liga activa y disciplina entre dispositivos de forma manual.
 - Copa eliminatoria simulada.
 - Catálogos de clubes, jugadoras, selecciones y competiciones.
 - Validación de datos y pruebas de calendario en GitHub Actions.
