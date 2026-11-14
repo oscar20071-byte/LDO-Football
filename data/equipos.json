@@ -962,6 +962,86 @@
       "temporada": "2026-2027",
       "fuente": "https://weleague.jp/pdf/about/outline/26-27WELEAGUE_PROFILE.pdf",
       "verificado": true
+    },
+    {
+      "id": "al-ahli-w",
+      "nombre": "Al-Ahli",
+      "tipo": "club",
+      "pais": "Arabia Saudita",
+      "competicion": "Women's Premier League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.linkedin.com/posts/saudi-arabian-football-federation_the-20262027-womens-premier-league-season-activity-7492480596707966977-pHfb",
+      "verificado": true
+    },
+    {
+      "id": "al-qadsiah-w",
+      "nombre": "Al-Qadsiah",
+      "tipo": "club",
+      "pais": "Arabia Saudita",
+      "competicion": "Women's Premier League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.linkedin.com/posts/saudi-arabian-football-federation_the-20262027-womens-premier-league-season-activity-7492480596707966977-pHfb",
+      "verificado": true
+    },
+    {
+      "id": "al-hilal-w",
+      "nombre": "Al-Hilal",
+      "tipo": "club",
+      "pais": "Arabia Saudita",
+      "competicion": "Women's Premier League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.linkedin.com/posts/saudi-arabian-football-federation_the-20262027-womens-premier-league-season-activity-7492480596707966977-pHfb",
+      "verificado": true
+    },
+    {
+      "id": "al-ittihad-w",
+      "nombre": "Al-Ittihad",
+      "tipo": "club",
+      "pais": "Arabia Saudita",
+      "competicion": "Women's Premier League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.linkedin.com/posts/saudi-arabian-football-federation_the-20262027-womens-premier-league-season-activity-7492480596707966977-pHfb",
+      "verificado": true
+    },
+    {
+      "id": "al-nassr-w",
+      "nombre": "Al-Nassr",
+      "tipo": "club",
+      "pais": "Arabia Saudita",
+      "competicion": "Women's Premier League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.linkedin.com/posts/saudi-arabian-football-federation_the-20262027-womens-premier-league-season-activity-7492480596707966977-pHfb",
+      "verificado": true
+    },
+    {
+      "id": "alula-w",
+      "nombre": "AlUla",
+      "tipo": "club",
+      "pais": "Arabia Saudita",
+      "competicion": "Women's Premier League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.linkedin.com/posts/saudi-arabian-football-federation_the-20262027-womens-premier-league-season-activity-7492480596707966977-pHfb",
+      "verificado": true
+    },
+    {
+      "id": "neom-sc-w",
+      "nombre": "NEOM SC",
+      "tipo": "club",
+      "pais": "Arabia Saudita",
+      "competicion": "Women's Premier League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.linkedin.com/posts/saudi-arabian-football-federation_the-20262027-womens-premier-league-season-activity-7492480596707966977-pHfb",
+      "verificado": true
+    },
+    {
+      "id": "al-taraji-w",
+      "nombre": "Al-Taraji",
+      "tipo": "club",
+      "pais": "Arabia Saudita",
+      "competicion": "Women's Premier League",
+      "temporada": "2026-2027",
+      "fuente": "https://www.linkedin.com/posts/saudi-arabian-football-federation_the-20262027-womens-premier-league-season-activity-7492480596707966977-pHfb",
+      "verificado": true
     }
   ]
 }
