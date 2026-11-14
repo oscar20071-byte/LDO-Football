@@ -20,10 +20,14 @@ function initCompetition(name){
  const comp=competitions.find(c=>c.name===name);if(!comp)return;
  const list=teams.filter(t=>t.competicion===name);
  if(list.length<2){$('compMessage').textContent='Esta competición necesita al menos dos clubes.';return}
- state={name,season:'2026/27',round:0,discipline:{},table:list.map(t=>({id:t.id,name:t.nombre,p:0,w:0,d:0,l:0,gf:0,ga:0,gd:0})),schedule:makeSchedule(list.map(t=>t.id)),history:[]};
+ state=mergeStandaloneDiscipline({name,season:'2026/27',round:0,discipline:{},table:list.map(t=>({id:t.id,name:t.nombre,p:0,w:0,d:0,l:0,gf:0,ga:0,gd:0})),schedule:makeSchedule(list.map(t=>t.id)),history:[]});
  persist();render();
 }
-function persist(){localStorage.setItem(STORE,JSON.stringify(state))}
+function mergeStandaloneDiscipline(target){
+ let saved={};try{saved=JSON.parse(localStorage.getItem('ldoDisciplineV1')||'{}').discipline||{}}catch(e){}
+ target.discipline={...saved,...(target.discipline||{})};return target;
+}
+function persist(){localStorage.setItem(STORE,JSON.stringify(state));localStorage.setItem('ldoDisciplineV1',JSON.stringify({discipline:state.discipline||{}}))}
 function disciplineRecord(player){
  if(!state.discipline)state.discipline={};
  if(!state.discipline[player.id])state.discipline[player.id]={id:player.id,name:player.nombre,teamId:player.clubId||player.equipoId,yellows:0,yellowCards:0,redCards:0,suspension:0};
@@ -97,7 +101,7 @@ function renderCup(){
 async function boot(){
  try{const [res,rosters]=await Promise.all([fetch('data/equipos.json'),fetch('data/jugadoras.json')]);const [data,playerData]=await Promise.all([res.json(),rosters.json()]);teams=data.equipos.filter(t=>t.tipo==='club');players=playerData.jugadoras||[];competitions=[...new Set(teams.map(t=>t.competicion))].sort().map(name=>({name}));$('competitionSelect').innerHTML=competitions.map(c=>'<option>'+esc(c.name)+'</option>').join('');
  try{state=JSON.parse(localStorage.getItem(STORE)||'null')}catch(e){state=null}
- if(state&&state.table?.length){state.discipline=state.discipline||{};render();if(state.cup)renderCup()}
+ if(state&&state.table?.length){state=mergeStandaloneDiscipline(state);persist();render();if(state.cup)renderCup()}
  $('createLeague').onclick=()=>initCompetition($('competitionSelect').value);
  $('playRound').onclick=playRound;$('createCup').onclick=initCup;$('playCup').onclick=playCup;
  $('resetLeague').onclick=()=>{if(confirm('¿Borrar liga, resultados y copa guardados?')){state=null;localStorage.removeItem(STORE);$('compTitle').textContent='Sin competición activa';$('compTable').innerHTML='';$('compFixtures').innerHTML='';$('cupBracket').innerHTML='';$('compMessage').textContent='Selecciona una competición.'}};
