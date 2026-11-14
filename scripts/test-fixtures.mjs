@@ -39,7 +39,7 @@ for (const competition of data.competiciones) {
       pairCounts.set(pair, (pairCounts.get(pair) ?? 0) + 1);
     }
   }
-  for (const [id, count] of appearances) if (count !== ids.length - 1) failures.push(competition.nombre + ': partidos incorrectos para ' + id + ' (' + count + ')');
+  for (const [id, count] of appearances) if (count !== 2 * (ids.length - 1)) failures.push(competition.nombre + ': partidos incorrectos para ' + id + ' (' + count + ')');
   const expectedPairs = ids.length * (ids.length - 1) / 2;
   if (pairCounts.size !== expectedPairs) failures.push(competition.nombre + ': cobertura de rivales incorrecta');
   for (const [pair, count] of pairCounts) if (count !== 2) failures.push(competition.nombre + ': enfrentamiento no ida/vuelta ' + pair);
