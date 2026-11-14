@@ -10,7 +10,7 @@ Juego web de fútbol femenino con vista 2D desde arriba.
 5. En móvil aparecen controles táctiles.
 
 ## Funciones actuales
-- Partido arcade 2D 5 contra 5 con IA básica.
+- Partido arcade 2D 5 contra 5 con IA básica.\n- Usa jugadoras registradas en los clubes que ya tienen datos y permite sustituciones cuando existe banquillo.
 - Marcador, reloj, pausa y reinicio.
 - Modo carrera local con progreso guardado en el navegador.
 - Catálogo de clubes, selecciones, jugadoras y competiciones.\n- Gestor de ligas con calendario, clasificación y resultados simulados.\n- Copa eliminatoria simulada.
