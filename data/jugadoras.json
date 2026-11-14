@@ -2,5 +2,292 @@
   "version": "1.0",
   "temporada": "2026-2027",
   "nota": "No contiene plantillas ficticias. Incorporar jugadoras cuando sus datos estén verificados.",
-  "jugadoras": []
+  "jugadoras": [
+    {
+      "id": "claudia-dickey",
+      "nombre": "Claudia Dickey",
+      "posicion": "POR",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "jordan-silkowitz",
+      "nombre": "Jordan Silkowitz",
+      "posicion": "POR",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "phallon-tullis-joyce",
+      "nombre": "Phallon Tullis-Joyce",
+      "posicion": "POR",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "tierna-davidson",
+      "nombre": "Tierna Davidson",
+      "posicion": "DFC",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "emily-fox",
+      "nombre": "Emily Fox",
+      "posicion": "DF",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "kate-del-fava",
+      "nombre": "Kate Del Fava",
+      "posicion": "DF",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "avery-patterson",
+      "nombre": "Avery Patterson",
+      "posicion": "DF",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "lilly-reale",
+      "nombre": "Lilly Reale",
+      "posicion": "DF",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "tara-rudd",
+      "nombre": "Tara Rudd",
+      "posicion": "DF",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "gisele-thompson",
+      "nombre": "Gisele Thompson",
+      "posicion": "DF",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "kennedy-wesley",
+      "nombre": "Kennedy Wesley",
+      "posicion": "DF",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "lindsey-heaps",
+      "nombre": "Lindsey Heaps",
+      "posicion": "MC",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "jaelin-howell",
+      "nombre": "Jaelin Howell",
+      "posicion": "MC",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "claire-hutton",
+      "nombre": "Claire Hutton",
+      "posicion": "MC",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "rose-lavelle",
+      "nombre": "Rose Lavelle",
+      "posicion": "MC",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "evelyn-shores",
+      "nombre": "Evelyn Shores",
+      "posicion": "MC",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "lily-yohannes",
+      "nombre": "Lily Yohannes",
+      "posicion": "MC",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "ashley-sanchez",
+      "nombre": "Ashley Sanchez",
+      "posicion": "MC",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "mallory-swanson",
+      "nombre": "Mallory Swanson",
+      "posicion": "DEL",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "trinity-byars",
+      "nombre": "Trinity Byars",
+      "posicion": "DEL",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "michelle-cooper",
+      "nombre": "Michelle Cooper",
+      "posicion": "DEL",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "trinity-rodman",
+      "nombre": "Trinity Rodman",
+      "posicion": "DEL",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "emma-sears",
+      "nombre": "Emma Sears",
+      "posicion": "DEL",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "pietra-tordin",
+      "nombre": "Pietra Tordin",
+      "posicion": "DEL",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "alyssa-thompson",
+      "nombre": "Alyssa Thompson",
+      "posicion": "DEL",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    },
+    {
+      "id": "sophia-wilson",
+      "nombre": "Sophia Wilson",
+      "posicion": "DEL",
+      "equipoId": "uswnt",
+      "nacionalidad": "Estados Unidos",
+      "categoria": "absoluta",
+      "fuente": "https://www.ussoccer.com/teams/uswnt/roster",
+      "fechaConsulta": "2026-11-14",
+      "verificado": true
+    }
+  ]
 }
