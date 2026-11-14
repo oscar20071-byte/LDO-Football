@@ -8,6 +8,8 @@ Temporada de referencia declarada para el catálogo: **2026-2027**. Los particip
 - Navegador de clubes, selecciones y jugadoras registradas.
 - Alineaciones de partido que aprovechan registros verificados disponibles y muestran jugadoras genéricas de prueba cuando no hay plantilla.
 - Sustituciones locales en el equipo del usuario cuando existe banquillo; se puede elegir desde un selector qué titular sale.
+- Sustituciones automáticas del rival alrededor de los minutos 60 y 75 cuando hay suplentes.
+- Tarjetas amarillas, doble amarilla y rojas aleatorias durante el partido; las expulsiones retiran a la jugadora del juego y dejan al equipo con una menos.
 - Modo carrera local con progresión estadística, entrenamiento, fatiga, recuperación, lesiones simuladas, tarjetas, suspensiones, contratos y cambio de club.
 - Gestor local de ligas con calendario de ida y vuelta, jornadas simuladas y clasificación.
 - Copa eliminatoria simulada.
@@ -24,8 +26,8 @@ Temporada de referencia declarada para el catálogo: **2026-2027**. Los particip
 ## Límites conocidos
 - El partido es un prototipo arcade, no un simulador de fútbol completo. La IA, la posesión y las colisiones son básicas.
 - El partido utiliza cinco jugadoras por equipo e incluye una portera con posicionamiento defensivo y movimiento lateral básico. Solo asigna una jugadora real a portera cuando su posición está confirmada; si no hay dato, usa una portera genérica. No implementa todavía formaciones configurables, tácticas avanzadas, faltas ni reglas completas.
-- Las sustituciones actuales afectan al equipo local del usuario; todavía falta automatizar o habilitar cambios para el equipo rival.
-- Las tarjetas, lesiones y suspensiones están en la simulación estadística del modo carrera, no en el partido 2D.
+- Las sustituciones del usuario son manuales y las del rival son automáticas y simplificadas.
+- El sistema de tarjetas del partido es aleatorio y básico; no calcula todavía faltas, sanciones acumuladas entre encuentros ni suspensiones de competición. Las lesiones y suspensiones detalladas siguen en el modo carrera estadístico.
 - El modo carrera no está conectado al partido 2D. El cambio de club y los contratos son mecánicas locales simplificadas, no negociaciones de mercado.
 - Las ligas y copas producen resultados aleatorios simulados; no son resultados oficiales. Sus grupos iniciales necesitan validación de formato, división y participantes.
 - No están completas las plantillas de todos los clubes ni las convocatorias de selecciones absolutas y juveniles.
