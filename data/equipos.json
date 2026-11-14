@@ -302,6 +302,666 @@
       "temporada": "2026",
       "fuente": "https://images.nwslsoccer.com/image/private/t_q-good/prd/tstudhfledlk7z8ygtzd.pdf",
       "verificado": true
+    },
+    {
+      "id": "athletic-club-w",
+      "nombre": "Athletic Club",
+      "tipo": "club",
+      "pais": "España",
+      "competicion": "Liga F Moeve",
+      "temporada": "2026-2027",
+      "fuente": "https://www.laliga.com/futbol-femenino/clubes",
+      "verificado": true
+    },
+    {
+      "id": "atletico-madrid-w",
+      "nombre": "Atlético de Madrid",
+      "tipo": "club",
+      "pais": "España",
+      "competicion": "Liga F Moeve",
+      "temporada": "2026-2027",
+      "fuente": "https://www.laliga.com/futbol-femenino/clubes",
+      "verificado": true
+    },
+    {
+      "id": "costa-adeje-tenerife",
+      "nombre": "Costa Adeje Tenerife",
+      "tipo": "club",
+      "pais": "España",
+      "competicion": "Liga F Moeve",
+      "temporada": "2026-2027",
+      "fuente": "https://www.laliga.com/futbol-femenino/clubes",
+      "verificado": true
+    },
+    {
+      "id": "deportivo-abanca",
+      "nombre": "Deportivo Abanca",
+      "tipo": "club",
+      "pais": "España",
+      "competicion": "Liga F Moeve",
+      "temporada": "2026-2027",
+      "fuente": "https://www.laliga.com/futbol-femenino/clubes",
+      "verificado": true
+    },
+    {
+      "id": "deportivo-alaves-w",
+      "nombre": "Deportivo Alavés",
+      "tipo": "club",
+      "pais": "España",
+      "competicion": "Liga F Moeve",
+      "temporada": "2026-2027",
+      "fuente": "https://www.laliga.com/futbol-femenino/clubes",
+      "verificado": true
+    },
+    {
+      "id": "badalona-women",
+      "nombre": "FC Badalona Women",
+      "tipo": "club",
+      "pais": "España",
+      "competicion": "Liga F Moeve",
+      "temporada": "2026-2027",
+      "fuente": "https://www.laliga.com/futbol-femenino/clubes",
+      "verificado": true
+    },
+    {
+      "id": "barcelona-w",
+      "nombre": "FC Barcelona",
+      "tipo": "club",
+      "pais": "España",
+      "competicion": "Liga F Moeve",
+      "temporada": "2026-2027",
+      "fuente": "https://www.laliga.com/futbol-femenino/clubes",
+      "verificado": true
+    },
+    {
+      "id": "granada-femenino",
+      "nombre": "Granada CF Fundación 1931",
+      "tipo": "club",
+      "pais": "España",
+      "competicion": "Liga F Moeve",
+      "temporada": "2026-2027",
+      "fuente": "https://www.laliga.com/futbol-femenino/clubes",
+      "verificado": true
+    },
+    {
+      "id": "logrono-united",
+      "nombre": "Logroño United",
+      "tipo": "club",
+      "pais": "España",
+      "competicion": "Liga F Moeve",
+      "temporada": "2026-2027",
+      "fuente": "https://www.laliga.com/futbol-femenino/clubes",
+      "verificado": true
+    },
+    {
+      "id": "madrid-cff",
+      "nombre": "Madrid CFF",
+      "tipo": "club",
+      "pais": "España",
+      "competicion": "Liga F Moeve",
+      "temporada": "2026-2027",
+      "fuente": "https://www.laliga.com/futbol-femenino/clubes",
+      "verificado": true
+    },
+    {
+      "id": "espanyol-w",
+      "nombre": "RCD Espanyol de Barcelona",
+      "tipo": "club",
+      "pais": "España",
+      "competicion": "Liga F Moeve",
+      "temporada": "2026-2027",
+      "fuente": "https://www.laliga.com/futbol-femenino/clubes",
+      "verificado": true
+    },
+    {
+      "id": "real-madrid-w",
+      "nombre": "Real Madrid CF",
+      "tipo": "club",
+      "pais": "España",
+      "competicion": "Liga F Moeve",
+      "temporada": "2026-2027",
+      "fuente": "https://www.laliga.com/futbol-femenino/clubes",
+      "verificado": true
+    },
+    {
+      "id": "real-sociedad-w",
+      "nombre": "Real Sociedad",
+      "tipo": "club",
+      "pais": "España",
+      "competicion": "Liga F Moeve",
+      "temporada": "2026-2027",
+      "fuente": "https://www.laliga.com/futbol-femenino/clubes",
+      "verificado": true
+    },
+    {
+      "id": "eibar-w",
+      "nombre": "SD Eibar",
+      "tipo": "club",
+      "pais": "España",
+      "competicion": "Liga F Moeve",
+      "temporada": "2026-2027",
+      "fuente": "https://www.laliga.com/futbol-femenino/clubes",
+      "verificado": true
+    },
+    {
+      "id": "sevilla-w",
+      "nombre": "Sevilla FC",
+      "tipo": "club",
+      "pais": "España",
+      "competicion": "Liga F Moeve",
+      "temporada": "2026-2027",
+      "fuente": "https://www.laliga.com/futbol-femenino/clubes",
+      "verificado": true
+    },
+    {
+      "id": "valencia-w",
+      "nombre": "VCF Femenino",
+      "tipo": "club",
+      "pais": "España",
+      "competicion": "Liga F Moeve",
+      "temporada": "2026-2027",
+      "fuente": "https://www.laliga.com/futbol-femenino/clubes",
+      "verificado": true
+    },
+    {
+      "id": "fleury-91-w",
+      "nombre": "FC Fleury 91",
+      "tipo": "club",
+      "pais": "Francia",
+      "competicion": "Première Ligue",
+      "temporada": "2026-2027",
+      "fuente": "https://www.worldfootball.net/competition/co1786/france-women-premiere-ligue/teams/",
+      "verificado": true
+    },
+    {
+      "id": "nantes-w",
+      "nombre": "FC Nantes",
+      "tipo": "club",
+      "pais": "Francia",
+      "competicion": "Première Ligue",
+      "temporada": "2026-2027",
+      "fuente": "https://www.worldfootball.net/competition/co1786/france-women-premiere-ligue/teams/",
+      "verificado": true
+    },
+    {
+      "id": "le-havre-w",
+      "nombre": "Le Havre AC",
+      "tipo": "club",
+      "pais": "Francia",
+      "competicion": "Première Ligue",
+      "temporada": "2026-2027",
+      "fuente": "https://www.worldfootball.net/competition/co1786/france-women-premiere-ligue/teams/",
+      "verificado": true
+    },
+    {
+      "id": "montpellier-w",
+      "nombre": "Montpellier HSC",
+      "tipo": "club",
+      "pais": "Francia",
+      "competicion": "Première Ligue",
+      "temporada": "2026-2027",
+      "fuente": "https://www.worldfootball.net/competition/co1786/france-women-premiere-ligue/teams/",
+      "verificado": true
+    },
+    {
+      "id": "ol-lyonnes",
+      "nombre": "OL Lyonnes",
+      "tipo": "club",
+      "pais": "Francia",
+      "competicion": "Première Ligue",
+      "temporada": "2026-2027",
+      "fuente": "https://www.worldfootball.net/competition/co1786/france-women-premiere-ligue/teams/",
+      "verificado": true
+    },
+    {
+      "id": "marseille-w",
+      "nombre": "Olympique Marseille",
+      "tipo": "club",
+      "pais": "Francia",
+      "competicion": "Première Ligue",
+      "temporada": "2026-2027",
+      "fuente": "https://www.worldfootball.net/competition/co1786/france-women-premiere-ligue/teams/",
+      "verificado": true
+    },
+    {
+      "id": "paris-fc-w",
+      "nombre": "Paris FC",
+      "tipo": "club",
+      "pais": "Francia",
+      "competicion": "Première Ligue",
+      "temporada": "2026-2027",
+      "fuente": "https://www.worldfootball.net/competition/co1786/france-women-premiere-ligue/teams/",
+      "verificado": true
+    },
+    {
+      "id": "psg-w",
+      "nombre": "Paris Saint-Germain",
+      "tipo": "club",
+      "pais": "Francia",
+      "competicion": "Première Ligue",
+      "temporada": "2026-2027",
+      "fuente": "https://www.worldfootball.net/competition/co1786/france-women-premiere-ligue/teams/",
+      "verificado": true
+    },
+    {
+      "id": "strasbourg-w",
+      "nombre": "Racing Strasbourg",
+      "tipo": "club",
+      "pais": "Francia",
+      "competicion": "Première Ligue",
+      "temporada": "2026-2027",
+      "fuente": "https://www.worldfootball.net/competition/co1786/france-women-premiere-ligue/teams/",
+      "verificado": true
+    },
+    {
+      "id": "lens-w",
+      "nombre": "RC Lens",
+      "tipo": "club",
+      "pais": "Francia",
+      "competicion": "Première Ligue",
+      "temporada": "2026-2027",
+      "fuente": "https://www.worldfootball.net/competition/co1786/france-women-premiere-ligue/teams/",
+      "verificado": true
+    },
+    {
+      "id": "toulouse-w",
+      "nombre": "Toulouse FC",
+      "tipo": "club",
+      "pais": "Francia",
+      "competicion": "Première Ligue",
+      "temporada": "2026-2027",
+      "fuente": "https://www.worldfootball.net/competition/co1786/france-women-premiere-ligue/teams/",
+      "verificado": true
+    },
+    {
+      "id": "saint-malo-w",
+      "nombre": "US Saint-Malo",
+      "tipo": "club",
+      "pais": "Francia",
+      "competicion": "Première Ligue",
+      "temporada": "2026-2027",
+      "fuente": "https://www.worldfootball.net/competition/co1786/france-women-premiere-ligue/teams/",
+      "verificado": true
+    },
+    {
+      "id": "union-berlin-w",
+      "nombre": "1. FC Union Berlin",
+      "tipo": "club",
+      "pais": "Alemania",
+      "competicion": "Google Pixel Frauen-Bundesliga",
+      "temporada": "2026-2027",
+      "fuente": "https://www.dfb.de/news/teilnehmerfeld-der-google-pixel-frauen-bundesliga-steht-fest-alle-sportlich-qualifizierten-klubs-erhalten-zulassung",
+      "verificado": true
+    },
+    {
+      "id": "werder-bremen-w",
+      "nombre": "SV Werder Bremen",
+      "tipo": "club",
+      "pais": "Alemania",
+      "competicion": "Google Pixel Frauen-Bundesliga",
+      "temporada": "2026-2027",
+      "fuente": "https://www.dfb.de/news/teilnehmerfeld-der-google-pixel-frauen-bundesliga-steht-fest-alle-sportlich-qualifizierten-klubs-erhalten-zulassung",
+      "verificado": true
+    },
+    {
+      "id": "eintracht-frankfurt-w",
+      "nombre": "Eintracht Frankfurt",
+      "tipo": "club",
+      "pais": "Alemania",
+      "competicion": "Google Pixel Frauen-Bundesliga",
+      "temporada": "2026-2027",
+      "fuente": "https://www.dfb.de/news/teilnehmerfeld-der-google-pixel-frauen-bundesliga-steht-fest-alle-sportlich-qualifizierten-klubs-erhalten-zulassung",
+      "verificado": true
+    },
+    {
+      "id": "freiburg-w",
+      "nombre": "SC Freiburg",
+      "tipo": "club",
+      "pais": "Alemania",
+      "competicion": "Google Pixel Frauen-Bundesliga",
+      "temporada": "2026-2027",
+      "fuente": "https://www.dfb.de/news/teilnehmerfeld-der-google-pixel-frauen-bundesliga-steht-fest-alle-sportlich-qualifizierten-klubs-erhalten-zulassung",
+      "verificado": true
+    },
+    {
+      "id": "hamburger-sv-w",
+      "nombre": "Hamburger SV",
+      "tipo": "club",
+      "pais": "Alemania",
+      "competicion": "Google Pixel Frauen-Bundesliga",
+      "temporada": "2026-2027",
+      "fuente": "https://www.dfb.de/news/teilnehmerfeld-der-google-pixel-frauen-bundesliga-steht-fest-alle-sportlich-qualifizierten-klubs-erhalten-zulassung",
+      "verificado": true
+    },
+    {
+      "id": "hoffenheim-w",
+      "nombre": "TSG 1899 Hoffenheim",
+      "tipo": "club",
+      "pais": "Alemania",
+      "competicion": "Google Pixel Frauen-Bundesliga",
+      "temporada": "2026-2027",
+      "fuente": "https://www.dfb.de/news/teilnehmerfeld-der-google-pixel-frauen-bundesliga-steht-fest-alle-sportlich-qualifizierten-klubs-erhalten-zulassung",
+      "verificado": true
+    },
+    {
+      "id": "koln-w",
+      "nombre": "1. FC Köln",
+      "tipo": "club",
+      "pais": "Alemania",
+      "competicion": "Google Pixel Frauen-Bundesliga",
+      "temporada": "2026-2027",
+      "fuente": "https://www.dfb.de/news/teilnehmerfeld-der-google-pixel-frauen-bundesliga-steht-fest-alle-sportlich-qualifizierten-klubs-erhalten-zulassung",
+      "verificado": true
+    },
+    {
+      "id": "rb-leipzig-w",
+      "nombre": "RB Leipzig",
+      "tipo": "club",
+      "pais": "Alemania",
+      "competicion": "Google Pixel Frauen-Bundesliga",
+      "temporada": "2026-2027",
+      "fuente": "https://www.dfb.de/news/teilnehmerfeld-der-google-pixel-frauen-bundesliga-steht-fest-alle-sportlich-qualifizierten-klubs-erhalten-zulassung",
+      "verificado": true
+    },
+    {
+      "id": "bayer-leverkusen-w",
+      "nombre": "Bayer 04 Leverkusen",
+      "tipo": "club",
+      "pais": "Alemania",
+      "competicion": "Google Pixel Frauen-Bundesliga",
+      "temporada": "2026-2027",
+      "fuente": "https://www.dfb.de/news/teilnehmerfeld-der-google-pixel-frauen-bundesliga-steht-fest-alle-sportlich-qualifizierten-klubs-erhalten-zulassung",
+      "verificado": true
+    },
+    {
+      "id": "mainz-05-w",
+      "nombre": "Mainz 05",
+      "tipo": "club",
+      "pais": "Alemania",
+      "competicion": "Google Pixel Frauen-Bundesliga",
+      "temporada": "2026-2027",
+      "fuente": "https://www.dfb.de/news/teilnehmerfeld-der-google-pixel-frauen-bundesliga-steht-fest-alle-sportlich-qualifizierten-klubs-erhalten-zulassung",
+      "verificado": true
+    },
+    {
+      "id": "bayern-munich-w",
+      "nombre": "FC Bayern München",
+      "tipo": "club",
+      "pais": "Alemania",
+      "competicion": "Google Pixel Frauen-Bundesliga",
+      "temporada": "2026-2027",
+      "fuente": "https://www.dfb.de/news/teilnehmerfeld-der-google-pixel-frauen-bundesliga-steht-fest-alle-sportlich-qualifizierten-klubs-erhalten-zulassung",
+      "verificado": true
+    },
+    {
+      "id": "nurnberg-w",
+      "nombre": "1. FC Nürnberg",
+      "tipo": "club",
+      "pais": "Alemania",
+      "competicion": "Google Pixel Frauen-Bundesliga",
+      "temporada": "2026-2027",
+      "fuente": "https://www.dfb.de/news/teilnehmerfeld-der-google-pixel-frauen-bundesliga-steht-fest-alle-sportlich-qualifizierten-klubs-erhalten-zulassung",
+      "verificado": true
+    },
+    {
+      "id": "stuttgart-w",
+      "nombre": "VfB Stuttgart",
+      "tipo": "club",
+      "pais": "Alemania",
+      "competicion": "Google Pixel Frauen-Bundesliga",
+      "temporada": "2026-2027",
+      "fuente": "https://www.dfb.de/news/teilnehmerfeld-der-google-pixel-frauen-bundesliga-steht-fest-alle-sportlich-qualifizierten-klubs-erhalten-zulassung",
+      "verificado": true
+    },
+    {
+      "id": "wolfsburg-w",
+      "nombre": "VfL Wolfsburg",
+      "tipo": "club",
+      "pais": "Alemania",
+      "competicion": "Google Pixel Frauen-Bundesliga",
+      "temporada": "2026-2027",
+      "fuente": "https://www.dfb.de/news/teilnehmerfeld-der-google-pixel-frauen-bundesliga-steht-fest-alle-sportlich-qualifizierten-klubs-erhalten-zulassung",
+      "verificado": true
+    },
+    {
+      "id": "como-1907-w",
+      "nombre": "Como 1907",
+      "tipo": "club",
+      "pais": "Italia",
+      "competicion": "Serie A Women",
+      "temporada": "2026-2027",
+      "fuente": "https://www.figc.it/it/serie-a-women/club/club-serie-a",
+      "verificado": true
+    },
+    {
+      "id": "como-women",
+      "nombre": "Como Women",
+      "tipo": "club",
+      "pais": "Italia",
+      "competicion": "Serie A Women",
+      "temporada": "2026-2027",
+      "fuente": "https://www.figc.it/it/serie-a-women/club/club-serie-a",
+      "verificado": true
+    },
+    {
+      "id": "fiorentina-w",
+      "nombre": "Fiorentina",
+      "tipo": "club",
+      "pais": "Italia",
+      "competicion": "Serie A Women",
+      "temporada": "2026-2027",
+      "fuente": "https://www.figc.it/it/serie-a-women/club/club-serie-a",
+      "verificado": true
+    },
+    {
+      "id": "inter-w",
+      "nombre": "Inter",
+      "tipo": "club",
+      "pais": "Italia",
+      "competicion": "Serie A Women",
+      "temporada": "2026-2027",
+      "fuente": "https://www.figc.it/it/serie-a-women/club/club-serie-a",
+      "verificado": true
+    },
+    {
+      "id": "juventus-w",
+      "nombre": "Juventus",
+      "tipo": "club",
+      "pais": "Italia",
+      "competicion": "Serie A Women",
+      "temporada": "2026-2027",
+      "fuente": "https://www.figc.it/it/serie-a-women/club/club-serie-a",
+      "verificado": true
+    },
+    {
+      "id": "lazio-w",
+      "nombre": "Lazio",
+      "tipo": "club",
+      "pais": "Italia",
+      "competicion": "Serie A Women",
+      "temporada": "2026-2027",
+      "fuente": "https://www.figc.it/it/serie-a-women/club/club-serie-a",
+      "verificado": true
+    },
+    {
+      "id": "milan-w",
+      "nombre": "Milan",
+      "tipo": "club",
+      "pais": "Italia",
+      "competicion": "Serie A Women",
+      "temporada": "2026-2027",
+      "fuente": "https://www.figc.it/it/serie-a-women/club/club-serie-a",
+      "verificado": true
+    },
+    {
+      "id": "napoli-women",
+      "nombre": "Napoli Women",
+      "tipo": "club",
+      "pais": "Italia",
+      "competicion": "Serie A Women",
+      "temporada": "2026-2027",
+      "fuente": "https://www.figc.it/it/serie-a-women/club/club-serie-a",
+      "verificado": true
+    },
+    {
+      "id": "parma-w",
+      "nombre": "Parma",
+      "tipo": "club",
+      "pais": "Italia",
+      "competicion": "Serie A Women",
+      "temporada": "2026-2027",
+      "fuente": "https://www.figc.it/it/serie-a-women/club/club-serie-a",
+      "verificado": true
+    },
+    {
+      "id": "roma-w",
+      "nombre": "Roma",
+      "tipo": "club",
+      "pais": "Italia",
+      "competicion": "Serie A Women",
+      "temporada": "2026-2027",
+      "fuente": "https://www.figc.it/it/serie-a-women/club/club-serie-a",
+      "verificado": true
+    },
+    {
+      "id": "sassuolo-w",
+      "nombre": "Sassuolo",
+      "tipo": "club",
+      "pais": "Italia",
+      "competicion": "Serie A Women",
+      "temporada": "2026-2027",
+      "fuente": "https://www.figc.it/it/serie-a-women/club/club-serie-a",
+      "verificado": true
+    },
+    {
+      "id": "ternana-women",
+      "nombre": "Ternana Women",
+      "tipo": "club",
+      "pais": "Italia",
+      "competicion": "Serie A Women",
+      "temporada": "2026-2027",
+      "fuente": "https://www.figc.it/it/serie-a-women/club/club-serie-a",
+      "verificado": true
+    },
+    {
+      "id": "mynavi-sendai",
+      "nombre": "Mynavi Sendai",
+      "tipo": "club",
+      "pais": "Japón",
+      "competicion": "WE League",
+      "temporada": "2026-2027",
+      "fuente": "https://weleague.jp/pdf/about/outline/26-27WELEAGUE_PROFILE.pdf",
+      "verificado": true
+    },
+    {
+      "id": "urawa-red-diamonds-ladies",
+      "nombre": "Mitsubishi Heavy Industries Urawa Reds Ladies",
+      "tipo": "club",
+      "pais": "Japón",
+      "competicion": "WE League",
+      "temporada": "2026-2027",
+      "fuente": "https://weleague.jp/pdf/about/outline/26-27WELEAGUE_PROFILE.pdf",
+      "verificado": true
+    },
+    {
+      "id": "rb-omiya-ardija-women",
+      "nombre": "RB Omiya Ardija Women",
+      "tipo": "club",
+      "pais": "Japón",
+      "competicion": "WE League",
+      "temporada": "2026-2027",
+      "fuente": "https://weleague.jp/pdf/about/outline/26-27WELEAGUE_PROFILE.pdf",
+      "verificado": true
+    },
+    {
+      "id": "chifure-as-elfen-saitama",
+      "nombre": "Chifure AS Elfen Saitama",
+      "tipo": "club",
+      "pais": "Japón",
+      "competicion": "WE League",
+      "temporada": "2026-2027",
+      "fuente": "https://weleague.jp/pdf/about/outline/26-27WELEAGUE_PROFILE.pdf",
+      "verificado": true
+    },
+    {
+      "id": "jef-chiba-ladies",
+      "nombre": "JEF Chiba Ladies",
+      "tipo": "club",
+      "pais": "Japón",
+      "competicion": "WE League",
+      "temporada": "2026-2027",
+      "fuente": "https://weleague.jp/pdf/about/outline/26-27WELEAGUE_PROFILE.pdf",
+      "verificado": true
+    },
+    {
+      "id": "ntv-tokyo-verdy-beleza",
+      "nombre": "Nippon TV Tokyo Verdy Beleza",
+      "tipo": "club",
+      "pais": "Japón",
+      "competicion": "WE League",
+      "temporada": "2026-2027",
+      "fuente": "https://weleague.jp/pdf/about/outline/26-27WELEAGUE_PROFILE.pdf",
+      "verificado": true
+    },
+    {
+      "id": "nojima-stella-kanagawa",
+      "nombre": "Nojima Stella Kanagawa Sagamihara",
+      "tipo": "club",
+      "pais": "Japón",
+      "competicion": "WE League",
+      "temporada": "2026-2027",
+      "fuente": "https://weleague.jp/pdf/about/outline/26-27WELEAGUE_PROFILE.pdf",
+      "verificado": true
+    },
+    {
+      "id": "ac-nagano-parceiro-ladies",
+      "nombre": "AC Nagano Parceiro Ladies",
+      "tipo": "club",
+      "pais": "Japón",
+      "competicion": "WE League",
+      "temporada": "2026-2027",
+      "fuente": "https://weleague.jp/pdf/about/outline/26-27WELEAGUE_PROFILE.pdf",
+      "verificado": true
+    },
+    {
+      "id": "albirex-niigata-ladies",
+      "nombre": "Albirex Niigata Ladies",
+      "tipo": "club",
+      "pais": "Japón",
+      "competicion": "WE League",
+      "temporada": "2026-2027",
+      "fuente": "https://weleague.jp/pdf/about/outline/26-27WELEAGUE_PROFILE.pdf",
+      "verificado": true
+    },
+    {
+      "id": "cerezo-osaka-yanmar-ladies",
+      "nombre": "Cerezo Osaka Yanmar Ladies",
+      "tipo": "club",
+      "pais": "Japón",
+      "competicion": "WE League",
+      "temporada": "2026-2027",
+      "fuente": "https://weleague.jp/pdf/about/outline/26-27WELEAGUE_PROFILE.pdf",
+      "verificado": true
+    },
+    {
+      "id": "inac-kobe-leonesa",
+      "nombre": "INAC Kobe Leonessa",
+      "tipo": "club",
+      "pais": "Japón",
+      "competicion": "WE League",
+      "temporada": "2026-2027",
+      "fuente": "https://weleague.jp/pdf/about/outline/26-27WELEAGUE_PROFILE.pdf",
+      "verificado": true
+    },
+    {
+      "id": "sanfrecce-hiroshima-regina",
+      "nombre": "Sanfrecce Hiroshima Regina",
+      "tipo": "club",
+      "pais": "Japón",
+      "competicion": "WE League",
+      "temporada": "2026-2027",
+      "fuente": "https://weleague.jp/pdf/about/outline/26-27WELEAGUE_PROFILE.pdf",
+      "verificado": true
     }
   ]
 }
