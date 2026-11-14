@@ -11,7 +11,10 @@ Temporada de referencia declarada para el catálogo: **2026-2027**. Los particip
 - Sustituciones automáticas del rival alrededor de los minutos 60 y 75 cuando hay suplentes.
 - Tarjetas amarillas, doble amarilla y rojas aleatorias durante el partido; las expulsiones retiran a la jugadora del juego y dejan al equipo con una menos.
 - Modo carrera local con progresión estadística, entrenamiento, fatiga, recuperación, lesiones simuladas, tarjetas, suspensiones, contratos y cambio de club.
-- Gestor local de ligas con calendario de ida y vuelta, jornadas simuladas y clasificación.
+- Gestor local de ligas con calendario de ida y vuelta, jornadas simuladas, clasificación y disciplina persistente por jugadora verificada.
+- Amarillas acumuladas: al llegar a cinco, se aplica un partido de suspensión y se reinicia el contador de acumulación.
+- Segunda amarilla en un encuentro: roja y un partido de suspensión; roja directa: dos partidos de suspensión.
+- Las sanciones se guardan en el estado local de la competición; las jugadoras suspendidas reducen el rendimiento simulado del equipo mientras cumplen la sanción.
 - Copa eliminatoria simulada.
 - Validador de datos y pruebas automáticas de calendario mediante GitHub Actions.
 
@@ -27,7 +30,7 @@ Temporada de referencia declarada para el catálogo: **2026-2027**. Los particip
 - El partido es un prototipo arcade, no un simulador de fútbol completo. La IA, la posesión y las colisiones son básicas.
 - El partido utiliza cinco jugadoras por equipo e incluye una portera con posicionamiento defensivo y movimiento lateral básico. Solo asigna una jugadora real a portera cuando su posición está confirmada; si no hay dato, usa una portera genérica. No implementa todavía formaciones configurables, tácticas avanzadas, faltas ni reglas completas.
 - Las sustituciones del usuario son manuales y las del rival son automáticas y simplificadas.
-- El sistema de tarjetas del partido es aleatorio y básico; no calcula todavía faltas, sanciones acumuladas entre encuentros ni suspensiones de competición. Las lesiones y suspensiones detalladas siguen en el modo carrera estadístico.
+- El sistema de tarjetas del partido arcade sigue siendo aleatorio y no está conectado al registro disciplinario de ligas. En el gestor de ligas sí hay sanciones persistentes por jugadora verificada, pero el motor no genera alineaciones individuales: la sanción se representa reduciendo el rendimiento simulado del club. No hay cálculo de faltas ni conexión con el partido 2D.
 - El modo carrera no está conectado al partido 2D. El cambio de club y los contratos son mecánicas locales simplificadas, no negociaciones de mercado.
 - Las ligas y copas producen resultados aleatorios simulados; no son resultados oficiales. Sus grupos iniciales necesitan validación de formato, división y participantes.
 - No están completas las plantillas de todos los clubes ni las convocatorias de selecciones absolutas y juveniles.
@@ -41,7 +44,9 @@ Temporada de referencia declarada para el catálogo: **2026-2027**. Los particip
 - [ ] Conectar la carrera con partidos jugables.
 - [x] Añadir una portera con comportamiento defensivo básico.
 - [ ] Mejorar IA, porteras, tácticas, formaciones y reglas.
-- [ ] Implementar sustituciones para ambos equipos, tarjetas, lesiones y sanciones dentro del partido.
+- [x] Añadir tarjetas y sanciones persistentes por jugadora en el simulador de ligas.
+- [ ] Conectar las sanciones de liga con alineaciones individuales y con el partido arcade 2D.
+- [ ] Implementar lesiones y faltas en el partido.
 - [ ] Añadir fichajes, contratos negociables, presupuestos y temporadas.
 - [ ] Añadir escudos, retratos y equipaciones con recursos autorizados.
 - [ ] Probar el juego en navegadores de escritorio y móvil.
