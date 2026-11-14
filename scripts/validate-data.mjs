@@ -10,36 +10,51 @@ const checkUnique = (items, label) => {
     seen.add(item.id);
   }
 };
-const clubsData = read('data/equipos.json');
-const playersData = read('data/jugadoras.json');
-const nationsData = read('data/selecciones.json');
-const competitionsData = read('data/competiciones.json');
-const clubs = clubsData.equipos ?? [];
-const players = playersData.jugadoras ?? [];
-const nations = nationsData.selecciones ?? [];
-const competitions = competitionsData.competiciones ?? [];
+const clubs = read('data/equipos.json').equipos ?? [];
+const players = read('data/jugadoras.json').jugadoras ?? [];
+const nations = read('data/selecciones.json').selecciones ?? [];
+const competitions = read('data/competiciones.json').competiciones ?? [];
 
 checkUnique(clubs, 'Clubes');
 checkUnique(players, 'Jugadoras');
 checkUnique(nations, 'Selecciones');
 checkUnique(competitions, 'Competiciones');
 
-const clubIds = new Set(clubs.map(x => x.id));
+const clubById = new Map(clubs.map(club => [club.id, club]));
+const playerKeys = new Set();
 for (const player of players) {
-  if (player.clubId && !clubIds.has(player.clubId)) {
+  if (!player.nombre) errors.push('Jugadora ' + player.id + ': falta nombre');
+  if (player.clubId && !clubById.has(player.clubId)) {
     errors.push('Jugadora ' + player.id + ': clubId inexistente ' + player.clubId);
+  }
+  if (player.clubId) {
+    const key = player.nombre.trim().toLocaleLowerCase('es') + '|' + player.clubId;
+    if (playerKeys.has(key)) errors.push('Jugadora duplicada en club: ' + player.nombre + ' (' + player.clubId + ')');
+    playerKeys.add(key);
+  }
+  if (player.dorsal != null && (!Number.isInteger(Number(player.dorsal)) || Number(player.dorsal) < 1 || Number(player.dorsal) > 99)) {
+    errors.push('Jugadora ' + player.id + ': dorsal inválido');
   }
 }
 for (const competition of competitions) {
-  if (!Array.isArray(competition.clubes)) errors.push('Competición ' + competition.id + ': falta lista clubes');
+  if (!Array.isArray(competition.clubes) || competition.clubes.length < 2) {
+    errors.push('Competición ' + competition.id + ': necesita al menos dos clubes');
+  }
+  const localIds = new Set();
   for (const clubId of competition.clubes ?? []) {
-    if (!clubIds.has(clubId)) errors.push('Competición ' + competition.id + ': club inexistente ' + clubId);
+    if (!clubById.has(clubId)) errors.push('Competición ' + competition.id + ': club inexistente ' + clubId);
+    if (localIds.has(clubId)) errors.push('Competición ' + competition.id + ': club repetido ' + clubId);
+    localIds.add(clubId);
+    const club = clubById.get(clubId);
+    if (club && club.competicion !== competition.nombre) {
+      errors.push('Competición ' + competition.nombre + ': ' + club.nombre + ' pertenece a ' + club.competicion);
+    }
   }
 }
-if (!clubs.length) errors.push('No hay clubes en el catálogo');
-if (!players.length) errors.push('No hay jugadoras en el catálogo');
-if (!nations.length) errors.push('No hay selecciones en el catálogo');
-if (!competitions.length) errors.push('No hay competiciones en el catálogo');
+for (const nation of nations) {
+  if (!nation.nombre || !nation.categoria) errors.push('Selección ' + nation.id + ': falta nombre o categoría');
+}
+if (!clubs.length || !players.length || !nations.length || !competitions.length) errors.push('Uno de los catálogos está vacío');
 
 if (errors.length) {
   console.error('VALIDACIÓN FALLIDA');
