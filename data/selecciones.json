@@ -2034,6 +2034,106 @@
       "plantillaDisponible": false,
       "estado": "catalogo_pendiente",
       "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-paises-bajos-women",
+      "pais": "Países Bajos",
+      "nombre": "Países Bajos (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-nueva-caledonia-women",
+      "pais": "Nueva Caledonia",
+      "nombre": "Nueva Caledonia (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-nueva-zelanda-women",
+      "pais": "Nueva Zelanda",
+      "nombre": "Nueva Zelanda (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-nicaragua-women",
+      "pais": "Nicaragua",
+      "nombre": "Nicaragua (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-niger-women",
+      "pais": "Níger",
+      "nombre": "Níger (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-nigeria-women",
+      "pais": "Nigeria",
+      "nombre": "Nigeria (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-macedonia-del-norte-women",
+      "pais": "Macedonia del Norte",
+      "nombre": "Macedonia del Norte (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-irlanda-del-norte-women",
+      "pais": "Irlanda del Norte",
+      "nombre": "Irlanda del Norte (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-noruega-women",
+      "pais": "Noruega",
+      "nombre": "Noruega (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
+    },
+    {
+      "id": "fifa-oman-women",
+      "pais": "Omán",
+      "nombre": "Omán (femenina)",
+      "categoria": "absoluta",
+      "fuente": "https://legal.fifa.com/associations",
+      "plantillaDisponible": false,
+      "estado": "catalogo_pendiente",
+      "nota": "Asociación miembro FIFA; confirmar actividad de selección femenina y convocatoria vigente antes de añadir jugadoras."
     }
   ]
 }
