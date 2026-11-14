@@ -101,7 +101,7 @@ $('careerRenew').onclick=()=>{if(!career)return;career.contractYears+=1;saveCare
 $('careerReset').onclick=()=>{if(confirm('¿Borrar el progreso de esta carrera?')){career=null;localStorage.removeItem('ldoCareerV1');renderCareer()}};
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
 function rosterFor(side){const id=side==='home'?match.homeTeamId:match.awayTeamId;return players.filter(p=>(p.clubId===id||p.equipoId===id)&&p.verificado===true)}
-function selectedRoster(side){const roster=rosterFor(side),keeper=roster.find(p=>['POR','GK'].includes(p.posicion)),field=roster.filter(p=>!['POR','GK'].includes(p.posicion)).slice(0,4);return [...field,keeper||null]}
+function selectedRoster(side){const roster=rosterFor(side),keeper=roster.find(p=>['POR','GK'].includes(p.posicion)),field=roster.filter(p=>!['POR','GK'].includes(p.posicion)).slice(0,4);while(field.length<4)field.push(null);return [...field,keeper||null]}
 function makePlayer(side,i,p){const dir=side==='home'?1:-1,keeper=i===4||['POR','GK'].includes(p?.posicion);return {x:keeper?(side==='home'?78:882):((side==='home'?260:700)+(i===0?0:(i%2?dir*65:-dir*40))),y:keeper?270:[270,145,395,220][i%4],r:15,speed:keeper?2.1:i===0?3.4:2.5,side,index:i,dir,role:keeper?'POR':'CAMPO',color:(side==='home'?homeColors:awayColors)[i===0?0:1],player:p||null,name:p?.nombre||'Jugadora de prueba '+(i+1),position:p?.posicion|| (keeper?'POR':'ND'),dorsal:p?.dorsal||i+1}}
 function makeTeam(side){return selectedRoster(side).map((p,i)=>makePlayer(side,i,p))}
 function makeBench(side){const selected=selectedRoster(side).filter(Boolean).map(p=>p.id);return rosterFor(side).filter(p=>!selected.includes(p.id)).map((p,i)=>makePlayer(side,i+5,p))}
