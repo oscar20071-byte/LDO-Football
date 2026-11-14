@@ -20,7 +20,7 @@ Juego web de fútbol femenino con partido arcade 2D desde arriba y sistemas loca
 - Ligas con calendario de ida y vuelta, clasificación y resultados simulados.
 - Disciplina en ligas: amarillas acumulables, segunda amarilla, rojas directas y suspensiones persistentes entre jornadas para jugadoras verificadas; las sanciones pendientes reducen el rendimiento simulado del club.
 - Exportación e importación de respaldos JSON para transferir carrera, liga activa y disciplina entre dispositivos de forma manual.
-- Sincronización manual en la nube mediante Supabase: autenticación por código de correo, guardado privado por usuario y políticas RLS. Requiere crear el proyecto y ejecutar `supabase/schema.sql`; no se incluye ninguna clave secreta.
+- Sincronización automática en la nube mediante Firebase Authentication y Cloud Firestore. Cada cuenta guarda su propio progreso; requiere configurar un proyecto Firebase y publicar `firebase/firestore.rules`.
 - Copa eliminatoria simulada.
 - Catálogos de clubes, jugadoras, selecciones y competiciones.
 - Validación de datos y pruebas de calendario en GitHub Actions.
@@ -28,7 +28,7 @@ Juego web de fútbol femenino con partido arcade 2D desde arriba y sistemas loca
 ## Datos y transparencia
 La base contiene 137 registros de jugadoras: Chelsea Women (27), London City Lionesses (27), Manchester City Women (26), Real Madrid femenino (32) y USWNT (26). Las plantillas de los demás clubes y selecciones todavía son parciales. Los grupos competitivos son catálogos iniciales y necesitan confirmación de formato y participantes. Los resultados de ligas y copas son generados por el juego y no son resultados oficiales. Las lesiones siguen en el modo carrera estadístico. El partido 2D y el motor de ligas comparten el registro local de disciplina para jugadoras verificadas. Las sanciones pendientes las excluyen de las alineaciones del partido 2D y se descuentan al finalizar el encuentro. La sincronización sigue siendo local al navegador y no se comparte entre dispositivos.
 
-Consulta [BASE_DATOS.md](BASE_DATOS.md) para el estado detallado, [data/FUENTES.md](data/FUENTES.md) para las fuentes y [supabase/README.md](supabase/README.md) para activar la nube.
+Consulta [BASE_DATOS.md](BASE_DATOS.md) para el estado detallado, [data/FUENTES.md](data/FUENTES.md) para las fuentes y [firebase/README.md](firebase/README.md) para activar la nube.
 
 ## Estado
 Proyecto en desarrollo. El prototipo actual no es un simulador completo ni una reproducción de FIFA.
