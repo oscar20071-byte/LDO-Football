@@ -17,12 +17,13 @@ Juego web de fútbol femenino con partido arcade 2D desde arriba y sistemas loca
 - Tarjetas amarillas, segunda amarilla y rojas durante el partido; la expulsada deja de participar y su equipo juega con una menos.
 - Modo carrera con progresión, entrenamiento, fatiga, recuperación, lesiones simuladas, tarjetas, suspensiones y contratos locales.
 - Ligas con calendario de ida y vuelta, clasificación y resultados simulados.
+- Disciplina en ligas: amarillas acumulables, segunda amarilla, rojas directas y suspensiones persistentes entre jornadas para jugadoras verificadas; las sanciones pendientes reducen el rendimiento simulado del club.
 - Copa eliminatoria simulada.
 - Catálogos de clubes, jugadoras, selecciones y competiciones.
 - Validación de datos y pruebas de calendario en GitHub Actions.
 
 ## Datos y transparencia
-La base contiene 137 registros de jugadoras: Chelsea Women (27), London City Lionesses (27), Manchester City Women (26), Real Madrid femenino (32) y USWNT (26). Las plantillas de los demás clubes y selecciones todavía son parciales. Los grupos competitivos son catálogos iniciales y necesitan confirmación de formato y participantes. Los resultados de ligas y copas son generados por el juego y no son resultados oficiales. Las lesiones y suspensiones detalladas siguen en el modo carrera estadístico; el partido 2D ya incluye tarjetas y expulsiones básicas.
+La base contiene 137 registros de jugadoras: Chelsea Women (27), London City Lionesses (27), Manchester City Women (26), Real Madrid femenino (32) y USWNT (26). Las plantillas de los demás clubes y selecciones todavía son parciales. Los grupos competitivos son catálogos iniciales y necesitan confirmación de formato y participantes. Los resultados de ligas y copas son generados por el juego y no son resultados oficiales. Las lesiones siguen en el modo carrera estadístico. El partido 2D tiene tarjetas y expulsiones básicas; el motor de ligas registra sanciones persistentes para jugadoras verificadas, aunque todavía no muestra alineaciones individuales ni conecta las sanciones con el partido arcade 2D.
 
 Consulta [BASE_DATOS.md](BASE_DATOS.md) para el estado detallado y [data/FUENTES.md](data/FUENTES.md) para las fuentes.
 
