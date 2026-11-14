@@ -100,8 +100,8 @@ $('careerTransfer').onclick=()=>{if(!career)return;const target=$('careerClub').
 $('careerRenew').onclick=()=>{if(!career)return;career.contractYears+=1;saveCareer();renderCareer();$('careerStatus').textContent='Contrato renovado por una temporada adicional.'};
 $('careerReset').onclick=()=>{if(confirm('¿Borrar el progreso de esta carrera?')){career=null;localStorage.removeItem('ldoCareerV1');renderCareer()}};
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
-function rosterFor(side){const id=side==='home'?match.homeTeamId:match.awayTeamId;return players.filter(p=>(p.clubId===id||p.equipoId===id)&&p.verificado===true)}
-function makePlayer(side,i,p){const x=side==='home'?260:700,dir=side==='home'?1:-1;return {x:x+(i===0?0:(i%2?dir*65:-dir*40)),y:[270,145,395,220,320][i%5],r:15,speed:i===0?3.4:2.5,side,index:i,dir,color:(side==='home'?homeColors:awayColors)[i===0?0:1],player:p||null,name:p?.nombre||'Jugadora de prueba '+(i+1),position:p?.posicion||'ND',dorsal:p?.dorsal||i+1}}
+function rosterFor(side){const id=side==='home'?match.homeTeamId:match.awayTeamId;return players.filter(p=>(p.clubId===id||p.equipoId===id)&&p.verificado===true).sort((a,b)=>Number(['POR','GK','GK'].includes(a.posicion))-Number(['POR','GK'].includes(b.posicion)))}
+function makePlayer(side,i,p){const dir=side==='home'?1:-1,keeper=i===4||['POR','GK'].includes(p?.posicion);return {x:keeper?(side==='home'?78:882):((side==='home'?260:700)+(i===0?0:(i%2?dir*65:-dir*40))),y:keeper?270:[270,145,395,220][i%4],r:15,speed:keeper?2.1:i===0?3.4:2.5,side,index:i,dir,role:keeper?'POR':'CAMPO',color:(side==='home'?homeColors:awayColors)[i===0?0:1],player:p||null,name:p?.nombre||'Jugadora de prueba '+(i+1),position:p?.posicion|| (keeper?'POR':'ND'),dorsal:p?.dorsal||i+1}}
 function makeTeam(side){const roster=rosterFor(side);return Array.from({length:5},(_,i)=>makePlayer(side,i,roster[i]||null))}
 function makeBench(side){return rosterFor(side).slice(5).map((p,i)=>makePlayer(side,i+5,p))}
 function renderLineups(){if(!match)return;const team=(name,list,bench)=>'<article class="playercard"><strong>'+String(name).replace(/[&<>\"]/g,'')+'</strong><div class="hint">'+(list.some(p=>p.player)?'Jugadoras registradas en la base de datos':'Alineación de prueba; plantilla no disponible')+'</div>'+list.map(p=>'<div class="hint">#'+p.dorsal+' · '+String(p.name).replace(/[&<>\"]/g,'')+' ('+p.position+')</div>').join('')+(bench.length?'<div class="hint">Banquillo: '+bench.length+' jugadoras</div>':'')+'</article>';document.getElementById('lineupInfo').innerHTML=team(match.homeName,match.home,match.homeBench||[])+team(match.awayName,match.away,match.awayBench||[]);document.getElementById('substitutePlayer').disabled=!(match.homeBench&&match.homeBench.length)}
@@ -120,9 +120,9 @@ if(match&&!match.paused&&!match.finished){
 match.elapsed+=1/60;if(match.elapsed>=90){match.finished=true;match.paused=true;$('matchStatus').textContent='Final del partido.'}
 const p=match.home[match.active],b=match.ball;let dx=0,dy=0;
 if(keys.w||keys.arrowup)dy--;if(keys.s||keys.arrowdown)dy++;if(keys.a||keys.arrowleft)dx--;if(keys.d||keys.arrowright)dx++;
-const mag=Math.hypot(dx,dy)||1;p.x=clamp(p.x+dx/mag*p.speed,40,920);p.y=clamp(p.y+dy/mag*p.speed,40,500);
-for(const q of match.home){if(q===p)continue;const target=dist(q,b)<150?b:{x:480+(q.index%2?90:-90),y:[270,145,395,220,320][q.index]};const d=dist(q,target)||1;q.x+=((target.x-q.x)/d)*q.speed*.65;q.y+=((target.y-q.y)/d)*q.speed*.65}
-for(const q of match.away){const target=b,d=dist(q,target)||1;q.x+=((target.x-q.x)/d)*q.speed*.8;q.y+=((target.y-q.y)/d)*q.speed*.8}
+const mag=Math.hypot(dx,dy)||1;p.x=clamp(p.x+dx/mag*p.speed,p.role==='POR'?35:40,p.role==='POR'?135:920);p.y=clamp(p.y+dy/mag*p.speed,p.role==='POR'?190:40,p.role==='POR'?350:500);
+for(const q of match.home){if(q===p)continue;if(q.role==='POR'){q.x=78;q.y=clamp(b.y,205,335);continue}const target=dist(q,b)<150?b:{x:480+(q.index%2?90:-90),y:[270,145,395,220,320][q.index%5]};const d=dist(q,target)||1;q.x+=((target.x-q.x)/d)*q.speed*.65;q.y+=((target.y-q.y)/d)*q.speed*.65}
+for(const q of match.away){if(q.role==='POR'){q.x=882;q.y=clamp(b.y,205,335);continue}const target=b,d=dist(q,target)||1;q.x+=((target.x-q.x)/d)*q.speed*.8;q.y+=((target.y-q.y)/d)*q.speed*.8}
 for(const q of [...match.home,...match.away]){const d=dist(q,b);if(d<q.r+b.r+3&&Math.hypot(b.vx,b.vy)<2){b.vx=q.side==='home'?4:-4;b.vy=(b.y-q.y)*.12}}
 b.x+=b.vx;b.y+=b.vy;b.vx*=.986;b.vy*=.986;
 if(b.y<28||b.y>512)b.vy*=-.8;
