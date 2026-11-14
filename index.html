@@ -163,6 +163,10 @@ $('importSave').addEventListener('click',()=>$('saveFile').click());
 $('saveFile').addEventListener('change',e=>{importProgress(e.target.files&&e.target.files[0]);e.target.value=''});
 
 const CLOUD_CONFIG_KEY='ldoFirebaseConfigV1';
+localStorage.removeItem('ldoSupabaseConfigV1');localStorage.removeItem('ldoSupabaseSessionV1');
+const CLOUD_DEVICE_KEY='ldoFirebaseDeviceV1';
+let cloudDeviceId=localStorage.getItem(CLOUD_DEVICE_KEY);
+if(!cloudDeviceId){cloudDeviceId='ldo-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2);localStorage.setItem(CLOUD_DEVICE_KEY,cloudDeviceId)}
 let cloudConfig=null,cloudAuth=null,cloudDb=null,cloudUser=null,cloudReady=false,cloudApplying=false,cloudTimer=null,cloudUnsubscribe=null;
 try{cloudConfig=JSON.parse(localStorage.getItem(CLOUD_CONFIG_KEY)||'null')}catch(e){}
 $('cloudApiKey').value=cloudConfig?.apiKey||'';
@@ -183,7 +187,7 @@ function saveCloudConfig(){
 }
 function currentSavePayload(){
  const storage={};for(const key of SAVE_KEYS)storage[key]=localStorage.getItem(key);
- return {app:'LDO Football',format:'ldo-cloud-save',version:1,updatedAt:new Date().toISOString(),storage};
+ return {app:'LDO Football',format:'ldo-cloud-save',version:1,deviceId:cloudDeviceId,updatedAt:new Date().toISOString(),storage};
 }
 function validateCloudPayload(payload){
  if(!payload||payload.app!=='LDO Football'||payload.format!=='ldo-cloud-save'||payload.version!==1||!payload.storage||typeof payload.storage!=='object')throw Error('El respaldo en la nube tiene un formato no reconocido.');
@@ -212,11 +216,16 @@ async function startCloudSync(user){
   }else{await uploadCloudSave(false);cloudMessage('Cuenta conectada. Tu progreso local se guardó en Firebase.')}
   cloudReady=true;
   if(cloudUnsubscribe)cloudUnsubscribe();
+  let firstSnapshot=true;
   cloudUnsubscribe=ref.onSnapshot(snapshot=>{
    if(!cloudReady||!snapshot.exists||cloudApplying)return;
    const remote=snapshot.data();
-   if(remote.updatedAt?.toDate&&Date.now()-remote.updatedAt.toDate().getTime()>3000){
-    cloudMessage('Hay una actualización en la nube. Inicia sesión en otro dispositivo para recuperar la última partida.');
+   if(firstSnapshot){firstSnapshot=false;return}
+   if(remote.deviceId&&remote.deviceId!==cloudDeviceId){
+    try{validateCloudPayload(remote)}catch(e){cloudMessage('La actualización remota no es válida: '+e.message);return}
+    if(confirm('Tu cuenta recibió una partida más reciente desde otro dispositivo. ¿Quieres cargarla aquí?')){
+     applyCloudPayload(remote);cloudMessage('Partida sincronizada desde otro dispositivo.');location.reload();
+    }else{uploadCloudSave(false).then(()=>cloudMessage('Se conservó este dispositivo y se actualizó la nube.')).catch(e=>cloudMessage('No se pudo sincronizar: '+e.message))}
    }
   },e=>cloudMessage('Aviso de sincronización: '+e.message));
  }catch(e){cloudReady=false;cloudMessage('No se pudo preparar la sincronización: '+e.message)}
