@@ -1,0 +1,887 @@
+{
+  "version": "2.0",
+  "temporada": "2026-2027",
+  "nota": "Plantillas ficticias de demostración para el prototipo masculino. No son jugadores reales ni convocatorias oficiales.",
+  "jugadores": [
+    {
+      "id": "real-madrid-demo-1",
+      "nombre": "Álvaro Martín",
+      "posicion": "POR",
+      "clubId": "real-madrid",
+      "nacionalidad": "España",
+      "dorsal": 1,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "real-madrid-demo-2",
+      "nombre": "Diego Navarro",
+      "posicion": "DEF",
+      "clubId": "real-madrid",
+      "nacionalidad": "España",
+      "dorsal": 2,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "real-madrid-demo-3",
+      "nombre": "Sergio Torres",
+      "posicion": "DEF",
+      "clubId": "real-madrid",
+      "nacionalidad": "España",
+      "dorsal": 3,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "real-madrid-demo-4",
+      "nombre": "Mateo Ruiz",
+      "posicion": "DEF",
+      "clubId": "real-madrid",
+      "nacionalidad": "España",
+      "dorsal": 4,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "real-madrid-demo-5",
+      "nombre": "Pablo Herrera",
+      "posicion": "DEF",
+      "clubId": "real-madrid",
+      "nacionalidad": "España",
+      "dorsal": 5,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "real-madrid-demo-6",
+      "nombre": "Adrián Vega",
+      "posicion": "MED",
+      "clubId": "real-madrid",
+      "nacionalidad": "España",
+      "dorsal": 6,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "real-madrid-demo-7",
+      "nombre": "Nicolás Castro",
+      "posicion": "MED",
+      "clubId": "real-madrid",
+      "nacionalidad": "España",
+      "dorsal": 7,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "real-madrid-demo-8",
+      "nombre": "Hugo Romero",
+      "posicion": "MED",
+      "clubId": "real-madrid",
+      "nacionalidad": "España",
+      "dorsal": 8,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "real-madrid-demo-9",
+      "nombre": "Lucas Molina",
+      "posicion": "DEL",
+      "clubId": "real-madrid",
+      "nacionalidad": "España",
+      "dorsal": 9,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "real-madrid-demo-10",
+      "nombre": "Daniel Santos",
+      "posicion": "DEL",
+      "clubId": "real-madrid",
+      "nacionalidad": "España",
+      "dorsal": 10,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "real-madrid-demo-11",
+      "nombre": "Marco León",
+      "posicion": "DEL",
+      "clubId": "real-madrid",
+      "nacionalidad": "España",
+      "dorsal": 11,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "barcelona-demo-1",
+      "nombre": "Iker Morales",
+      "posicion": "POR",
+      "clubId": "barcelona",
+      "nacionalidad": "España",
+      "dorsal": 1,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "barcelona-demo-2",
+      "nombre": "Bruno Castillo",
+      "posicion": "DEF",
+      "clubId": "barcelona",
+      "nacionalidad": "España",
+      "dorsal": 2,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "barcelona-demo-3",
+      "nombre": "Gabriel Rojas",
+      "posicion": "DEF",
+      "clubId": "barcelona",
+      "nacionalidad": "España",
+      "dorsal": 3,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "barcelona-demo-4",
+      "nombre": "Álex Medina",
+      "posicion": "DEF",
+      "clubId": "barcelona",
+      "nacionalidad": "España",
+      "dorsal": 4,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "barcelona-demo-5",
+      "nombre": "Mario Fuentes",
+      "posicion": "DEF",
+      "clubId": "barcelona",
+      "nacionalidad": "España",
+      "dorsal": 5,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "barcelona-demo-6",
+      "nombre": "Javier Ortiz",
+      "posicion": "MED",
+      "clubId": "barcelona",
+      "nacionalidad": "España",
+      "dorsal": 6,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "barcelona-demo-7",
+      "nombre": "Samuel Cruz",
+      "posicion": "MED",
+      "clubId": "barcelona",
+      "nacionalidad": "España",
+      "dorsal": 7,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "barcelona-demo-8",
+      "nombre": "David Flores",
+      "posicion": "MED",
+      "clubId": "barcelona",
+      "nacionalidad": "España",
+      "dorsal": 8,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "barcelona-demo-9",
+      "nombre": "Leo Campos",
+      "posicion": "DEL",
+      "clubId": "barcelona",
+      "nacionalidad": "España",
+      "dorsal": 9,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "barcelona-demo-10",
+      "nombre": "Iván Reyes",
+      "posicion": "DEL",
+      "clubId": "barcelona",
+      "nacionalidad": "España",
+      "dorsal": 10,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "barcelona-demo-11",
+      "nombre": "Tomás Gil",
+      "posicion": "DEL",
+      "clubId": "barcelona",
+      "nacionalidad": "España",
+      "dorsal": 11,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "manchester-city-demo-1",
+      "nombre": "Ethan Brooks",
+      "posicion": "POR",
+      "clubId": "manchester-city",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 1,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "manchester-city-demo-2",
+      "nombre": "Oliver Grant",
+      "posicion": "DEF",
+      "clubId": "manchester-city",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 2,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "manchester-city-demo-3",
+      "nombre": "Jack Bennett",
+      "posicion": "DEF",
+      "clubId": "manchester-city",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 3,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "manchester-city-demo-4",
+      "nombre": "Harry Cole",
+      "posicion": "DEF",
+      "clubId": "manchester-city",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 4,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "manchester-city-demo-5",
+      "nombre": "Noah Price",
+      "posicion": "DEF",
+      "clubId": "manchester-city",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 5,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "manchester-city-demo-6",
+      "nombre": "Liam Foster",
+      "posicion": "MED",
+      "clubId": "manchester-city",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 6,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "manchester-city-demo-7",
+      "nombre": "Mason Reed",
+      "posicion": "MED",
+      "clubId": "manchester-city",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 7,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "manchester-city-demo-8",
+      "nombre": "Theo Ward",
+      "posicion": "MED",
+      "clubId": "manchester-city",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 8,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "manchester-city-demo-9",
+      "nombre": "Lucas Gray",
+      "posicion": "DEL",
+      "clubId": "manchester-city",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 9,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "manchester-city-demo-10",
+      "nombre": "Charlie Hayes",
+      "posicion": "DEL",
+      "clubId": "manchester-city",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 10,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "manchester-city-demo-11",
+      "nombre": "Ryan Scott",
+      "posicion": "DEL",
+      "clubId": "manchester-city",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 11,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "liverpool-demo-1",
+      "nombre": "James Carter",
+      "posicion": "POR",
+      "clubId": "liverpool",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 1,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "liverpool-demo-2",
+      "nombre": "William Hughes",
+      "posicion": "DEF",
+      "clubId": "liverpool",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 2,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "liverpool-demo-3",
+      "nombre": "George Turner",
+      "posicion": "DEF",
+      "clubId": "liverpool",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 3,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "liverpool-demo-4",
+      "nombre": "Alfie Wood",
+      "posicion": "DEF",
+      "clubId": "liverpool",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 4,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "liverpool-demo-5",
+      "nombre": "Oscar James",
+      "posicion": "DEF",
+      "clubId": "liverpool",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 5,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "liverpool-demo-6",
+      "nombre": "Archie Bell",
+      "posicion": "MED",
+      "clubId": "liverpool",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 6,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "liverpool-demo-7",
+      "nombre": "Freddie King",
+      "posicion": "MED",
+      "clubId": "liverpool",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 7,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "liverpool-demo-8",
+      "nombre": "Jacob Hill",
+      "posicion": "MED",
+      "clubId": "liverpool",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 8,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "liverpool-demo-9",
+      "nombre": "Finley Moore",
+      "posicion": "DEL",
+      "clubId": "liverpool",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 9,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "liverpool-demo-10",
+      "nombre": "Max Cooper",
+      "posicion": "DEL",
+      "clubId": "liverpool",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 10,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "liverpool-demo-11",
+      "nombre": "Henry Adams",
+      "posicion": "DEL",
+      "clubId": "liverpool",
+      "nacionalidad": "Inglaterra",
+      "dorsal": 11,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "bayern-demo-1",
+      "nombre": "Lukas Weber",
+      "posicion": "POR",
+      "clubId": "bayern",
+      "nacionalidad": "Alemania",
+      "dorsal": 1,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "bayern-demo-2",
+      "nombre": "Felix Bauer",
+      "posicion": "DEF",
+      "clubId": "bayern",
+      "nacionalidad": "Alemania",
+      "dorsal": 2,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "bayern-demo-3",
+      "nombre": "Leon Fischer",
+      "posicion": "DEF",
+      "clubId": "bayern",
+      "nacionalidad": "Alemania",
+      "dorsal": 3,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "bayern-demo-4",
+      "nombre": "Paul Wagner",
+      "posicion": "DEF",
+      "clubId": "bayern",
+      "nacionalidad": "Alemania",
+      "dorsal": 4,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "bayern-demo-5",
+      "nombre": "Jonas Becker",
+      "posicion": "DEF",
+      "clubId": "bayern",
+      "nacionalidad": "Alemania",
+      "dorsal": 5,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "bayern-demo-6",
+      "nombre": "Ben Hoffmann",
+      "posicion": "MED",
+      "clubId": "bayern",
+      "nacionalidad": "Alemania",
+      "dorsal": 6,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "bayern-demo-7",
+      "nombre": "Noah Schäfer",
+      "posicion": "MED",
+      "clubId": "bayern",
+      "nacionalidad": "Alemania",
+      "dorsal": 7,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "bayern-demo-8",
+      "nombre": "Elias Koch",
+      "posicion": "MED",
+      "clubId": "bayern",
+      "nacionalidad": "Alemania",
+      "dorsal": 8,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "bayern-demo-9",
+      "nombre": "Finn Richter",
+      "posicion": "DEL",
+      "clubId": "bayern",
+      "nacionalidad": "Alemania",
+      "dorsal": 9,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "bayern-demo-10",
+      "nombre": "Luis Brandt",
+      "posicion": "DEL",
+      "clubId": "bayern",
+      "nacionalidad": "Alemania",
+      "dorsal": 10,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "bayern-demo-11",
+      "nombre": "Maximilian Wolf",
+      "posicion": "DEL",
+      "clubId": "bayern",
+      "nacionalidad": "Alemania",
+      "dorsal": 11,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "psg-demo-1",
+      "nombre": "Hugo Laurent",
+      "posicion": "POR",
+      "clubId": "psg",
+      "nacionalidad": "Francia",
+      "dorsal": 1,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "psg-demo-2",
+      "nombre": "Lucas Moreau",
+      "posicion": "DEF",
+      "clubId": "psg",
+      "nacionalidad": "Francia",
+      "dorsal": 2,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "psg-demo-3",
+      "nombre": "Nathan Garcia",
+      "posicion": "DEF",
+      "clubId": "psg",
+      "nacionalidad": "Francia",
+      "dorsal": 3,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "psg-demo-4",
+      "nombre": "Enzo Petit",
+      "posicion": "DEF",
+      "clubId": "psg",
+      "nacionalidad": "Francia",
+      "dorsal": 4,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "psg-demo-5",
+      "nombre": "Mathis Roux",
+      "posicion": "DEF",
+      "clubId": "psg",
+      "nacionalidad": "Francia",
+      "dorsal": 5,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "psg-demo-6",
+      "nombre": "Theo Fournier",
+      "posicion": "MED",
+      "clubId": "psg",
+      "nacionalidad": "Francia",
+      "dorsal": 6,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "psg-demo-7",
+      "nombre": "Louis Girard",
+      "posicion": "MED",
+      "clubId": "psg",
+      "nacionalidad": "Francia",
+      "dorsal": 7,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "psg-demo-8",
+      "nombre": "Raphaël André",
+      "posicion": "MED",
+      "clubId": "psg",
+      "nacionalidad": "Francia",
+      "dorsal": 8,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "psg-demo-9",
+      "nombre": "Adam Lefèvre",
+      "posicion": "DEL",
+      "clubId": "psg",
+      "nacionalidad": "Francia",
+      "dorsal": 9,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "psg-demo-10",
+      "nombre": "Noé Michel",
+      "posicion": "DEL",
+      "clubId": "psg",
+      "nacionalidad": "Francia",
+      "dorsal": 10,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "psg-demo-11",
+      "nombre": "Evan Bernard",
+      "posicion": "DEL",
+      "clubId": "psg",
+      "nacionalidad": "Francia",
+      "dorsal": 11,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "juventus-demo-1",
+      "nombre": "Lorenzo Romano",
+      "posicion": "POR",
+      "clubId": "juventus",
+      "nacionalidad": "Italia",
+      "dorsal": 1,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "juventus-demo-2",
+      "nombre": "Matteo Conti",
+      "posicion": "DEF",
+      "clubId": "juventus",
+      "nacionalidad": "Italia",
+      "dorsal": 2,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "juventus-demo-3",
+      "nombre": "Alessandro Greco",
+      "posicion": "DEF",
+      "clubId": "juventus",
+      "nacionalidad": "Italia",
+      "dorsal": 3,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "juventus-demo-4",
+      "nombre": "Riccardo Gallo",
+      "posicion": "DEF",
+      "clubId": "juventus",
+      "nacionalidad": "Italia",
+      "dorsal": 4,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "juventus-demo-5",
+      "nombre": "Andrea Costa",
+      "posicion": "DEF",
+      "clubId": "juventus",
+      "nacionalidad": "Italia",
+      "dorsal": 5,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "juventus-demo-6",
+      "nombre": "Gabriele Riva",
+      "posicion": "MED",
+      "clubId": "juventus",
+      "nacionalidad": "Italia",
+      "dorsal": 6,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "juventus-demo-7",
+      "nombre": "Tommaso Bruno",
+      "posicion": "MED",
+      "clubId": "juventus",
+      "nacionalidad": "Italia",
+      "dorsal": 7,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "juventus-demo-8",
+      "nombre": "Edoardo De Luca",
+      "posicion": "MED",
+      "clubId": "juventus",
+      "nacionalidad": "Italia",
+      "dorsal": 8,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "juventus-demo-9",
+      "nombre": "Federico Marchetti",
+      "posicion": "DEL",
+      "clubId": "juventus",
+      "nacionalidad": "Italia",
+      "dorsal": 9,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "juventus-demo-10",
+      "nombre": "Nicolò Serra",
+      "posicion": "DEL",
+      "clubId": "juventus",
+      "nacionalidad": "Italia",
+      "dorsal": 10,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "juventus-demo-11",
+      "nombre": "Davide Fontana",
+      "posicion": "DEL",
+      "clubId": "juventus",
+      "nacionalidad": "Italia",
+      "dorsal": 11,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "inter-demo-1",
+      "nombre": "Luca Bianchi",
+      "posicion": "POR",
+      "clubId": "inter",
+      "nacionalidad": "Italia",
+      "dorsal": 1,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "inter-demo-2",
+      "nombre": "Marco Ferrari",
+      "posicion": "DEF",
+      "clubId": "inter",
+      "nacionalidad": "Italia",
+      "dorsal": 2,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "inter-demo-3",
+      "nombre": "Alessio Ricci",
+      "posicion": "DEF",
+      "clubId": "inter",
+      "nacionalidad": "Italia",
+      "dorsal": 3,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "inter-demo-4",
+      "nombre": "Samuele Lombardi",
+      "posicion": "DEF",
+      "clubId": "inter",
+      "nacionalidad": "Italia",
+      "dorsal": 4,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "inter-demo-5",
+      "nombre": "Pietro Marino",
+      "posicion": "DEF",
+      "clubId": "inter",
+      "nacionalidad": "Italia",
+      "dorsal": 5,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "inter-demo-6",
+      "nombre": "Giacomo Moretti",
+      "posicion": "MED",
+      "clubId": "inter",
+      "nacionalidad": "Italia",
+      "dorsal": 6,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "inter-demo-7",
+      "nombre": "Michele Galli",
+      "posicion": "MED",
+      "clubId": "inter",
+      "nacionalidad": "Italia",
+      "dorsal": 7,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "inter-demo-8",
+      "nombre": "Filippo Rizzo",
+      "posicion": "MED",
+      "clubId": "inter",
+      "nacionalidad": "Italia",
+      "dorsal": 8,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "inter-demo-9",
+      "nombre": "Emanuele Caruso",
+      "posicion": "DEL",
+      "clubId": "inter",
+      "nacionalidad": "Italia",
+      "dorsal": 9,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "inter-demo-10",
+      "nombre": "Diego Vitale",
+      "posicion": "DEL",
+      "clubId": "inter",
+      "nacionalidad": "Italia",
+      "dorsal": 10,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    },
+    {
+      "id": "inter-demo-11",
+      "nombre": "Stefano Sala",
+      "posicion": "DEL",
+      "clubId": "inter",
+      "nacionalidad": "Italia",
+      "dorsal": 11,
+      "estado": "jugador_demo_ficticio",
+      "verificado": false
+    }
+  ]
+}
