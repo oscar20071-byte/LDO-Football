@@ -1,52 +1,5 @@
 import fs from 'node:fs';
-
-const data = JSON.parse(fs.readFileSync('data/competiciones.json', 'utf8'));
-const failures = [];
-function makeSchedule(ids) {
-  const teams = ids.slice();
-  if (teams.length % 2) teams.push(null);
-  const size = teams.length;
-  const firstLeg = [];
-  for (let round = 0; round < size - 1; round++) {
-    const games = [];
-    for (let i = 0; i < size / 2; i++) {
-      const home = teams[i], away = teams[size - 1 - i];
-      if (home && away) games.push([home, away]);
-    }
-    firstLeg.push(games);
-    const fixed = teams[0], rotating = teams.slice(1);
-    rotating.unshift(rotating.pop());
-    teams.splice(0, teams.length, fixed, ...rotating);
-  }
-  return [...firstLeg, ...firstLeg.map(games => games.map(([home, away]) => [away, home]))];
-}
-for (const competition of data.competiciones) {
-  const ids = competition.clubes;
-  const schedule = makeSchedule(ids);
-  const expectedRounds = (ids.length % 2 ? ids.length : ids.length - 1) * 2;
-  if (schedule.length !== expectedRounds) failures.push(competition.nombre + ': número de jornadas incorrecto');
-  const appearances = new Map(ids.map(id => [id, 0]));
-  const pairCounts = new Map();
-  for (const round of schedule) {
-    const roundTeams = new Set();
-    for (const [home, away] of round) {
-      if (home === away) failures.push(competition.nombre + ': un club juega contra sí mismo');
-      if (roundTeams.has(home) || roundTeams.has(away)) failures.push(competition.nombre + ': club repetido en una jornada');
-      roundTeams.add(home); roundTeams.add(away);
-      appearances.set(home, (appearances.get(home) ?? 0) + 1);
-      appearances.set(away, (appearances.get(away) ?? 0) + 1);
-      const pair = [home, away].sort().join('|');
-      pairCounts.set(pair, (pairCounts.get(pair) ?? 0) + 1);
-    }
-  }
-  for (const [id, count] of appearances) if (count !== 2 * (ids.length - 1)) failures.push(competition.nombre + ': partidos incorrectos para ' + id + ' (' + count + ')');
-  const expectedPairs = ids.length * (ids.length - 1) / 2;
-  if (pairCounts.size !== expectedPairs) failures.push(competition.nombre + ': cobertura de rivales incorrecta');
-  for (const [pair, count] of pairCounts) if (count !== 2) failures.push(competition.nombre + ': enfrentamiento no ida/vuelta ' + pair);
-}
-if (failures.length) {
-  console.error('PRUEBAS DE CALENDARIO FALLIDAS');
-  failures.forEach(x => console.error('- ' + x));
-  process.exit(1);
-}
-console.log('Calendarios correctos: ' + data.competiciones.length + ' competiciones ida/vuelta');
+const data=JSON.parse(fs.readFileSync('data/competiciones.json','utf8')); const failures=[];
+function schedule(ids){const t=ids.slice();if(t.length%2)t.push(null);const n=t.length,first=[];for(let r=0;r<n-1;r++){const games=[];for(let i=0;i<n/2;i++){const a=t[i],b=t[n-1-i];if(a&&b)games.push([a,b]);}first.push(games);const fixed=t[0],rot=t.slice(1);rot.unshift(rot.pop());t.splice(0,t.length,fixed,...rot);}return [...first,...first.map(g=>g.map(([a,b])=>[b,a]))];}
+for(const c of data.competiciones){const ids=c.clubes,s=schedule(ids),expected=(ids.length%2?ids.length:ids.length-1)*2;if(s.length!==expected)failures.push(c.nombre+': jornadas incorrectas');const counts=new Map(ids.map(id=>[id,0])),pairs=new Map();for(const round of s){const used=new Set();for(const [a,b] of round){if(a===b||used.has(a)||used.has(b))failures.push(c.nombre+': emparejamiento inválido');used.add(a);used.add(b);counts.set(a,(counts.get(a)||0)+1);counts.set(b,(counts.get(b)||0)+1);const key=[a,b].sort().join('|');pairs.set(key,(pairs.get(key)||0)+1);}}for(const [id,n] of counts)if(n!==2*(ids.length-1))failures.push(c.nombre+': partidos incorrectos '+id);if(pairs.size!==ids.length*(ids.length-1)/2)failures.push(c.nombre+': rivales incompletos');for(const [pair,n] of pairs)if(n!==2)failures.push(c.nombre+': ida/vuelta incorrecta '+pair);}
+if(failures.length){console.error(failures.join('\n'));process.exit(1)}console.log('Calendarios ida/vuelta correctos: '+data.competiciones.length);
