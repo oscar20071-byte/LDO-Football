@@ -16,7 +16,8 @@ Temporada de referencia declarada para el catálogo: **2026-2027**. Los particip
 - Segunda amarilla en un encuentro: roja y un partido de suspensión; roja directa: dos partidos de suspensión.
 - Las sanciones se guardan en el estado local de la competición; las jugadoras suspendidas reducen el rendimiento simulado del equipo mientras cumplen la sanción.
 - Respaldo portátil en JSON: permite exportar e importar carrera, competición activa y disciplina para trasladar el progreso manualmente entre dispositivos.
-- Sincronización automática en la nube mediante Firebase Authentication y Cloud Firestore. Cada cuenta guarda su propio progreso; requiere configurar Firebase y publicar `firebase/firestore.rules`.
+- Guardado local automático sin cuenta ni inicio de sesión.
+- Código de transferencia LDO1 para trasladar carrera, competición y disciplina entre dispositivos sin servidor; se conserva también el respaldo JSON.
 - Copa eliminatoria simulada.
 - Validador de datos y pruebas automáticas de calendario mediante GitHub Actions.
 
@@ -32,12 +33,12 @@ Temporada de referencia declarada para el catálogo: **2026-2027**. Los particip
 - El partido es un prototipo arcade, no un simulador de fútbol completo. La IA, la posesión y las colisiones son básicas.
 - El partido utiliza cinco jugadoras por equipo e incluye una portera con posicionamiento defensivo y movimiento lateral básico. Solo asigna una jugadora real a portera cuando su posición está confirmada; si no hay dato, usa una portera genérica. No implementa todavía formaciones configurables, tácticas avanzadas, faltas ni reglas completas.
 - Las sustituciones del usuario son manuales y las del rival son automáticas y simplificadas.
-- El sistema de tarjetas del partido arcade sigue siendo aleatorio y básico, pero ahora comparte el registro disciplinario local con las ligas. Las jugadoras verificadas con suspensión pendiente se excluyen de las alineaciones y del banquillo del partido 2D; al terminar el partido se descuenta una jornada solo a las sanciones que ya estaban activas al inicio. Las tarjetas del partido actualizan amarillas, rojas y suspensiones persistentes. No hay cálculo de faltas; la carrera, liga y disciplina sí pueden sincronizarse entre dispositivos mediante Firebase cuando está configurado.
+- El sistema de tarjetas del partido arcade sigue siendo aleatorio y básico, pero comparte el registro disciplinario local con las ligas. Las jugadoras verificadas con suspensión pendiente se excluyen de las alineaciones y del banquillo del partido 2D; al terminar el partido se descuenta una jornada solo a las sanciones que ya estaban activas al inicio. Las tarjetas del partido actualizan amarillas, rojas y suspensiones persistentes. No hay cálculo de faltas.
 - El modo carrera no está conectado al partido 2D. El cambio de club y los contratos son mecánicas locales simplificadas, no negociaciones de mercado.
 - Las ligas y copas producen resultados aleatorios simulados; no son resultados oficiales. Sus grupos iniciales necesitan validación de formato, división y participantes.
 - No están completas las plantillas de todos los clubes ni las convocatorias de selecciones absolutas y juveniles.
 - No se han incorporado todos los escudos, retratos ni uniformes oficiales.
-- La sincronización automática en la nube está integrada mediante Firebase, pero requiere configurar un proyecto, activar Email/Password, crear Firestore y publicar las reglas de `firebase/firestore.rules`. No se ha probado una conexión real porque aún faltan las credenciales del proyecto.
+- No hay sincronización automática en la nube. El progreso se guarda en el navegador y se transfiere manualmente con un código LDO1 o un respaldo JSON; ambos dispositivos deben abrir la misma versión compatible del juego.
 - No hay multijugador, economía completa, fichajes negociados ni ascensos y descensos.
 
 ## Próximas tareas
