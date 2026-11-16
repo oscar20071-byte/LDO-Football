@@ -3,14 +3,14 @@
 const $=id=>document.getElementById(id), canvas=$('pitch'),ctx=canvas.getContext('2d');
 const W=1000,H=620,FIELD={x:34,y:30,w:932,h:560},GOAL=150;
 const teams=[
-{id:'harbor',name:'Harbor City',short:'HBC',color:'#d9f0e5',trim:'#163d4b',rating:74},
-{id:'royal',name:'Royal Athletic',short:'RAC',color:'#e9cf54',trim:'#202d54',rating:78},
-{id:'metro',name:'Metro United',short:'MTU',color:'#e8e9ed',trim:'#bc3b49',rating:72},
-{id:'valley',name:'Valley Rovers',short:'VLR',color:'#f3f0dd',trim:'#357b52',rating:70},
-{id:'coastal',name:'Coastal FC',short:'CFC',color:'#d6e8ff',trim:'#2653a0',rating:76},
-{id:'capital',name:'Capital SC',short:'CSC',color:'#f3d8c8',trim:'#9a4d32',rating:73},
-{id:'mountain',name:'Mountain Club',short:'MTC',color:'#e8e6dd',trim:'#555b65',rating:69},
-{id:'stars',name:'United Stars',short:'UST',color:'#f5e7ad',trim:'#6d4c9b',rating:75}
+{id:'real-madrid',name:'Real Madrid',short:'RMA',color:'#f4f0df',trim:'#252b52',rating:88},
+{id:'barcelona',name:'FC Barcelona',short:'BAR',color:'#d9b8e8',trim:'#243d86',rating:87},
+{id:'manchester-city',name:'Manchester City',short:'MCI',color:'#b7e5f5',trim:'#527caa',rating:89},
+{id:'liverpool',name:'Liverpool FC',short:'LIV',color:'#e8d2c8',trim:'#a52836',rating:87},
+{id:'bayern',name:'Bayern München',short:'BAY',color:'#f0d6d6',trim:'#a51f35',rating:88},
+{id:'psg',name:'Paris Saint-Germain',short:'PSG',color:'#d6e2f5',trim:'#1b2b58',rating:86},
+{id:'juventus',name:'Juventus',short:'JUV',color:'#f2f2ed',trim:'#20242a',rating:84},
+{id:'inter',name:'Inter de Milán',short:'INT',color:'#d2e2f3',trim:'#1e3972',rating:85}
 ];
 const formations={'4-3-3':[[.08,.5],[.22,.2],[.22,.4],[.22,.6],[.22,.8],[.43,.25],[.43,.5],[.43,.75],[.68,.2],[.72,.5],[.68,.8]],'4-4-2':[[.08,.5],[.22,.2],[.22,.4],[.22,.6],[.22,.8],[.42,.15],[.42,.38],[.42,.62],[.42,.85],[.7,.35],[.7,.65]],'3-5-2':[[.08,.5],[.22,.25],[.22,.5],[.22,.75],[.42,.12],[.42,.31],[.42,.5],[.42,.69],[.42,.88],[.7,.35],[.7,.65]],'4-2-3-1':[[.08,.5],[.22,.2],[.22,.4],[.22,.6],[.22,.8],[.38,.35],[.38,.65],[.56,.2],[.6,.5],[.56,.8],[.76,.5]]};
 const defaultSave={season:2026,played:0,lastResult:'Todavía no has jugado',career:null,formation:'4-3-3',league:null};
@@ -57,7 +57,7 @@ $('careerMatch').onclick=()=>{if(save.career.fatigue>=95){$('careerNotice').text
 $('trainPlayer').onclick=()=>{const c=save.career;if(c.fatigue>75){$('careerNotice').textContent='Demasiado cansado para entrenar. Descansa.';return}c.xp+=8;c.fatigue+=12;c.ovr=Math.min(99,60+Math.floor(c.xp/40));persist();renderCareer()};
 $('restPlayer').onclick=()=>{save.career.fatigue=Math.max(0,save.career.fatigue-35);persist();renderCareer()};
 $('transferPlayer').onclick=()=>{const options=teams.filter(t=>t.id!==save.career.team);const pick=prompt('Escribe el número del nuevo club:\n'+options.map((t,i)=>(i+1)+'. '+t.name).join('\n'));const idx=Number(pick)-1;if(options[idx]){save.career.team=options[idx].id;persist();renderCareer()}};
-function renderClub(){const t=team(save.career?save.career.team:$('homeTeam').value);$('clubName').textContent=t.name;$('clubLeague').textContent='Liga Nacional · Valoración '+t.rating;$('clubCrest').textContent=t.short[0];$('formation').value=save.formation;$('squadList').innerHTML=Array.from({length:18},(_,i)=>'<div class="squad-player"><span>'+(i+1)+'. '+(['Portero','Defensa','Defensa','Defensa','Defensa','Medio','Medio','Medio','Extremo','Delantero','Extremo'][i%11])+' '+['Álvarez','Méndez','Santos','Reyes','Costa','Vega','Pérez','Silva','Ramos','Duarte','Morales'][i%11]+'</span><small>OVR '+(68+(i*7+t.rating)%20)+'</small></div>').join('')}
+function renderClub(){const t=team(save.career?save.career.team:$('homeTeam').value);$('clubName').textContent=t.name;$('clubLeague').textContent='Liga Nacional · Valoración '+t.rating;$('clubCrest').textContent=t.short[0];$('formation').value=save.formation;$('squadList').innerHTML=Array.from({length:18},(_,i)=>'<div class="squad-player"><span>'+(i+1)+'. '+(['Portero','Defensa','Defensa','Defensa','Defensa','Centrocampista','Centrocampista','Centrocampista','Extremo','Delantero','Extremo'][i%11])+' '+['Martín','Navarro','Torres','Ruiz','Herrera','Vega','Castro','Romero','Molina','Santos','León'][i%11]+'</span><small>OVR '+(68+(i*7+t.rating)%20)+'</small></div>').join('')}
 $('saveFormation').onclick=()=>{save.formation=$('formation').value;persist();renderClub()};
 function buildLeague(){const list=teams.slice(0,8).map(t=>({id:t.id,name:t.name,pj:0,g:0,e:0,p:0,gf:0,gc:0,pts:0}));return {round:0,table:list}}
 function renderLeague(){if(!save.league)save.league=buildLeague();const table=[...save.league.table].sort((a,b)=>b.pts-a.pts||(b.gf-b.gc)-(a.gf-a.gc));$('leagueTable').innerHTML=table.map((t,i)=>'<tr><td>'+ (i+1)+'</td><td>'+t.name+'</td><td>'+t.pj+'</td><td>'+t.g+'</td><td>'+t.e+'</td><td>'+t.p+'</td><td>'+(t.gf-t.gc)+'</td><td><b>'+t.pts+'</b></td></tr>').join('');$('leagueMessage').textContent='Jornadas completadas: '+save.league.round+' / 7.'}
