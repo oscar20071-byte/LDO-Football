@@ -22,5 +22,6 @@ jobs:
       - name: Comprobar sintaxis JavaScript
         run: |
           node --check game.js
+          node --check game3d.js
           node --check scripts/validate-data.mjs
           node --check scripts/test-fixtures.mjs
