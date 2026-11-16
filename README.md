@@ -17,6 +17,7 @@ Juego web de fútbol femenino con partido arcade 2D desde arriba y sistemas loca
 - Tarjetas amarillas, segunda amarilla y rojas durante el partido; las tarjetas a jugadoras verificadas se guardan en el registro disciplinario compartido con las ligas.
 - Las jugadoras suspendidas por la competición quedan fuera de las alineaciones y del banquillo del partido 2D hasta cumplir sus jornadas; al terminar el partido se descuenta una jornada de sanción.
 - Modo carrera con progresión, entrenamiento, fatiga, recuperación, lesiones simuladas, tarjetas, suspensiones y contratos locales.
+- Integración de carrera con el partido arcade 2D: la futbolista creada aparece en la alineación cuando juegas con su club; al terminar el encuentro se registran sus partidos, goles acreditados por sus disparos, experiencia y fatiga. Las sanciones y lesiones bloquean su participación.
 - Ligas con calendario de ida y vuelta, clasificación y resultados simulados.
 - Disciplina en ligas: amarillas acumulables, segunda amarilla, rojas directas y suspensiones persistentes entre jornadas para jugadoras verificadas; las sanciones pendientes reducen el rendimiento simulado del club.
 - Exportación e importación de respaldos JSON para transferir carrera, liga activa y disciplina entre dispositivos de forma manual.
