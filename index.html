@@ -154,7 +154,7 @@ $('saveFile').addEventListener('change',e=>{importProgress(e.target.files&&e.tar
 
 
  // Se eliminan configuraciones antiguas de servicios en la nube; el juego funciona sin cuentas.
- ['ldoFirebaseConfigV1','ldoFirebaseDeviceV1','ldoSupabaseConfigV1','ldoSupabaseSessionV1'].forEach(key=>localStorage.removeItem(key));
+ ['ldoSupabaseConfigV1','ldoSupabaseSessionV1'].forEach(key=>localStorage.removeItem(key));
  function encodeTransfer(data){
   const bytes=new TextEncoder().encode(JSON.stringify(data));
   let binary='';for(let i=0;i<bytes.length;i+=0x8000)binary+=String.fromCharCode(...bytes.subarray(i,i+0x8000));
