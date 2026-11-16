@@ -1,29 +1,30 @@
 # Football Journey
 
-Juego original de fútbol inspirado en la experiencia de los simuladores de fútbol móviles con vista cenital. No utiliza código, imágenes, escudos ni marcas de World Soccer Champs.
+Juego original de fútbol masculino con partidos en vista cenital y modos de carrera y competición. Inspirado en la experiencia de simuladores móviles de fútbol, con identidad visual y código propios; no utiliza recursos protegidos de World Soccer Champs.
 
 ## Primera base jugable
-- Menú principal y navegación entre modos.
-- Partido en vista cenital con campo, futbolistas, balón, marcador y reloj.
-- Movimiento directo con WASD o flechas.
-- Pase, tiro, cambio de futbolista y sprint.
+- Partidos con control directo de futbolistas masculinos.
+- Movimiento WASD/flechas, pase, tiro, cambio de jugador y sprint.
 - IA básica para compañeros y rivales.
-- Dificultad y duración configurables.
-- Modo carrera inicial con progreso local, entrenamiento, descanso y cambio de club.
+- Ocho clubes masculinos para el prototipo.
+- Modo carrera masculino con entrenamiento, descanso y cambio de club.
 - Vista de club, formaciones y plantilla de demostración.
-- Liga de ocho clubes con clasificación y jornadas simuladas.
-- Guardado local en el navegador; no requiere cuenta, Firebase ni Supabase.
+- Liga Europea de demostración con clasificación y jornadas simuladas.
+- Guardado local; no requiere cuentas, Firebase ni Supabase.
+
+## Datos
+Las 88 fichas de jugadores son nombres ficticios de demostración, no plantillas oficiales ni futbolistas reales. Las selecciones masculinas están catalogadas, pero sus convocatorias reales todavía no se han importado. No se deben presentar valoraciones ni alineaciones de demostración como datos oficiales.
 
 ## Controles
 - WASD / flechas: mover.
 - J: pase.
 - K: tiro.
-- L: cambiar futbolista.
+- L: cambiar jugador.
 - Espacio: sprint.
 - En móvil aparecen controles táctiles.
 
 ## Publicar
-Se puede publicar con GitHub Pages desde la rama `main`, carpeta raíz. El juego no necesita backend.
+GitHub Pages desde la rama `main`, carpeta raíz. No necesita backend.
 
 ## Pendiente
-La IA, las físicas, las plantillas, el modo carrera y la liga son prototipos. Aún faltan pruebas completas en navegador, animaciones, faltas y árbitro, sustituciones, mercado de fichajes avanzado, torneos, estadísticas detalladas y plantillas verificadas. Los clubes y futbolistas de demostración son ficticios.
+Pruebas completas en navegador, animaciones, físicas avanzadas, faltas y árbitro, sustituciones, fichajes completos, torneos, estadísticas y plantillas masculinas reales verificadas.
