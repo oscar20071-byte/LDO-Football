@@ -109,7 +109,7 @@ function shoot(){
  ball.userData.vx=dx/d*power;ball.userData.vz=dz/d*power;ball.userData.shot=true;ball.userData.lastTeam=0;shots[0]++;
  $('shots').textContent='Tiros '+shots[0]+' - '+shots[1];$('matchMessage').textContent='¡Disparo hacia la portería!';
 }
-function switchPlayer(){const n=nearestOwnToBall();if(n>=0){selected=n;$('matchMessage').textContent='Controlas a '+(players[n].data?.nombre||'tu jugador')+'.'}}
+function switchPlayer(){const owner=ball.userData.owner;let candidates=players.map((p,i)=>({p,i})).filter(x=>x.p.team===0&&x.i!==selected);if(owner&&owner.team===0){candidates.sort((a,b)=>Math.hypot(a.p.x-ball.position.x,a.p.z-ball.position.z)-Math.hypot(b.p.x-ball.position.x,b.p.z-ball.position.z));}else{candidates.sort((a,b)=>Math.hypot(a.p.x-ball.position.x,a.p.z-ball.position.z)-Math.hypot(b.p.x-ball.position.x,b.p.z-ball.position.z));}if(candidates.length){selected=candidates[0].i;$('matchMessage').textContent='Controlas a '+(players[selected].data?.nombre||'tu jugador')+'.'}}
 function scoreGoal(teamIndex){
  score[teamIndex]++;$('homeScore').textContent=score[0];$('awayScore').textContent=score[1];
  $('goalFlash').textContent='¡GOOOL!';$('goalFlash').classList.remove('show');void $('goalFlash').offsetWidth;$('goalFlash').classList.add('show');
@@ -180,8 +180,8 @@ async function startFromUI(career=false){
   const awayId=career?['real-madrid','barcelona','manchester-city','liverpool','bayern','psg','juventus','inter'].find(x=>x!==homeId):$('awayTeam').value;
   if(homeId===awayId){$('matchMessage').textContent='Elige dos clubes distintos.';return}
   const names=Object.fromEntries([['real-madrid','Real Madrid'],['barcelona','FC Barcelona'],['manchester-city','Manchester City'],['liverpool','Liverpool FC'],['bayern','Bayern München'],['psg','Paris Saint-Germain'],['juventus','Juventus'],['inter','Inter de Milán']]);
-  startScene(homeId,awayId,{career,careerData,duration:career?300:Number($('matchLength').value),homeName:names[homeId],awayName:names[awayId],homeShort:$('homeTeam').selectedOptions[0]?.textContent?.slice(0,3).toUpperCase(),awayShort:$('awayTeam').selectedOptions[0]?.textContent?.slice(0,3).toUpperCase()});
   document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));$('gameScreen').classList.add('active');
+  startScene(homeId,awayId,{career,careerData,duration:career?300:Number($('matchLength').value),homeName:names[homeId],awayName:names[awayId],homeShort:names[homeId].slice(0,3).toUpperCase(),awayShort:names[awayId].slice(0,3).toUpperCase()});
  }catch(err){console.error(err);$('matchMessage').textContent='Error al cargar el partido 3D: '+err.message;alert('No se pudo iniciar el partido 3D. Abre el juego desde GitHub Pages y comprueba tu conexión.')}
 }
 function stop(){active=false;if(raf!==null)cancelAnimationFrame(raf);keys.clear()}
@@ -191,7 +191,7 @@ $('passBtn').onclick=pass;$('shootBtn').onclick=shoot;$('switchBtn').onclick=swi
 $('pauseBtn').onclick=()=>{paused=!paused;$('pauseBtn').textContent=paused?'REANUDAR':'PAUSAR'};
 $('leaveMatch').onclick=()=>{if(confirm('¿Salir del partido? El resultado no se guardará.')){stop();document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));$('homeScreen').classList.add('active')}};
 $('resultContinue').onclick=()=>{stop();document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));$('homeScreen').classList.add('active')};
-window.addEventListener('keydown',e=>{const key=e.key.toLowerCase();if(['arrowup','arrowdown','arrowleft','arrowright',' '].includes(key))e.preventDefault();keys.add(key)});
+window.addEventListener('keydown',e=>{const key=e.key.toLowerCase();if(['arrowup','arrowdown','arrowleft','arrowright',' '].includes(key))e.preventDefault();if(e.repeat)return;keys.add(key);if(!active||paused)return;if(key==='j')pass();if(key==='k')shoot();if(key==='l')switchPlayer()});
 window.addEventListener('keyup',e=>keys.delete(e.key.toLowerCase()));
 document.querySelectorAll('[data-key]').forEach(button=>{const key=button.dataset.key.toLowerCase();button.addEventListener('pointerdown',e=>{e.preventDefault();keys.add(key)});['pointerup','pointercancel','pointerleave'].forEach(type=>button.addEventListener(type,()=>keys.delete(key)))});
 window.addEventListener('blur',()=>keys.clear());
