@@ -127,7 +127,7 @@ function aiUpdate(dt){
  const owner=ball.userData.owner;
  for(const p of players){
   if(p.team===0&&players[selected]===p)continue;
-  if(p.team===0&&!owner){const dx=ball.position.x-p.x,dz=ball.position.z-p.z,d=Math.hypot(dx,dz);if(d>3)movePlayer(p,dx,dz,dt*.7)}
+  if(p.team===0&&owner===p){movePlayer(p,7,clamp(-p.z*.12,-2,2),dt*.45)}else if(p.team===0&&(!owner||owner.team===1)){const target=owner&&owner.team===1?owner:ball.position;const dx=target.x-p.x,dz=target.z-p.z,d=Math.hypot(dx,dz);if(d>3)movePlayer(p,dx,dz,dt*.72)}
   else if(p.team===1){const target=owner&&owner.team===1?{x:owner.x+5,z:owner.z}:ball.position;const dx=target.x-p.x,dz=target.z-p.z,d=Math.hypot(dx,dz);if(d>3)movePlayer(p,dx,dz,dt*.75)}
   else if(p.team===0&&p!==players[selected]){const dx=clamp(p.x,-35,-8)-p.x,dz=clamp(p.z,-24,24)-p.z;if(Math.hypot(dx,dz)>2)movePlayer(p,dx,dz,dt*.25)}
  }
