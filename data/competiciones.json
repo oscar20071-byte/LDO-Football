@@ -1,11 +1,11 @@
 {
-  "version": "2.0",
+  "version": "3.0",
   "temporada": "2026-2027",
-  "nota": "Competiciones de demostración para la primera versión masculina. La liga europea es una competición ficticia del juego, no una liga oficial.",
+  "nota": "Los clubes pertenecen a sus ligas nacionales reales. Esta tabla única de ocho equipos es una competición de demostración del juego, no una liga oficial.",
   "competiciones": [
     {
-      "id": "liga-europea-demo",
-      "nombre": "Liga Europea (Demo)",
+      "id": "liga-ocho-demo",
+      "nombre": "Liga de Clubes (Demo)",
       "temporada": "2026-2027",
       "pais": "Europa",
       "clubes": [
