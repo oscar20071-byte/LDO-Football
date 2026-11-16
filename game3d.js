@@ -48,9 +48,9 @@ function buildCrowd(){
  // Gradas escalonadas a ambos lados del campo y detrás de las porterías.
  for(const side of [-1,1]){
   const stand=addBox(0,.45,side*37,102,.9,7,stadium);stand.castShadow=false;
-  for(let row=0;row<4;row++){
-   const z=side*(34.5+row*1.65);
-   for(let x=-47;x<=47;x+=2.6){
+  for(let row=0;row<3;row++){
+   const z=side*(34.5+row*1.8);
+   for(let x=-47;x<=47;x+=4.2){
     const person=new THREE.Group();person.position.set(x,.9+row*.22,z);
     const shirt=mat(crowdColors[(Math.floor((x+50)*3+row*7+side*13)%crowdColors.length+crowdColors.length)%crowdColors.length]);
     const body=new THREE.Mesh(new THREE.CylinderGeometry(.19,.23,.48,6),shirt);body.position.y=.34;person.add(body);
@@ -62,7 +62,7 @@ function buildCrowd(){
  }
  for(const side of [-1,1]){
   addBox(side*53,.45,0,7,.9,70,stadium);
-  for(let row=0;row<3;row++)for(let z=-31;z<=31;z+=2.8){
+  for(let row=0;row<2;row++)for(let z=-31;z<=31;z+=5.5){
    const person=new THREE.Group();person.position.set(side*(49+row*1.7),.9+row*.2,z);
    const shirt=mat(crowdColors[Math.floor(Math.random()*crowdColors.length)]);
    const body=new THREE.Mesh(new THREE.CylinderGeometry(.18,.22,.46,6),shirt);body.position.y=.32;person.add(body);
@@ -210,7 +210,7 @@ function frame(){
   if(elapsed>=duration){finish();return}
  }
  camera.position.x+=(0-camera.position.x)*.015;camera.lookAt(0,0,0);
- renderer.render(scene,camera);raf=requestAnimationFrame(frame);
+ animateCrowd(elapsed);renderer.render(scene,camera);raf=requestAnimationFrame(frame);
 }
 function finish(){
  active=false;if(raf!==null)cancelAnimationFrame(raf);
