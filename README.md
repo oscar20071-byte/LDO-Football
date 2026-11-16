@@ -1,35 +1,33 @@
 # Football Journey
 
-Juego original de fútbol masculino con partidos en vista cenital, modo carrera y competición. Tiene identidad visual y código propios; no utiliza código ni recursos protegidos de World Soccer Champs.
+Juego original de fútbol masculino con clubes y plantillas reales, partido en 3D y modo carrera. Tiene identidad visual y código propios.
 
-## Clubes y plantillas reales
-Incluye ocho clubes masculinos reales: Real Madrid, FC Barcelona, Manchester City, Liverpool FC, Bayern München, Paris Saint-Germain, Juventus e Inter de Milán.
-
-La base de datos contiene **212 futbolistas reales** de las plantillas consultadas para la temporada 2026/27, con nombre, dorsal, posición, nacionalidad y fuente de referencia por jugador. Los datos se consultaron el 16 de noviembre de 2026 en páginas oficiales de clubes y UEFA. Las plantillas pueden variar entre competiciones nacionales y UEFA, y se deben actualizar tras cambios confirmados.
-
-## Primera base jugable
-- Partidos en vista cenital con control directo.
-- Movimiento WASD/flechas, pase, tiro, cambio de jugador y sprint.
-- Los dorsales de los futbolistas aparecen en el terreno.
-- Modo carrera, entrenamiento, descanso y cambio de club.
-- Vista de club con plantilla real, dorsal, posición y nacionalidad.
-- Liga de demostración entre los ocho clubes (no representa una competición oficial).
-- Guardado local, sin cuentas ni backend.
+## Partidos 3D
+- Campo tridimensional renderizado con Three.js.
+- Futbolistas 3D con cabeza, cuerpo, brazos, piernas, camisetas y dorsales.
+- Cámara inclinada con perspectiva de estadio.
+- Balón con posesión, movimiento, pases, tiros y goles.
+- Inteligencia artificial básica para compañeros y rivales.
+- Controles de teclado y botones táctiles.
 
 ## Controles
-- WASD / flechas: mover.
-- J: pase.
-- K: tiro.
-- L: cambiar jugador.
-- Espacio: sprint.
+- WASD o flechas: mover al futbolista seleccionado.
+- J: pasar.
+- K: tirar.
+- L: cambiar al jugador propio más cercano al balón.
+- Espacio o Shift: sprint.
+- Botones en pantalla: pase, tiro, cambiar y pausar.
 
-## Datos
-- `data/equipos.json`: clubes reales y sus ligas nacionales.
-- `data/jugadores.json`: futbolistas, dorsales, posiciones y fuentes por club.
-- `data/selecciones.json`: catálogo inicial de selecciones masculinas; todavía faltan convocatorias completas verificadas.
+Si el jugador seleccionado no tiene el balón, pase y tiro intentan recuperar la posesión si está cerca. Si está lejos, muestra un aviso para acercarse al balón.
 
-## Publicar
-GitHub Pages desde `main`, carpeta raíz. La página carga las plantillas desde `data/jugadores.json`.
+## Clubes y plantillas
+Incluye Real Madrid, FC Barcelona, Manchester City, Liverpool FC, Bayern München, Paris Saint-Germain, Juventus e Inter de Milán. La base de datos incluye futbolistas, dorsales, posiciones, nacionalidades y fuentes de referencia en `data/jugadores.json`.
+
+## Tecnología
+- Three.js 0.180.0 cargado como módulo desde jsDelivr.
+- JavaScript sin backend.
+- Guardado de carrera local en el navegador.
+- Para jugar, abre la versión publicada mediante GitHub Pages o un servidor web local. No abras el HTML directamente como archivo si el navegador bloquea módulos o solicitudes de datos.
 
 ## Pendiente
-Completar convocatorias nacionales, ampliar plantillas domésticas cuando difieran de UEFA, incorporar competiciones oficiales completas y probar en navegador móvil y escritorio.
+Mejorar animaciones y movimientos, físicas, porteros, faltas, árbitros, sustituciones, audio, multijugador y pruebas en distintos dispositivos.
