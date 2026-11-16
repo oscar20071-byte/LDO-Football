@@ -1,36 +1,29 @@
-# ⚽ LDO FOOTBALL
+# Football Journey
 
-Juego web de fútbol femenino con partido arcade 2D desde arriba y sistemas locales de carrera y competiciones.
+Juego original de fútbol inspirado en la experiencia de los simuladores de fútbol móviles con vista cenital. No utiliza código, imágenes, escudos ni marcas de World Soccer Champs.
 
-## Probarlo
-1. Publica el repositorio con GitHub Pages.
-2. Abre la página publicada.
-3. Selecciona dos clubes diferentes y pulsa **Comenzar partido**.
-4. Usa WASD o las flechas para moverte, ESPACIO para chutar, X para pasar y Q para cambiar de jugadora.
-5. En móvil aparecen controles táctiles.
+## Primera base jugable
+- Menú principal y navegación entre modos.
+- Partido en vista cenital con campo, futbolistas, balón, marcador y reloj.
+- Movimiento directo con WASD o flechas.
+- Pase, tiro, cambio de futbolista y sprint.
+- IA básica para compañeros y rivales.
+- Dificultad y duración configurables.
+- Modo carrera inicial con progreso local, entrenamiento, descanso y cambio de club.
+- Vista de club, formaciones y plantilla de demostración.
+- Liga de ocho clubes con clasificación y jornadas simuladas.
+- Guardado local en el navegador; no requiere cuenta, Firebase ni Supabase.
 
-## Funciones disponibles
-- Partido 2D arcade 5 contra 5 con IA básica.
-- Jugadoras registradas en alineaciones cuando hay datos disponibles; jugadoras genéricas de prueba si falta la plantilla.
-- Sustituciones locales: eliges desde un selector qué titular sale y entra una jugadora del banquillo.
-- Sustituciones automáticas del rival alrededor de los minutos 60 y 75 cuando tiene banquillo.
-- Tarjetas amarillas, segunda amarilla y rojas durante el partido; las tarjetas a jugadoras verificadas se guardan en el registro disciplinario compartido con las ligas.
-- Las jugadoras suspendidas por la competición quedan fuera de las alineaciones y del banquillo del partido 2D hasta cumplir sus jornadas; al terminar el partido se descuenta una jornada de sanción.
-- Modo carrera con progresión, entrenamiento, fatiga, recuperación, lesiones simuladas, tarjetas, suspensiones y contratos locales.
-- Integración de carrera con el partido arcade 2D: la futbolista creada aparece en la alineación cuando juegas con su club; al terminar el encuentro se registran sus partidos, goles acreditados por sus disparos, experiencia y fatiga. Las sanciones y lesiones bloquean su participación.
-- Ligas con calendario de ida y vuelta, clasificación y resultados simulados.
-- Disciplina en ligas: amarillas acumulables, segunda amarilla, rojas directas y suspensiones persistentes entre jornadas para jugadoras verificadas; las sanciones pendientes reducen el rendimiento simulado del club.
-- Exportación e importación de respaldos JSON para transferir carrera, liga activa y disciplina entre dispositivos de forma manual.
-- Guardado local automático sin cuentas ni inicio de sesión.
-- Código de transferencia sin servidor para mover carrera, liga y disciplina entre dispositivos; también se mantiene la exportación e importación de respaldos JSON.
-- Copa eliminatoria simulada.
-- Catálogos de clubes, jugadoras, selecciones y competiciones.
-- Validación de datos y pruebas de calendario en GitHub Actions.
+## Controles
+- WASD / flechas: mover.
+- J: pase.
+- K: tiro.
+- L: cambiar futbolista.
+- Espacio: sprint.
+- En móvil aparecen controles táctiles.
 
-## Datos y transparencia
-La base contiene 137 registros de jugadoras: Chelsea Women (27), London City Lionesses (27), Manchester City Women (26), Real Madrid femenino (32) y USWNT (26). Las plantillas de los demás clubes y selecciones todavía son parciales. Los grupos competitivos son catálogos iniciales y necesitan confirmación de formato y participantes. Los resultados de ligas y copas son generados por el juego y no son resultados oficiales. Las lesiones siguen en el modo carrera estadístico. El partido 2D y el motor de ligas comparten el registro local de disciplina para jugadoras verificadas. Las sanciones pendientes las excluyen de las alineaciones del partido 2D y se descuentan al finalizar el encuentro. La carrera, liga y disciplina se guardan localmente y pueden trasladarse a otro dispositivo mediante un código de transferencia o un archivo JSON; no hay sincronización automática en la nube.
+## Publicar
+Se puede publicar con GitHub Pages desde la rama `main`, carpeta raíz. El juego no necesita backend.
 
-Consulta [BASE_DATOS.md](BASE_DATOS.md) para el estado detallado y [data/FUENTES.md](data/FUENTES.md) para las fuentes.
-
-## Estado
-Proyecto en desarrollo. El prototipo actual no es un simulador completo ni una reproducción de FIFA.
+## Pendiente
+La IA, las físicas, las plantillas, el modo carrera y la liga son prototipos. Aún faltan pruebas completas en navegador, animaciones, faltas y árbitro, sustituciones, mercado de fichajes avanzado, torneos, estadísticas detalladas y plantillas verificadas. Los clubes y futbolistas de demostración son ficticios.
