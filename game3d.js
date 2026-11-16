@@ -9,15 +9,24 @@ const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const mat=(color,roughness=.78)=>new THREE.MeshStandardMaterial({color,roughness});
 const green=mat('#247a42'),lineMat=new THREE.LineBasicMaterial({color:'#eaf5df'}),white=mat('#f6f6ee'),black=mat('#18242b');
 const teamPalette=[{shirt:'#f3f1e9',short:'#202c50',sock:'#f3f1e9'},{shirt:'#273c83',short:'#a51e39',sock:'#273c83'}];
+const crowd=[];
+const crowdColors=['#d94b45','#f0c84b','#3478bd','#e8e8e8','#34a06b','#8a5bb5','#e58a37'];
 
 function makeHuman(p,teamIndex){
  const root=new THREE.Group();
- const kit=teamPalette[teamIndex],shirt=mat(kit.shirt),short=mat(kit.short),skin=mat('#d5a27c'),sock=mat(kit.sock),boot=mat('#20252a');
+ const keeper=p.role==='GK';
+ const kit=keeper?{shirt:teamIndex===0?'#f0c52e':'#ef7b25',short:'#20252a',sock:'#f4f4f4'}:teamPalette[teamIndex];
+ const shirt=mat(kit.shirt),short=mat(kit.short),skin=mat('#d5a27c'),sock=mat(kit.sock),boot=mat('#20252a');
  const torso=new THREE.Mesh(new THREE.CylinderGeometry(.43,.5,1.05,10),shirt);torso.position.y=1.55;root.add(torso);
  const head=new THREE.Mesh(new THREE.SphereGeometry(.28,12,10),skin);head.position.y=2.32;root.add(head);
  const hair=new THREE.Mesh(new THREE.SphereGeometry(.285,12,8,0,Math.PI*2,0,Math.PI*.52),mat('#30251f'));hair.position.y=2.4;root.add(hair);
+ p.arms=[];
  for(const side of [-1,1]){
-  const arm=new THREE.Mesh(new THREE.CylinderGeometry(.12,.14,.78,8),shirt);arm.position.set(side*.53,1.62,0);arm.rotation.z=side*-.16;root.add(arm);
+  const arm=new THREE.Group();arm.position.set(side*.53,1.93,0);
+  const sleeve=new THREE.Mesh(new THREE.CylinderGeometry(.12,.14,.48,8),shirt);sleeve.position.y=-.12;arm.add(sleeve);
+  const forearm=new THREE.Mesh(new THREE.CylinderGeometry(.085,.105,.32,8),skin);forearm.position.y=-.49;arm.add(forearm);
+  if(keeper){const glove=new THREE.Mesh(new THREE.SphereGeometry(.14,8,8),mat('#f5f5f5'));glove.position.y=-.68;arm.add(glove)}
+  arm.rotation.z=side*-.16;root.add(arm);p.arms.push(arm);
   const leg=new THREE.Group();leg.position.set(side*.22,1.02,0);
   const thigh=new THREE.Mesh(new THREE.CylinderGeometry(.15,.17,.55,8),short);thigh.position.y=-.27;leg.add(thigh);
   const shin=new THREE.Mesh(new THREE.CylinderGeometry(.105,.12,.48,8),sock);shin.position.y=-.75;leg.add(shin);
@@ -29,11 +38,41 @@ function makeHuman(p,teamIndex){
  const texture=new THREE.CanvasTexture(numberCanvas);
  const badge=new THREE.Mesh(new THREE.PlaneGeometry(.45,.28),new THREE.MeshBasicMaterial({map:texture,transparent:true,side:THREE.DoubleSide}));
  badge.position.set(0,1.58,-.445);root.add(badge);
- p.root=root;p.team=teamIndex;p.legs=p.legs;p.speed=teamIndex===0?7.2:6.3;
+ p.root=root;p.team=teamIndex;p.legs=p.legs;p.speed=keeper?5.2:(teamIndex===0?7.2:6.3);p.keeper=keeper;
  return root;
 }
 function addLine(points){const geometry=new THREE.BufferGeometry().setFromPoints(points.map(v=>new THREE.Vector3(v[0],.035,v[1])));scene.add(new THREE.Line(geometry,lineMat))}
 function addBox(x,y,z,w,h,d,material){const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),material);m.position.set(x,y,z);scene.add(m);return m}
+function buildCrowd(){
+ const stadium=mat('#68727b'),seatA=mat('#263746'),seatB=mat('#354858');
+ // Gradas escalonadas a ambos lados del campo y detrás de las porterías.
+ for(const side of [-1,1]){
+  const stand=addBox(0,.45,side*37,102,.9,7,stadium);stand.castShadow=false;
+  for(let row=0;row<4;row++){
+   const z=side*(34.5+row*1.65);
+   for(let x=-47;x<=47;x+=2.6){
+    const person=new THREE.Group();person.position.set(x,.9+row*.22,z);
+    const shirt=mat(crowdColors[(Math.floor((x+50)*3+row*7+side*13)%crowdColors.length+crowdColors.length)%crowdColors.length]);
+    const body=new THREE.Mesh(new THREE.CylinderGeometry(.19,.23,.48,6),shirt);body.position.y=.34;person.add(body);
+    const head=new THREE.Mesh(new THREE.SphereGeometry(.15,7,6),mat('#c99470'));head.position.y=.68;person.add(head);
+    const arms=[];for(const sign of [-1,1]){const arm=new THREE.Group();arm.position.set(sign*.22,.48,0);const limb=new THREE.Mesh(new THREE.CylinderGeometry(.055,.07,.42,5),shirt);limb.position.y=.18;arm.add(limb);person.add(arm);arms.push(arm)}
+    scene.add(person);crowd.push({root:person,arms,phase:Math.random()*Math.PI*2,rate:1+Math.random()*2});
+   }
+  }
+ }
+ for(const side of [-1,1]){
+  addBox(side*53,.45,0,7,.9,70,stadium);
+  for(let row=0;row<3;row++)for(let z=-31;z<=31;z+=2.8){
+   const person=new THREE.Group();person.position.set(side*(49+row*1.7),.9+row*.2,z);
+   const shirt=mat(crowdColors[Math.floor(Math.random()*crowdColors.length)]);
+   const body=new THREE.Mesh(new THREE.CylinderGeometry(.18,.22,.46,6),shirt);body.position.y=.32;person.add(body);
+   const head=new THREE.Mesh(new THREE.SphereGeometry(.14,7,6),mat('#c99470'));head.position.y=.65;person.add(head);
+   const arms=[];for(const sign of [-1,1]){const arm=new THREE.Group();arm.position.set(sign*.2,.46,0);const limb=new THREE.Mesh(new THREE.CylinderGeometry(.05,.065,.4,5),shirt);limb.position.y=.17;arm.add(limb);person.add(arm);arms.push(arm)}
+   scene.add(person);crowd.push({root:person,arms,phase:Math.random()*Math.PI*2,rate:1+Math.random()*2});
+  }
+ }
+}
+function animateCrowd(time){for(const fan of crowd){const wave=Math.max(0,Math.sin(time*fan.rate+fan.phase));fan.root.position.y+=Math.sin(time*2+fan.phase)*.002;fan.arms.forEach((arm,i)=>{arm.rotation.z=(i===0?-1:1)*(.25+wave*.9);arm.rotation.x=wave*.22})}}
 function buildPitch(){
  const ground=new THREE.Mesh(new THREE.PlaneGeometry(FIELD.x,FIELD.z),green);ground.rotation.x=-Math.PI/2;ground.position.y=-.04;scene.add(ground);
  for(let i=0;i<10;i++){const stripe=new THREE.Mesh(new THREE.PlaneGeometry(FIELD.x/10,FIELD.z),mat(i%2?'#247a42':'#2a8548'));stripe.rotation.x=-Math.PI/2;stripe.position.set(-FIELD.x/2+FIELD.x/20+i*FIELD.x/10,-.025,0);scene.add(stripe)}
@@ -58,7 +97,7 @@ function setupRenderer(){
  fieldEl.replaceChildren(renderer.domElement);
  scene.add(new THREE.HemisphereLight('#e8f5ff','#284a2f',2));
  const sun=new THREE.DirectionalLight('#fff4d8',2.2);sun.position.set(-25,60,30);sun.castShadow=true;scene.add(sun);
- buildPitch();clock=new THREE.Clock();
+ buildPitch();buildCrowd();clock=new THREE.Clock();
  window.addEventListener('resize',resize);
 }
 function resize(){if(!renderer||!camera)return;const w=fieldEl.clientWidth,h=fieldEl.clientHeight;if(!w||!h)return;camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h)}
@@ -66,8 +105,8 @@ function squadFor(id){return roster.filter(p=>p.clubId===id)}
 function positionsFor(teamIndex,squad){
  const gk=squad.filter(p=>p.posicion==='POR'),def=squad.filter(p=>p.posicion==='DEF'),mid=squad.filter(p=>p.posicion==='MED'),fwd=squad.filter(p=>p.posicion==='DEL');
  const chosen=[gk[0],...def.slice(0,4),...mid.slice(0,3),...fwd.slice(0,3)].filter(Boolean);
- const coords=[[-43,0],[-29,-22],[-31,-7],[-31,7],[-29,22],[-10,-19],[-12,0],[-10,19],[13,-21],[17,0],[13,21]];
- return chosen.slice(0,11).map((data,i)=>({data,team:teamIndex,x:teamIndex===0?coords[i][0]:-coords[i][0],z:coords[i][1],legs:[],vx:0,vz:0,hasBall:false}));
+ const coords=[[-46,0],[-29,-22],[-31,-7],[-31,7],[-29,22],[-10,-19],[-12,0],[-10,19],[13,-21],[17,0],[13,21]];
+ return chosen.slice(0,11).map((data,i)=>({data,team:teamIndex,role:data.posicion==='POR'?'GK':data.posicion,x:teamIndex===0?coords[i][0]:-coords[i][0],z:coords[i][1],legs:[],arms:[],vx:0,vz:0,hasBall:false}));
 }
 function clearScenePlayers(){for(const p of players)if(p.root)scene.remove(p.root);players=[];if(ball)scene.remove(ball)}
 function spawnPlayers(){
@@ -118,14 +157,25 @@ function scoreGoal(teamIndex){
  attachBall(players[1]);selected=1;ball.userData.owner=players[1];
 }
 function movePlayer(p,dx,dz,dt,sprint=false){
- const len=Math.hypot(dx,dz);if(!len)return;
+ const len=Math.hypot(dx,dz);if(!len){p.legs.forEach(leg=>leg.rotation.x*=.78);p.arms?.forEach(arm=>arm.rotation.x*=.78);return;}
  const speed=p.speed*(sprint?1.38:1);p.x=clamp(p.x+dx/len*speed*dt,-48,48);p.z=clamp(p.z+dz/len*speed*dt,-29,29);
  p.root.position.set(p.x,0,p.z);p.root.rotation.y=Math.atan2(dx,dz);
- const swing=Math.sin(performance.now()*.018)*.5;p.legs.forEach((leg,i)=>leg.rotation.x=(i===0?1:-1)*swing);
+ const phase=performance.now()*.014+(p.team?Math.PI:0),swing=Math.sin(phase)*.62;
+ p.legs.forEach((leg,i)=>{leg.rotation.x=(i===0?1:-1)*swing;leg.rotation.z=Math.cos(phase)*.035});
+ p.arms?.forEach((arm,i)=>{arm.rotation.x=(i===0?-1:1)*swing*.72;arm.rotation.z=(i===0?-.12:.12)});
+ p.root.position.y=.025+Math.abs(Math.sin(phase*2))*.045;
 }
 function aiUpdate(dt){
  const owner=ball.userData.owner;
  for(const p of players){
+  if(p.keeper){
+   const homeSide=p.team===0?-1:1,targetX=homeSide*45.5,targetZ=clamp(ball.position.z,-6.2,6.2);
+   const dx=targetX-p.x,dz=targetZ-p.z;
+   if(Math.abs(dx)>.25||Math.abs(dz)>.35)movePlayer(p,dx,dz,dt*1.25);
+   p.x=homeSide*45.5;p.root.position.x=p.x;
+   if(!owner&&Math.abs(ball.position.x-p.x)<5&&Math.abs(ball.position.z-p.z)<4){attachBall(p);$('matchMessage').textContent='¡El portero atrapa el balón!'}
+   continue;
+  }
   if(p.team===0&&players[selected]===p)continue;
   if(p.team===0&&owner===p){movePlayer(p,7,clamp(-p.z*.12,-2,2),dt*.45)}else if(p.team===0&&(!owner||owner.team===1)){const target=owner&&owner.team===1?owner:ball.position;const dx=target.x-p.x,dz=target.z-p.z,d=Math.hypot(dx,dz);if(d>3)movePlayer(p,dx,dz,dt*.72)}
   else if(p.team===1){const target=owner&&owner.team===1?{x:owner.x+5,z:owner.z}:ball.position;const dx=target.x-p.x,dz=target.z-p.z,d=Math.hypot(dx,dz);if(d>3)movePlayer(p,dx,dz,dt*.75)}
