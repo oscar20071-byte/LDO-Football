@@ -59,7 +59,7 @@ canvas{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#16834b
 <div class="actions"><button id="exportSave">Exportar progreso</button><button id="importSave">Importar archivo</button><input id="saveFile" type="file" accept=".json,application/json" hidden></div>
 <p id="backupStatus" class="hint" aria-live="polite">Tus datos actuales siguen guardados en este navegador.</p>
 <p class="hint">No necesitas cuenta, correo, contraseña ni conexión a un servidor. El progreso se guarda en este navegador. Para llevarlo a otro dispositivo, genera un código aquí y pégalo allí.</p>
-<div class="actions"><button id="createTransferCode">Generar código de transferencia</button><button id="applyTransferCode">Importar código</button></div>
+<div class="actions"><button id="createTransferCode">Generar código de transferencia</button><button id="copyTransferCode">Copiar código</button><button id="applyTransferCode">Importar código</button></div>
 <label>Código de transferencia<textarea id="transferCode" rows="5" placeholder="Genera un código aquí o pega uno recibido desde otro dispositivo"></textarea></label>
 <p id="transferStatus" class="hint" aria-live="polite">El código contiene tu carrera, competición y disciplina. Compártelo solo con quien deba recibir tu partida.</p>
 </section>
@@ -190,6 +190,11 @@ $('saveFile').addEventListener('change',e=>{importProgress(e.target.files&&e.tar
    $('transferCode').value=encodeTransfer(data);
    $('transferStatus').textContent='Código generado. Cópialo y pégalo en LDO Football en el otro dispositivo.';
   }catch(e){$('transferStatus').textContent='No se pudo generar el código: '+e.message}
+ });
+ $('copyTransferCode').addEventListener('click',async()=>{
+  const field=$('transferCode');if(!field.value.trim()){$('transferStatus').textContent='Primero genera o pega un código.';return}
+  try{await navigator.clipboard.writeText(field.value);$('transferStatus').textContent='Código copiado. Pégalo en el otro dispositivo.'}
+  catch(e){field.focus();field.select();$('transferStatus').textContent='Seleccionamos el código. Pulsa Ctrl+C para copiarlo.'}
  });
  $('applyTransferCode').addEventListener('click',()=>{
   try{
