@@ -29,7 +29,7 @@
 </section>
 <section id="gameScreen" class="screen">
 <div class="match-top"><button class="ghost" id="leaveMatch">← Salir</button><div class="scoreboard"><span id="homeName">LOCAL</span><strong><b id="homeScore">0</b> - <b id="awayScore">0</b></strong><span id="awayName">VISITANTE</span></div><div class="match-time" id="matchClock">00:00</div></div>
-<div class="pitch-wrap"><canvas id="pitch" width="1000" height="620" aria-label="Campo de fútbol interactivo"></canvas><div id="goalFlash" class="goal-flash"></div></div>
+<div class="pitch-wrap"><div id="pitch" role="img" aria-label="Campo de fútbol tridimensional con futbolistas controlables"></div><div id="goalFlash" class="goal-flash"></div></div>
 <div class="match-controls"><div class="control-help"><b>CONTROLES</b><span>WASD / Flechas · Mover</span><span>J · Pase</span><span>K · Tiro</span><span>L · Cambiar jugador</span><span>Espacio · Sprint</span></div><div class="touch-pad"><button data-key="ArrowUp">▲</button><div><button data-key="ArrowLeft">◀</button><button data-key="ArrowDown">▼</button><button data-key="ArrowRight">▶</button></div></div><div class="action-buttons"><button id="passBtn">PASE <kbd>J</kbd></button><button id="shootBtn">TIRO <kbd>K</kbd></button><button id="switchBtn">CAMBIAR <kbd>L</kbd></button><button id="pauseBtn">PAUSAR</button></div></div>
 <div class="match-stats"><span id="possession">Posesión 50% - 50%</span><span id="shots">Tiros 0 - 0</span><span id="matchMessage">¡Que comience el partido!</span></div>
 </section>
@@ -52,4 +52,5 @@
 </main>
 <footer>FOOTBALL JOURNEY <span>·</span> Juego original de fútbol · Progreso guardado en tu dispositivo</footer>
 <script src="game.js"></script>
+<script type="module" src="game3d.js"></script>
 </body></html>
